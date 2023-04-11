@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 type FlexContainerProps = {
   gp?: number;
+  pd?: string;
   fd?: "row" | "column" | "row-reverse" | "column-reverse";
   ai?: "flex-start" | "center" | "flex-end";
   jc?:
@@ -19,4 +20,5 @@ export const FlexContainer = styled.div`
   flex-direction: ${({ fd }: FlexContainerProps) => fd};
   justify-content: ${({ jc }: FlexContainerProps) => jc};
   align-items: ${({ ai = "center" }: FlexContainerProps) => ai};
+  padding: ${({ pd }: FlexContainerProps) => pd};
 `;

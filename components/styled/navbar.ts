@@ -4,9 +4,7 @@ import { themeType } from "types/common";
 import { device } from "../../theme";
 
 export const NavBar = styled.nav`
-  width: 80%;
-  max-width: 810px;
-  margin: auto;
+  width: 100%;
   padding: ${({ pd }: { pd?: string }) => pd};
 
   @media ${device.tablet} {

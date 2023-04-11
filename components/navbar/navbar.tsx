@@ -12,6 +12,7 @@ import {
   HeadLine,
   ProfilePhoto,
 } from "@components/styled/navbar";
+import { NavLink } from "@components/styled/global";
 
 const Navbar = () => {
   const theme: themeType = useContext(ThemeContext);
@@ -19,10 +20,12 @@ const Navbar = () => {
   return (
     <NavBar as={FlexContainer} pd="1.25rem 0.625rem" jc="space-between">
       <FlexContainer fd="column" ai="flex-start" className="details">
-        <LogoText>
-          <Word>abanseka</Word>
-          <Word cl={theme.colors.highlight}>.dev</Word>
-        </LogoText>
+        <NavLink href="/">
+          <LogoText>
+            <Word>abanseka</Word>
+            <Word cl={theme.colors.highlight}>.dev</Word>
+          </LogoText>
+        </NavLink>
 
         <HeadLine>Front-end developer & Digital Nomad</HeadLine>
       </FlexContainer>
