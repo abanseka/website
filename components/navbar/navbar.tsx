@@ -1,54 +1,48 @@
-import Image from "next/image";
-import Button from "@components/button/Button";
+import { useContext } from "react";
+import { themeType } from "types/common";
+import { ThemeContext } from "styled-components";
 import { FlexContainer } from "@components/styled/flex";
-import { HeadLine, LogoText, NavBar, Span } from "@components/styled/navbar";
+import Button from "@components/button/Button";
 import dp from "../../assets/dp_template.jpeg";
-import styled from "styled-components";
-
-const accent: string = "#865671";
+import {
+  Ring,
+  Word,
+  NavBar,
+  LogoText,
+  HeadLine,
+  ProfilePhoto,
+} from "@components/styled/navbar";
 
 const Navbar = () => {
+  const theme: themeType = useContext(ThemeContext);
+
   return (
-    <NavBar pd="1.25rem 0.625rem">
-      <FlexContainer jc="space-between">
-        <FlexContainer fd="column" ai="flex-start">
-          <LogoText>
-            <Span>abanseka</Span>
-            <Span color={accent}>.dev</Span>
-          </LogoText>
+    <NavBar as={FlexContainer} pd="1.25rem 0.625rem" jc="space-between">
+      <FlexContainer fd="column" ai="flex-start" className="details">
+        <LogoText>
+          <Word>abanseka</Word>
+          <Word cl={theme.colors.highlight}>.dev</Word>
+        </LogoText>
 
-          <HeadLine>Front-end developer & Digital Nomad</HeadLine>
-        </FlexContainer>
+        <HeadLine>Front-end developer & Digital Nomad</HeadLine>
+      </FlexContainer>
 
-        <FlexContainer fd="column" gp={1}>
-          <Ring
-            as={FlexContainer}
-            jc="center"
-            ai="center"
-            children={<ProfilePhoto src={dp} alt="cartoon character" />}
-          />
+      <FlexContainer fd="column" gp={1}>
+        <Ring as={FlexContainer} jc="center" ai="center" colors={theme.colors}>
+          <ProfilePhoto src={dp} alt="cartoon character" priority />
+        </Ring>
 
-          <Button
-            label="Hire Me"
-            props={{ bg: accent, cl: "#fff", sx: 1.025 }}
-          />
-        </FlexContainer>
+        <Button
+          label="Hire Me"
+          props={{
+            sx: 1.025,
+            bg: theme.colors.accent,
+            cl: theme.colors.offWhite,
+          }}
+        />
       </FlexContainer>
     </NavBar>
   );
 };
 
 export default Navbar;
-
-const ProfilePhoto = styled(Image)`
-  width: 5rem;
-  border-radius: 3rem;
-  color: transparent;
-`;
-
-const Ring = styled.div`
-  width: 5.625rem;
-  height: 5.625rem;
-  border-radius: 3rem;
-  background-color: ${accent};
-`;
