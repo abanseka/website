@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 type FlexContainerProps = {
   gp?: number;
-  fd?: "row" | "column";
+  fd?: "row" | "column" | "row-reverse" | "column-reverse";
   ai?: "flex-start" | "center" | "flex-end";
   jc?:
     | "flex-start"

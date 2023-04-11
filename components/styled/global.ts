@@ -1,7 +1,8 @@
 import { createGlobalStyle } from "styled-components";
+import { themeType } from "types/common";
 
 const GlobalStyles = createGlobalStyle`
-  *{
+  * {
     margin: 0;
     padding: 0;
     outline: 0;
@@ -9,9 +10,9 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    color: #A0775E;
-    background: #f8efe5;
     font-family: 'Poppins', sans-serif;
+    color: ${(theme: themeType) => theme.colors.primary};
+    background: ${(theme: themeType) => theme.colors.offWhite};
   }
 
   img {
