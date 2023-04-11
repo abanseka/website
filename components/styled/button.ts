@@ -8,12 +8,14 @@ export type ButtonStyledProps = {
   we?: number;
   bd?: string;
   br?: number;
+  dp?: string;
 };
 
 export const ButtonStyled = styled.button`
   min-width: 2rem;
   outline: none;
   cursor: pointer;
+  display: ${({ dp }: ButtonStyledProps) => dp};
   color: ${({ cl }: ButtonStyledProps) => cl};
   font-size: ${({ sx = 0.875 }: ButtonStyledProps) => `${sx}rem`};
   font-weight: ${({ we = 600 }: ButtonStyledProps) => we};

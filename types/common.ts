@@ -4,6 +4,7 @@ export type themeType = {
     offWhite: string;
     primary: string;
     highlight: string;
+    dimmed: string;
   };
 };
 

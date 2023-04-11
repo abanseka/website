@@ -6,6 +6,7 @@ export const theme: themeType = {
     primary: "#6c757d",
     offWhite: "#f8f9fa",
     highlight: "#d84f37",
+    dimmed: "#ced4da",
   },
 };
 
