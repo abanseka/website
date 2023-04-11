@@ -1,7 +1,8 @@
 import { ReactNode } from "react";
-import Navbar from "./navbar/navbar";
-import { AppContainer } from "./styled/global";
-import NavWidget from "./widgets/navigation";
+import Navbar from "@components/navbar/navbar";
+import { AppContainer } from "@components/styled/global";
+import NavWidget from "@components/widgets/navigation";
+import Footer from "@components/footer/footer";
 
 interface LayoutProps {
   children: ReactNode;
@@ -13,6 +14,7 @@ export default function Layout({ children }: LayoutProps) {
       <Navbar />
       <NavWidget />
       <main>{children}</main>
+      <Footer />
     </AppContainer>
   );
 }

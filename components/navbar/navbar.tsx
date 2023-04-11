@@ -9,10 +9,9 @@ import {
   Word,
   NavBar,
   LogoText,
-  HeadLine,
   ProfilePhoto,
 } from "@components/styled/navbar";
-import { NavLink } from "@components/styled/global";
+import { MediumTypography, NavLink } from "@components/styled/global";
 
 const Navbar = () => {
   const theme: themeType = useContext(ThemeContext);
@@ -20,14 +19,16 @@ const Navbar = () => {
   return (
     <NavBar as={FlexContainer} pd="1.25rem 0.625rem" jc="space-between">
       <FlexContainer fd="column" ai="flex-start" className="details">
-        <NavLink href="/">
+        <NavLink href="/" colors={theme.colors}>
           <LogoText>
             <Word>abanseka</Word>
             <Word cl={theme.colors.highlight}>.dev</Word>
           </LogoText>
         </NavLink>
 
-        <HeadLine>Front-end developer & Digital Nomad</HeadLine>
+        <MediumTypography ta="center">
+          Front-end developer & Digital Nomad
+        </MediumTypography>
       </FlexContainer>
 
       <FlexContainer fd="column" gp={1}>
@@ -41,6 +42,7 @@ const Navbar = () => {
             sx: 1.025,
             bg: theme.colors.accent,
             cl: theme.colors.offWhite,
+            dp: "none",
           }}
         />
       </FlexContainer>

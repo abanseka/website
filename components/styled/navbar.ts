@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styled from "styled-components";
 import { themeType } from "types/common";
-import { device } from "../../theme";
+import { device } from "theme";
 
 export const NavBar = styled.nav`
   width: 100%;
@@ -28,17 +28,6 @@ export const Word = styled.span`
 
 export const LogoText = styled.h1`
   width: fit-content;
-`;
-
-export const HeadLine = styled.p`
-  line-height: 1;
-  font-size: 1.25rem;
-  font-weight: 500;
-  text-align: center;
-  @media ${device.mobileL} {
-    word-break: break-word;
-    font-size: 1rem;
-  }
 `;
 
 export const ProfilePhoto = styled(Image)`

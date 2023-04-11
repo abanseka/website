@@ -1,8 +1,8 @@
 import Link from "next/link";
-import styled, { createGlobalStyle } from "styled-components";
 import { themeType } from "types/common";
 import { FlexContainer } from "./flex";
-import { device } from "../../theme";
+import { device } from "theme";
+import styled, { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -33,6 +33,18 @@ export const AppContainer = styled.main`
 export const WidgetWrapper = styled(FlexContainer)`
   @media ${device.tablet} {
     justify-content: center;
+  }
+`;
+
+type text = { ta?: "left" | "center" | "right" };
+export const MediumTypography = styled.p`
+  line-height: 1;
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-align: ${({ ta = "left" }: text) => ta};
+  @media ${device.mobileL} {
+    word-break: break-word;
+    font-size: 1rem;
   }
 `;
 

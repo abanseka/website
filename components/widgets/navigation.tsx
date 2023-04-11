@@ -1,9 +1,9 @@
 import { NavLink, WidgetWrapper } from "@components/styled/global";
-import { theme } from "../../theme";
-import JournalIcon from "../../assets/journal.svg";
-import WorkIcon from "../../assets/work.svg";
-import GitHub from "../../assets/rocket.svg";
-import Person from "../../assets/person.svg";
+import { theme } from "theme";
+import JournalIcon from "@assets/journal.svg";
+import WorkIcon from "@assets/work.svg";
+import GitHub from "@assets/rocket.svg";
+import Person from "@assets/person.svg";
 
 type navLink = {
   label: string;
@@ -11,7 +11,7 @@ type navLink = {
   icon?: React.ReactNode;
 };
 
-const NavWidget = () => {
+const NavWidget = ({ renderIcon = true }: { renderIcon?: boolean }) => {
   const navLinks: navLink[] = [
     {
       label: "Journal",
@@ -39,7 +39,7 @@ const NavWidget = () => {
     <WidgetWrapper gp={1.2} pd="0.5rem 0.25rem">
       {navLinks.map((link: navLink) => (
         <NavLink colors={theme.colors} href={link.href} key={link.href}>
-          {link.icon}
+          {renderIcon && link.icon}
           {link.label}
         </NavLink>
       ))}
