@@ -11,8 +11,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <p>website ☕</p>
-        <pre>
+        <pre style={{ display: "none" }}>
           <code>
             {JSON.stringify({
               sources: {
