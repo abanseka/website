@@ -71,7 +71,7 @@ export const NavLink = styled(Link)`
     }
   }
 
-  @media ${device.mobileL} {
+  @media ${device.tablet} {
     font-size: 1rem;
     flex-direction: column;
     gap: 0;
