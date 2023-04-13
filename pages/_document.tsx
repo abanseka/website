@@ -11,11 +11,23 @@ export default function Document() {
           crossOrigin=""
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,500;1,600&display=swap"
+          href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200;300;400;500;600;800&display=swap"
           rel="stylesheet"
         />
       </Head>
       <body>
+        <svg className="noise" xmlns="http://www.w3.org/2000/svg">
+          <filter id="noiseFilter">
+            <feTurbulence
+              type="fractalNoise"
+              baseFrequency="0.65"
+              numOctaves="3"
+              stitchTiles="stitch"
+            />
+          </filter>
+
+          <rect width="100%" height="100%" filter="url(#noiseFilter)" />
+        </svg>
         <Main />
         <NextScript />
       </body>

@@ -1,6 +1,6 @@
 import { FlexContainer } from "@components/styled/flex";
 import { FooterStyled } from "@components/styled/footer";
-import { MediumTypography } from "@components/styled/global";
+import { NormalText } from "@components/styled/global";
 import NavWidget from "@components/widgets/navigation";
 import { theme } from "theme";
 
@@ -14,9 +14,9 @@ const Footer = () => {
     >
       <NavWidget renderIcon={false} />
 
-      <MediumTypography>
+      <NormalText>
         Built with Next.js, Styled Components and Vercel
-      </MediumTypography>
+      </NormalText>
     </FooterStyled>
   );
 };

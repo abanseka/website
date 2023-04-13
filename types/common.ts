@@ -17,3 +17,10 @@ export type screens = {
   laptopL: string;
   desktop: string;
 };
+
+export type post = {
+  id: number;
+  title: string;
+  content: string;
+  summary: string;
+};
