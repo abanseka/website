@@ -4,7 +4,7 @@ import { themeType } from "types/common";
 import { device } from "theme";
 
 export const NavBar = styled.nav`
-  width: 42rem;
+  max-width: 42rem;
   margin: auto;
   padding: ${({ pd }: { pd?: string }) => pd};
 

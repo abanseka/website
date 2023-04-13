@@ -52,7 +52,7 @@ export const AppContainer = styled.main`
 `;
 
 export const WidgetWrapper = styled(FlexContainer)`
-  width: 42rem;
+  max-width: 42rem;
   margin: auto;
   postion: sticky;
   top: 1rem;

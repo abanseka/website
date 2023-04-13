@@ -3,7 +3,7 @@ import { themeType } from "types/common";
 import { device } from "theme";
 
 export const FooterStyled = styled.footer`
-  width: 42rem;
+  max-width: 42rem;
   margin: auto;
   flex-direction: column;
   margin: 0 auto 2rem;
