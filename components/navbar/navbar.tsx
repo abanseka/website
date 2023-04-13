@@ -11,7 +11,7 @@ import {
   LogoText,
   ProfilePhoto,
 } from "@components/styled/navbar";
-import { MediumTypography, NavLink } from "@components/styled/global";
+import { NormalText, NavLink } from "@components/styled/global";
 
 const Navbar = () => {
   const theme: themeType = useContext(ThemeContext);
@@ -26,9 +26,9 @@ const Navbar = () => {
           </LogoText>
         </NavLink>
 
-        <MediumTypography ta="center">
+        <NormalText ta="center">
           Front-end developer & Digital Nomad
-        </MediumTypography>
+        </NormalText>
       </FlexContainer>
 
       <FlexContainer fd="column" gp={1}>

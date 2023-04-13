@@ -1,6 +1,12 @@
 import Head from "next/head";
+import { MainContainer } from "@components/styled/Main";
+import PostCard from "@components/widgets/postCard";
+import Blog from "../DummyPost.json";
+import { post } from "types/common";
 
 export default function Home() {
+  const { posts } = Blog;
+
   return (
     <>
       <Head>
@@ -10,17 +16,15 @@ export default function Home() {
         <link rel="icon" href="/branch_favicon.png" />
       </Head>
 
-      <main>
-        <pre style={{ display: "none" }}>
-          <code>
-            {JSON.stringify({
-              sources: {
-                favicon: "https://icons8.com/icon/33280/code-fork",
-              },
-            })}
-          </code>
-        </pre>
-      </main>
+      <MainContainer>
+        {posts.map((post: post) => (
+          <PostCard
+            key={post.id}
+            title={post.title}
+            description={post.summary}
+          />
+        ))}
+      </MainContainer>
     </>
   );
 }
