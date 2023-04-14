@@ -17,6 +17,7 @@
     "paths": {
       "@components/*": ["./components/*"],
       "@assets/*": ["./assets/*"],
+      "@styledComponents/*": ["./styles/*"],
       "types/*": ["./types/*"],
       "theme": ["./theme.ts"]
     }
