@@ -1,17 +1,18 @@
 import { useContext } from "react";
 import { themeType } from "types/common";
 import { ThemeContext } from "styled-components";
-import { FlexContainer } from "@components/styled/flex";
-import Button from "@components/button/Button";
-import dp from "../../assets/dp_template.jpeg";
 import {
   Ring,
   Word,
   NavBar,
   LogoText,
   ProfilePhoto,
-} from "@components/styled/navbar";
-import { NormalText, NavLink } from "@components/styled/global";
+} from "@styledComponents/navbar";
+import { FlexContainer } from "@styledComponents/flex";
+import { NormalText } from "@styledComponents/global";
+import Button from "@components/button/Button";
+import dp from "../../assets/dp_template.jpeg";
+import PhoneIcon from "../../assets/phoneInbox.svg";
 
 const Navbar = () => {
   const theme: themeType = useContext(ThemeContext);
@@ -19,31 +20,28 @@ const Navbar = () => {
   return (
     <NavBar as={FlexContainer} pd="1.25rem 0.625rem" jc="space-between">
       <FlexContainer fd="column" ai="flex-start" className="details">
-        <NavLink href="/" >
-          <LogoText>
-            <Word>abanseka</Word>
-            <Word cl={theme.colors.highlight}>.dev</Word>
-          </LogoText>
-        </NavLink>
+        <LogoText>
+          <Word>abanseka</Word>
+          <Word cl={theme.colors.highlight}>.dev</Word>
+        </LogoText>
 
         <NormalText ta="center">Front-end developer & Digital Nomad</NormalText>
       </FlexContainer>
 
       <FlexContainer fd="column" gp={1}>
-        <NavLink href="/" >
-          <Ring as={FlexContainer} jc="center" ai="center">
-            <ProfilePhoto src={dp} alt="cartoon character" priority />
-          </Ring>
-        </NavLink>
+        <Ring as={FlexContainer} jc="center" ai="center">
+          <ProfilePhoto src={dp} alt="cartoon character" priority />
+        </Ring>
 
         <Button
-          label="Hire Me"
+          label="whatsapp"
           props={{
             sx: 1.025,
             bg: theme.colors.accent,
             cl: theme.colors.offWhite,
             dp: "none",
           }}
+          icon={<PhoneIcon fill={theme.colors.offWhite} width="2rem" />}
         />
       </FlexContainer>
     </NavBar>

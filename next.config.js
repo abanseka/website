@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 
-const nextConfig = {
+const withMdx = require("@next/mdx")();
+
+module.exports = withMdx({
+  pageExtensions: ["mdx", "md", "jsx", "js", "tsx", "ts"],
   reactStrictMode: true,
   compiler: {
     styledComponents: true,
@@ -28,6 +31,4 @@ const nextConfig = {
 
     return config;
   },
-};
-
-module.exports = nextConfig;
+});

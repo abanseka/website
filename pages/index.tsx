@@ -1,12 +1,17 @@
 import Head from "next/head";
-import { MainContainer } from "@components/styled/Main";
-import PostCard from "@components/widgets/postCard";
-import Blog from "../DummyPost.json";
-import { post } from "types/common";
+import { getSortedNotesData } from "../lib/notes";
+import Notes from "./notes/notes";
 
-export default function Home() {
-  const { posts } = Blog;
+export async function getStaticProps() {
+  const allNotesData = getSortedNotesData();
+  return {
+    props: {
+      allNotesData,
+    },
+  };
+}
 
+export default function Home({ allNotesData }: { allNotesData: any }) {
   return (
     <>
       <Head>
@@ -16,15 +21,7 @@ export default function Home() {
         <link rel="icon" href="/branch_favicon.png" />
       </Head>
 
-      <MainContainer>
-        {posts.map((post: post) => (
-          <PostCard
-            key={post.id}
-            title={post.title}
-            description={post.summary}
-          />
-        ))}
-      </MainContainer>
+      <Notes allNotesData={allNotesData} />
     </>
   );
 }

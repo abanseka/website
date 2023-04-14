@@ -17,6 +17,8 @@ const GlobalStyles = createGlobalStyle`
     position: relative;
   }
 
+
+
   img {
     max-width: 100%;
     height: auto;
@@ -33,10 +35,11 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 export const AppContainer = styled.main`
-  height: 100vh;
-  height: 100dvh;
   padding: 0 0.625rem;
   overflow-y: scroll;
+  height: 100vh;
+  height: 100dvh;
+  position: relative;
 
   ::-webkit-scrollbar {
     display: none;
@@ -47,11 +50,30 @@ export const AppContainer = styled.main`
   }
 `;
 
+export const MainContainer = styled.div`
+  max-width: 42rem;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 0.625rem;
+  gap: 1rem;
+`;
+
 export const MenuContainer = styled.div`
   max-width: 42rem;
   margin: auto;
+  .footerMenu {
+    padding: 1rem 0;
+  }
   @media ${device.tablet} {
-    justify-content: center;
+    .headerMenu,
+    .footerMenu {
+      justify-content: center;
+      p {
+        text-align: center;
+      }
+    }
   }
 `;
 
@@ -71,10 +93,11 @@ export const NormalText = styled.p`
   line-height: 1;
   font-weight: 400;
   font-size: 1.125rem;
-  text-align: ${({ ta = "left" }: text) => ta};
+  text-align: ${({ ta }: text) => ta};
   @media ${device.mobileL} {
     word-break: break-word;
     font-size: 0.8rem;
+    line-height: unset;
   }
 `;
 
