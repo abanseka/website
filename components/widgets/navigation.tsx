@@ -1,9 +1,9 @@
-import { NavLink, WidgetWrapper } from "@components/styled/global";
-import { theme } from "theme";
+import { NavLink, MenuContainer } from "@components/styled/global";
 import JournalIcon from "@assets/journal.svg";
 import WorkIcon from "@assets/work.svg";
 import GitHub from "@assets/rocket.svg";
 import Person from "@assets/person.svg";
+import { FlexContainer } from "@components/styled/flex";
 
 type navLink = {
   label: string;
@@ -11,7 +11,7 @@ type navLink = {
   icon?: React.ReactNode;
 };
 
-const NavWidget = ({ renderIcon = true }: { renderIcon?: boolean }) => {
+const NavWidget = ({ renderIcon = true, ma }: { renderIcon?: boolean,ma?:string }) => {
   const navLinks: navLink[] = [
     {
       label: "Journal",
@@ -36,14 +36,14 @@ const NavWidget = ({ renderIcon = true }: { renderIcon?: boolean }) => {
   ];
 
   return (
-    <WidgetWrapper gp={1.2} pd="0.5rem 0.25rem">
+    <MenuContainer as={FlexContainer} gp={1.2} pd="0.5rem 0.25rem" ma={ma}>
       {navLinks.map((link: navLink) => (
-        <NavLink colors={theme.colors} href={link.href} key={link.href}>
+        <NavLink href={link.href} key={link.href}>
           {renderIcon && link.icon}
           {link.label}
         </NavLink>
       ))}
-    </WidgetWrapper>
+    </MenuContainer>
   );
 };
 

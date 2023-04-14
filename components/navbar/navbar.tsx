@@ -19,22 +19,22 @@ const Navbar = () => {
   return (
     <NavBar as={FlexContainer} pd="1.25rem 0.625rem" jc="space-between">
       <FlexContainer fd="column" ai="flex-start" className="details">
-        <NavLink href="/" colors={theme.colors}>
+        <NavLink href="/" >
           <LogoText>
             <Word>abanseka</Word>
             <Word cl={theme.colors.highlight}>.dev</Word>
           </LogoText>
         </NavLink>
 
-        <NormalText ta="center">
-          Front-end developer & Digital Nomad
-        </NormalText>
+        <NormalText ta="center">Front-end developer & Digital Nomad</NormalText>
       </FlexContainer>
 
       <FlexContainer fd="column" gp={1}>
-        <Ring as={FlexContainer} jc="center" ai="center" colors={theme.colors}>
-          <ProfilePhoto src={dp} alt="cartoon character" priority />
-        </Ring>
+        <NavLink href="/" >
+          <Ring as={FlexContainer} jc="center" ai="center">
+            <ProfilePhoto src={dp} alt="cartoon character" priority />
+          </Ring>
+        </NavLink>
 
         <Button
           label="Hire Me"

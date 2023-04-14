@@ -1,7 +1,6 @@
 import Image from "next/image";
 import styled from "styled-components";
-import { themeType } from "types/common";
-import { device } from "theme";
+import { device, theme } from "theme";
 
 export const NavBar = styled.nav`
   max-width: 42rem;
@@ -43,7 +42,7 @@ export const Ring = styled.div`
   width: 5.625rem;
   height: 5.625rem;
   border-radius: 3rem;
-  background: ${(theme: themeType) => theme.colors.highlight};
+  background: ${theme.colors.highlight};
   @media ${device.mobileL} {
     width: 4rem;
     height: 4rem;

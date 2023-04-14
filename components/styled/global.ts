@@ -1,6 +1,4 @@
 import Link from "next/link";
-import { themeType } from "types/common";
-import { FlexContainer } from "./flex";
 import { device, theme } from "theme";
 import styled, { createGlobalStyle } from "styled-components";
 
@@ -14,8 +12,9 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: 'JetBrains Mono',sans-serif;
-    color: ${(theme: themeType) => theme.colors.primary};
-    background: ${(theme: themeType) => theme.colors.offWhite};
+    color: ${theme.colors.primary};
+    background: ${theme.colors.offWhite};
+    position: relative;
   }
 
   img {
@@ -39,24 +38,18 @@ export const AppContainer = styled.main`
   padding: 0 0.625rem;
   overflow-y: scroll;
 
-  /* Hide scrollbar for Chrome, Safari and Opera */
   ::-webkit-scrollbar {
     display: none;
   }
-
-  /* Hide scrollbar for IE, Edge and Firefox */
   html {
     scrollbar-width: none;
     -ms-overflow-style: none;
   }
 `;
 
-export const WidgetWrapper = styled(FlexContainer)`
+export const MenuContainer = styled.div`
   max-width: 42rem;
   margin: auto;
-  postion: sticky;
-  top: 1rem;
-  bottom: 1rem;
   @media ${device.tablet} {
     justify-content: center;
   }
@@ -87,7 +80,7 @@ export const NormalText = styled.p`
 
 export const TitleText = styled.h2`
   line-height: 1.2;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 1.125rem;
   text-transform: capitalize;
   text-align: ${({ ta = "left" }: text) => ta};
@@ -104,19 +97,20 @@ export const NavLink = styled(Link)`
   font-size: 1rem;
   font-weight: 600;
   gap: 0.5rem;
-  color: ${(theme: themeType) => theme.colors?.primary};
+  color: ${theme.colors.primary};
+  transition: all 0.2s ease-in-out;
 
   svg {
     width: 1.2rem;
     height: 1.2rem;
-    fill: ${(theme: themeType) => theme.colors?.primary};
+    fill: ${theme.colors?.primary};
+    transition: all 0.2s ease-in-out;
   }
 
   &:hover {
-    color: ${(theme: themeType) => theme.colors?.highlight};
-
+    color: ${theme.colors.highlight};
     svg {
-      fill: ${(theme: themeType) => theme.colors?.highlight};
+      scale: 1.2;
     }
   }
 

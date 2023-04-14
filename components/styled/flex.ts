@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 type FlexContainerProps = {
+  ma?: string;
   gp?: number;
   pd?: string;
   fd?: "row" | "column" | "row-reverse" | "column-reverse";
@@ -16,6 +17,7 @@ type FlexContainerProps = {
 
 export const FlexContainer = styled.div`
   display: flex;
+  margin: ${({ ma }: FlexContainerProps) => ma};
   gap: ${({ gp }: FlexContainerProps) => `${gp}rem`};
   flex-direction: ${({ fd }: FlexContainerProps) => fd};
   justify-content: ${({ jc }: FlexContainerProps) => jc};

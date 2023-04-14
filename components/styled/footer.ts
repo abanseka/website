@@ -1,15 +1,12 @@
 import styled from "styled-components";
-import { themeType } from "types/common";
-import { device } from "theme";
+import { device, theme } from "theme";
 
 export const FooterStyled = styled.footer`
   max-width: 42rem;
-  margin: auto;
-  flex-direction: column;
   margin: 0 auto 2rem;
 
   & p {
-    color: ${(theme: themeType) => theme.colors.dimmed};
+    color: ${theme.colors.dimmed};
     @media ${device.tablet} {
       text-align: center;
     }

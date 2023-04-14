@@ -2,17 +2,16 @@ import { FlexContainer } from "@components/styled/flex";
 import { FooterStyled } from "@components/styled/footer";
 import { NormalText } from "@components/styled/global";
 import NavWidget from "@components/widgets/navigation";
-import { theme } from "theme";
 
 const Footer = () => {
   return (
     <FooterStyled
       as={FlexContainer}
-      gp={0.625}
+      fd="column"
       ai="flex-start"
-      colors={theme.colors}
+      gp={0.625}
     >
-      <NavWidget renderIcon={false} />
+      <NavWidget ma="0"  renderIcon={false} />
 
       <NormalText>
         Built with Next.js, Styled Components and Vercel
