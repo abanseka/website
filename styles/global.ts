@@ -63,7 +63,7 @@ export const MainContainer = styled.div`
 export const MenuContainer = styled.div`
   max-width: 42rem;
   margin: auto;
-  .footerMenu {
+  top: 1rem .footerMenu {
     padding: 1rem 0;
   }
   @media ${device.tablet} {
