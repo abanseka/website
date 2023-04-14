@@ -32,6 +32,16 @@ const GlobalStyles = createGlobalStyle`
     opacity: 0.4;
     pointer-events: none;
   }
+
+  .workpage{
+    width:100%;
+
+    @media ${device.mobileL} {
+      flex-direction:column;
+      align-items:center;
+    }
+  }
+}
 `;
 
 export const AppContainer = styled.main`

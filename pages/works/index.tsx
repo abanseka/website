@@ -1,4 +1,7 @@
 import Head from "next/head";
+import Bus from "@assets/bus.svg";
+import { FlexContainer } from "@styledComponents/flex";
+import { TitleText } from "@styledComponents/global";
 
 const index = () => {
   return (
@@ -10,7 +13,10 @@ const index = () => {
       </Head>
 
       <>
-        <h1>Work </h1>
+        <FlexContainer gp={1} jc="center" fd="column" className="workpage">
+          <Bus width="10rem" height="10rem" />
+          <TitleText>Works 🔧</TitleText>
+        </FlexContainer>
       </>
     </>
   );

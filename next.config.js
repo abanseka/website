@@ -2,7 +2,7 @@
 
 const withMdx = require("@next/mdx")();
 
-module.exports = withMdx({
+const nextConfig = {
   pageExtensions: ["mdx", "md", "jsx", "js", "tsx", "ts"],
   reactStrictMode: true,
   compiler: {
@@ -31,4 +31,6 @@ module.exports = withMdx({
 
     return config;
   },
-});
+};
+
+module.exports = withMdx(nextConfig);
