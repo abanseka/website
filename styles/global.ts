@@ -73,16 +73,15 @@ export const MainContainer = styled.div`
 export const MenuContainer = styled.div`
   max-width: 42rem;
   margin: auto;
-  top: 1rem .footerMenu {
+  top: 1rem;
+  .footerMenu {
     padding: 1rem 0;
   }
   @media ${device.tablet} {
     .headerMenu,
     .footerMenu {
       justify-content: center;
-      p {
-        text-align: center;
-      }
+      text-align: center;
     }
   }
 `;
@@ -104,7 +103,7 @@ export const NormalText = styled.p`
   font-weight: 400;
   font-size: 1.125rem;
   text-align: ${({ ta }: text) => ta};
-  @media ${device.mobileL} {
+  @media ${device.tablet} {
     word-break: break-word;
     font-size: 0.8rem;
     line-height: unset;
@@ -134,8 +133,8 @@ export const NavLink = styled(Link)`
   transition: all 0.2s ease-in-out;
 
   svg {
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 1.625rem;
+    height: 1.625rem;
     fill: ${theme.colors?.primary};
     transition: all 0.2s ease-in-out;
   }
@@ -148,11 +147,12 @@ export const NavLink = styled(Link)`
   }
 
   @media ${device.tablet} {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     flex-direction: column;
     gap: 0;
     svg {
       width: 1.2rem;
+      height: 1.2rem;
     }
   }
 `;

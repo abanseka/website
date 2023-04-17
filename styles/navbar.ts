@@ -8,11 +8,13 @@ export const NavBar = styled.nav`
   padding: ${({ pd }: { pd?: string }) => pd};
 
   @media ${device.tablet} {
-    flex-direction: column-reverse;
-    align-items: center;
-
-    .details {
+    .navbar {
+      flex-direction: column-reverse;
       align-items: center;
+
+      .details {
+        align-items: center;
+      }
     }
   }
 `;
