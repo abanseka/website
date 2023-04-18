@@ -33,8 +33,8 @@ const index = () => {
       workTitle: "Viginere Cipher",
       workerDescription: "A mini ecryption application ",
 
-      siteLink: "https://abanseka.vercel.app/",
-      repoLink: "https://github.com/abanseka/personal-website",
+      siteLink: "https://viginerecipher-begonia-9b5138.netlify.app/",
+      repoLink: "https://github.com/abanseka/viginere-cipher",
 
       siteLinkIcon: <SiteLinkIcon />,
       codeLinkIcon: <RepoLinkIcon />,
