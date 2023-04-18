@@ -17,6 +17,9 @@ type FlexContainerProps = {
     | "space-around"
     | "space-evenly";
 
+  fw?: "wrap" | "nowrap";
+  fg?: number;
+
   br?: string;
   bd?: string;
 };
@@ -32,6 +35,9 @@ export const FlexContainer = styled.div`
   flex-direction: ${({ fd }: FlexContainerProps) => fd};
   justify-content: ${({ jc }: FlexContainerProps) => jc};
   align-items: ${({ ai = "center" }: FlexContainerProps) => ai};
+
+  flex-wrap: ${({ fw }: FlexContainerProps) => fw};
+  flex-grow: ${({ fg }: FlexContainerProps) => fg};
 
   border-radius: ${({ br }: FlexContainerProps) => br};
   border: ${({ bd }: FlexContainerProps) => bd};

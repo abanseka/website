@@ -1,9 +1,9 @@
 import Head from "next/head";
+import { theme } from "theme";
 import { FlexContainer } from "@styledComponents/flex";
 import WorkCard from "@components/widgets/workCard";
 import { WorkCardProps } from "types/common";
 import { CSSProperties } from "styled-components";
-import { theme } from "theme";
 import Shield from "@assets/shield.svg";
 import Villa from "@assets/villa.svg";
 import SiteLinkIcon from "@assets/link.svg";
@@ -51,7 +51,13 @@ const index = () => {
       </Head>
 
       <>
-        <FlexContainer gp={1} jc="space-around" className="workpage">
+        <FlexContainer
+          gp={1}
+          jc="space-around"
+          className="workpage"
+          ma="0 0 5rem"
+          fw="wrap"
+        >
           {works.map(
             ({
               siteLink,

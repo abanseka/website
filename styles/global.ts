@@ -17,8 +17,6 @@ const GlobalStyles = createGlobalStyle`
     position: relative;
   }
 
-
-
   img {
     max-width: 100%;
     height: auto;
@@ -47,6 +45,20 @@ const GlobalStyles = createGlobalStyle`
       align-items:center;
       .workCard {
         min-width:50%;
+        height:200px;
+      }
+    }
+
+    @media ${device.mobileL} {
+      .workCard {
+        gap:0.025;
+        min-width:80%;
+      }
+    }
+
+    @media ${device.mobileM} {
+      .workCard {
+        min-width:100%;
       }
     }
   }
@@ -58,7 +70,6 @@ export const AppContainer = styled.main`
   overflow-y: scroll;
   height: 100vh;
   height: 100dvh;
-  position: relative;
 
   ::-webkit-scrollbar {
     display: none;

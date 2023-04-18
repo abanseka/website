@@ -22,12 +22,15 @@ const WorkCard: FC<WorkCardProps> = ({
       gp={0.625}
       pd="1rem"
       br="0.625rem"
+      fg={1}
       className="workCard"
       bd={`2px solid ${primary}`}
     >
       {headerImage}
-      <TitleText>{workTitle}</TitleText>
-      <SmallText style={{ color: highlight }}>{workerDescription}</SmallText>
+      <TitleText ta="center">{workTitle}</TitleText>
+      <SmallText ta="center" style={{ color: highlight }}>
+        {workerDescription}
+      </SmallText>
 
       <FlexContainer
         wd={100}
