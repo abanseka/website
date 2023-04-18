@@ -9,7 +9,7 @@ import {
   ProfilePhoto,
 } from "@styledComponents/navbar";
 import { FlexContainer } from "@styledComponents/flex";
-import { NormalText } from "@styledComponents/global";
+import { NormalText, SmallText } from "@styledComponents/global";
 import Button from "@components/button/Button";
 import dp from "../../assets/dp_template.jpeg";
 import PhoneIcon from "../../assets/phoneInbox.svg";
