@@ -36,9 +36,18 @@ const GlobalStyles = createGlobalStyle`
   .workpage{
     width:100%;
 
-    @media ${device.mobileL} {
+    .workCard:first-child {
+      .workLinks{
+        justify-content:center;
+      }
+    }
+
+    @media ${device.tablet} {
       flex-direction:column;
       align-items:center;
+      .workCard {
+        min-width:50%;
+      }
     }
   }
 }
@@ -153,6 +162,22 @@ export const NavLink = styled(Link)`
     svg {
       width: 1.2rem;
       height: 1.2rem;
+    }
+  }
+`;
+
+export const LinkIcon = styled(Link)`
+  svg {
+    width: 2rem;
+    height: 2rem;
+    fill: ${theme.colors?.primary};
+    transition: all 0.2s ease-in-out;
+  }
+
+  &:hover {
+    color: ${theme.colors.highlight};
+    svg {
+      scale: 1.2;
     }
   }
 `;

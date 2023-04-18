@@ -20,7 +20,11 @@ const Navbar = () => {
 
   return (
     <NavBar>
-      <FlexContainer pd="1.25rem 0.625rem" jc="space-between" className="navbar">
+      <FlexContainer
+        pd="1.25rem 0.625rem"
+        jc="space-between"
+        className="navbar"
+      >
         <FlexContainer fd="column" ai="flex-start" className="details">
           <LogoText>
             <Word>abanseka</Word>
