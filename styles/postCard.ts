@@ -25,14 +25,4 @@ export const PostCardStyled = styled.div`
   &:active {
     background: ${theme.colors.highlight};
   }
-
-  @media ${device.tablet} {
-    width: 70%;
-    margin: auto;
-  }
-
-  @media ${device.mobileL} {
-    width: 100%;
-    margin: auto;
-  }
 `;
