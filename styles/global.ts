@@ -17,8 +17,6 @@ const GlobalStyles = createGlobalStyle`
     position: relative;
   }
 
-
-
   img {
     max-width: 100%;
     height: auto;
@@ -36,20 +34,42 @@ const GlobalStyles = createGlobalStyle`
   .workpage{
     width:100%;
 
-    @media ${device.mobileL} {
+    .workCard:first-child {
+      .workLinks{
+        justify-content:center;
+      }
+    }
+
+    @media ${device.tablet} {
       flex-direction:column;
       align-items:center;
+      .workCard {
+        min-width:50%;
+        height:200px;
+      }
+    }
+
+    @media ${device.mobileL} {
+      .workCard {
+        gap:0.025;
+        min-width:80%;
+      }
+    }
+
+    @media ${device.mobileM} {
+      .workCard {
+        min-width:100%;
+      }
     }
   }
 }
 `;
 
 export const AppContainer = styled.main`
-  padding: 0 0.625rem;
+  padding: 15rem 0.625rem 0;
   overflow-y: scroll;
   height: 100vh;
   height: 100dvh;
-  position: relative;
 
   ::-webkit-scrollbar {
     display: none;
@@ -57,6 +77,10 @@ export const AppContainer = styled.main`
   html {
     scrollbar-width: none;
     -ms-overflow-style: none;
+  }
+
+  @media ${device.tablet} {
+    padding-top: 5rem;
   }
 `;
 
@@ -73,7 +97,6 @@ export const MainContainer = styled.div`
 export const MenuContainer = styled.div`
   max-width: 42rem;
   margin: auto;
-  top: 1rem;
   .footerMenu {
     padding: 1rem 0;
   }
@@ -153,6 +176,22 @@ export const NavLink = styled(Link)`
     svg {
       width: 1.2rem;
       height: 1.2rem;
+    }
+  }
+`;
+
+export const LinkIcon = styled(Link)`
+  svg {
+    width: 2rem;
+    height: 2rem;
+    fill: ${theme.colors?.primary};
+    transition: all 0.2s ease-in-out;
+  }
+
+  &:hover {
+    color: ${theme.colors.highlight};
+    svg {
+      scale: 1.2;
     }
   }
 `;

@@ -10,17 +10,23 @@ import {
 } from "@styledComponents/navbar";
 import { FlexContainer } from "@styledComponents/flex";
 import { NormalText } from "@styledComponents/global";
+import NavigationMenu from "@components/widgets/NavigationMenu";
 import Button from "@components/button/Button";
 import dp from "../../assets/dp_template.jpeg";
 import PhoneIcon from "../../assets/phoneInbox.svg";
-import NavigationMenu from "@components/widgets/NavigationMenu";
 
 const Navbar = () => {
   const theme: themeType = useContext(ThemeContext);
 
   return (
     <NavBar>
-      <FlexContainer pd="1.25rem 0.625rem" jc="space-between" className="navbar">
+      <NavigationMenu className="headerMenu" />
+
+      <FlexContainer
+        pd="1.25rem 0.625rem"
+        jc="space-between"
+        className="navbar"
+      >
         <FlexContainer fd="column" ai="flex-start" className="details">
           <LogoText>
             <Word>abanseka</Word>
@@ -49,8 +55,6 @@ const Navbar = () => {
           />
         </FlexContainer>
       </FlexContainer>
-
-      <NavigationMenu className="headerMenu" />
     </NavBar>
   );
 };

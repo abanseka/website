@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export type themeType = {
   colors: {
     accent: string;
@@ -24,3 +26,13 @@ export type post = {
   content: string;
   summary: string;
 };
+
+export interface WorkCardProps {
+  siteLink: string;
+  repoLink: string;
+  workTitle: string;
+  codeLinkIcon: ReactNode;
+  headerImage: ReactNode;
+  workerDescription: string;
+  siteLinkIcon?: ReactNode;
+}

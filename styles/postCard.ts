@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { theme } from "theme";
+import { device, theme } from "theme";
 
 export const PostCardStyled = styled.div`
   width: 100%;
@@ -24,5 +24,15 @@ export const PostCardStyled = styled.div`
 
   &:active {
     background: ${theme.colors.highlight};
+  }
+
+  @media ${device.tablet} {
+    width: 70%;
+    margin: auto;
+  }
+
+  @media ${device.mobileL} {
+    width: 100%;
+    margin: auto;
   }
 `;

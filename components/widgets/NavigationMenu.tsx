@@ -25,7 +25,7 @@ const NavigationMenu = ({
 }: MenuWidgetProps) => {
   // prettier-ignore
   const navLinks: navLink[] = [
-    { id: 1, label: "Lounge", href: "/", icon: <JournalIcon />, },
+    { id: 1, label: "Notes", href: "/", icon: <JournalIcon />, },
     { id: 2, label: "Works", href: "/works", icon: <WorkIcon />, },
     { id: 3, label: "GitHub", href: "https://github.com/abanseka", icon: <GitHub />, },
     { id: 4, label: "LinkedIn", href: "https://www.linkedin.com/in/abanseka-sylvester/", icon: <Person />, },

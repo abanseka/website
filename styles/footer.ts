@@ -1,9 +1,11 @@
 import styled from "styled-components";
-import { device } from "theme";
+import { device, theme } from "theme";
 
 export const FooterStyled = styled.footer`
   max-width: 42rem;
-  margin: 12.5rem auto 3rem;
+  margin: auto;
+  padding: 1rem 0.625rem 2rem;
+  background: ${theme.colors.offWhite};
 
   @media ${device.tablet} {
     p {
