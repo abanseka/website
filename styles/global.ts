@@ -66,7 +66,7 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 export const AppContainer = styled.main`
-  padding: 0 0.625rem;
+  padding: 15rem 0.625rem 0;
   overflow-y: scroll;
   height: 100vh;
   height: 100dvh;
@@ -77,6 +77,10 @@ export const AppContainer = styled.main`
   html {
     scrollbar-width: none;
     -ms-overflow-style: none;
+  }
+
+  @media ${device.tablet} {
+    padding-top: 5rem;
   }
 `;
 
@@ -93,7 +97,6 @@ export const MainContainer = styled.div`
 export const MenuContainer = styled.div`
   max-width: 42rem;
   margin: auto;
-  top: 1rem;
   .footerMenu {
     padding: 1rem 0;
   }
