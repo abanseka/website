@@ -13,7 +13,7 @@ export const theme: themeType = {
 const screens: screens = {
   mobileS: "320px",
   mobileM: "375px",
-  mobileL: "425px",
+  mobileL: "650px", //🔖 between mobile & tablet
   tablet: "768px",
   laptop: "1024px",
   laptopL: "1440px",
