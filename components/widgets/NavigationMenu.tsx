@@ -1,9 +1,10 @@
+import { MenuContainer } from "@styledComponents/global";
+import { FlexContainer } from "@styledComponents/flex";
+import { NavLink } from "@styledComponents/links";
 import JournalIcon from "@assets/journal.svg";
 import WorkIcon from "@assets/work.svg";
 import GitHub from "@assets/rocket.svg";
 import Person from "@assets/person.svg";
-import { MenuContainer, NavLink } from "@styledComponents/global";
-import { FlexContainer } from "@styledComponents/flex";
 
 type navLink = {
   id: number;

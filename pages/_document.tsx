@@ -16,7 +16,7 @@ export default function Document() {
         />
       </Head>
       <body>
-        <svg className="noise" xmlns="http://www.w3.org/2000/svg">
+        <svg className="noisePattern" xmlns="http://www.w3.org/2000/svg">
           <filter id="noiseFilter">
             <feTurbulence
               type="fractalNoise"

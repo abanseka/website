@@ -1,6 +1,6 @@
 import NavigationMenu from "@components/widgets/NavigationMenu";
 import { FooterStyled } from "@styledComponents/footer";
-import { NormalText } from "@styledComponents/global";
+import { NormalText } from "@styledComponents/typography";
 
 const Footer = () => {
   return (

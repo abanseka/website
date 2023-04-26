@@ -1,20 +1,17 @@
 import Head from "next/head";
 import { getAllPostIds, getNotesData } from "../../lib/notes";
-import { MainContainer } from "@styledComponents/global";
 
-export default function Note({ notes }: any) {
+export default function Note({ notes: note }: any) {
   return (
     <>
       <Head>
-        <title>{notes.title}</title>
+        <title>{note.title}</title>
       </Head>
 
-      <MainContainer>
-        <article>
-          <h1>{notes.title}</h1>
-          <div dangerouslySetInnerHTML={{ __html: notes.htmlContent }} />
-        </article>
-      </MainContainer>
+      <article>
+        <h1>{note.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: note.htmlContent }} />
+      </article>
     </>
   );
 }

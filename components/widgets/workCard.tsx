@@ -1,8 +1,9 @@
 import { FC } from "react";
 import { WorkCardProps } from "types/common";
 import { FlexContainer } from "@styledComponents/flex";
-import { LinkIcon, SmallText, TitleText } from "@styledComponents/global";
 import { theme } from "theme";
+import { SmallText, TitleText } from "@styledComponents/typography";
+import { LinkIcon } from "@styledComponents/links";
 
 const WorkCard: FC<WorkCardProps> = ({
   siteLink,

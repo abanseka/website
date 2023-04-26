@@ -1,7 +1,7 @@
 import { NoteType } from "types/note";
 import { FlexContainer } from "@styledComponents/flex";
-import { SmallText, TitleText } from "@styledComponents/global";
 import { NoteCardStyled } from "@styledComponents/noteCard";
+import { SmallText, TitleText } from "@styledComponents/typography";
 
 const NoteCard = ({ title, date, noteslug }: NoteType) => (
   <NoteCardStyled href={`notes/${noteslug}`}>
