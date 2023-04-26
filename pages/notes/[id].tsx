@@ -9,7 +9,6 @@ export default function Note({ notes: note }: any) {
       </Head>
 
       <article>
-        <h1>{note.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: note.htmlContent }} />
       </article>
     </>
