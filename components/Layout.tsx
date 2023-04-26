@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import Navbar from "@components/navbar/navbar";
-import { AppContainer, MainContainer } from "@styledComponents/global";
+import { AppContainer } from "@styledComponents/global";
+import { MainContainer } from "@styledComponents/maincontainer";
 import Footer from "@components/footer/footer";
 
 interface LayoutProps {

@@ -1,6 +1,8 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { remark } from "remark";
+import html from "remark-html";
 
 const notesDirectory = path.join(process.cwd(), "notes");
 
@@ -8,13 +10,13 @@ export function getSortedNotesData() {
   const fileNames = fs.readdirSync(notesDirectory);
 
   const allNotesData = fileNames.map((fileName) => {
-    const slug = fileName.replace(/\.mdx$/, "");
+    const noteslug = fileName.replace(/\.mdx$/, "");
     const fullPath = path.join(notesDirectory, fileName);
     const fileContents = fs.readFileSync(fullPath, "utf8");
     const matterResult = matter(fileContents);
 
     return {
-      slug,
+      noteslug,
       ...matterResult.data,
     };
   });
@@ -26,4 +28,31 @@ export function getSortedNotesData() {
       return -1;
     }
   });
+}
+
+export function getAllPostIds() {
+  const fileNames = fs.readdirSync(notesDirectory);
+
+  return fileNames.map((fileName) => {
+    return {
+      params: {
+        id: fileName.replace(/\.mdx$/, ""),
+      },
+    };
+  });
+}
+
+export async function getNotesData(id: string) {
+  const fullPath = path.join(notesDirectory, `${id}.mdx`);
+  const fileContents = fs.readFileSync(fullPath, "utf8");
+
+  const matterResult = matter(fileContents);
+  const processedNotes = await remark().use(html).process(matterResult.content);
+  const htmlContent = processedNotes.toString();
+
+  return {
+    id,
+    htmlContent,
+    ...matterResult.data,
+  };
 }

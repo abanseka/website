@@ -1,9 +1,9 @@
 import Head from "next/head";
 import { theme } from "theme";
-import { FlexContainer } from "@styledComponents/flex";
-import WorkCard from "@components/widgets/workCard";
-import { WorkCardProps } from "types/common";
 import { CSSProperties } from "styled-components";
+import { WorkCardProps } from "types/common";
+import { WorkPage } from "@styledComponents/workpage";
+import WorkCard from "@components/widgets/workCard";
 import Shield from "@assets/shield.svg";
 import Villa from "@assets/villa.svg";
 import SiteLinkIcon from "@assets/link.svg";
@@ -51,7 +51,7 @@ const index = () => {
       </Head>
 
       <>
-        <FlexContainer
+        <WorkPage
           gp={1}
           jc="space-around"
           className="workpage"
@@ -59,16 +59,20 @@ const index = () => {
           fw="wrap"
         >
           {works.map(
-            ({
-              siteLink,
-              repoLink,
-              workTitle,
-              headerImage,
-              codeLinkIcon,
-              siteLinkIcon,
-              workerDescription,
-            }: WorkCardProps) => (
+            (
+              {
+                siteLink,
+                repoLink,
+                workTitle,
+                headerImage,
+                codeLinkIcon,
+                siteLinkIcon,
+                workerDescription,
+              }: WorkCardProps,
+              idx
+            ) => (
               <WorkCard
+                key={idx}
                 repoLink={repoLink}
                 siteLink={siteLink}
                 workTitle={workTitle}
@@ -79,7 +83,7 @@ const index = () => {
               />
             )
           )}
-        </FlexContainer>
+        </WorkPage>
       </>
     </>
   );

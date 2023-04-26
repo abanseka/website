@@ -9,11 +9,11 @@ import {
   ProfilePhoto,
 } from "@styledComponents/navbar";
 import { FlexContainer } from "@styledComponents/flex";
-import { NormalText } from "@styledComponents/global";
 import NavigationMenu from "@components/widgets/NavigationMenu";
 import Button from "@components/button/Button";
 import dp from "../../assets/dp_template.jpeg";
 import PhoneIcon from "../../assets/phoneInbox.svg";
+import { NormalText } from "@styledComponents/typography";
 
 const Navbar = () => {
   const theme: themeType = useContext(ThemeContext);
