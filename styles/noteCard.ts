@@ -1,25 +1,20 @@
+import Link from "next/link";
 import styled from "styled-components";
-import { device, theme } from "theme";
+import { theme } from "theme";
 
-export const PostCardStyled = styled.div`
+export const NoteCardStyled = styled(Link)`
   width: 100%;
   padding: 1rem;
   border-radius: 0.625rem;
   background: ${theme.colors.dimmed};
+  text-decoration: none !important;
+  color: ${theme.colors.accent};
   transition: all 0.3s ease-in-out;
-
-  h2 {
-    color: ${theme.colors.accent};
-  }
 
   &:hover {
     cursor: pointer;
     color: ${theme.colors.offWhite};
     background: ${theme.colors.accent};
-
-    h2 {
-      color: ${theme.colors.offWhite};
-    }
   }
 
   &:active {

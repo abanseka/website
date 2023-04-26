@@ -1,48 +1,38 @@
 ---
-title: "My first Mdx blog"
+title: "My first Mdx blog 🔖"
 date: "2023-04-14"
 ---
 
+### Blogging With NEXT.JS & MDX 🔥🔥
+
+```javascript
 import Head from "next/head";
+import { MainContainer } from "@components/styled/Main";
 
-<>
-  <Head>
-    <title>Journal</title>
-    <meta name="description" content="abanseka's journal" />
-    <link rel="icon" href="/branch_favicon.png" />
-  </Head>
+const index = () => {
+  return (
+    <>
+      <Head>
+        <title>Journal</title>
+        <meta name="description" content="abanseka's journal" />
+        <link rel="icon" href="/branch_favicon.png" />
+      </Head>
 
-    # Blogging With NEXT.JS & MDX 🔥🔥
+      <MainContainer>
+        <h1>Journal</h1>
+      </MainContainer>
+    </>
+  );
+};
 
-    ```javascript
-    import Head from "next/head";
-    import { MainContainer } from "@components/styled/Main";
+export default index;
+```
 
-    const index = () => {
-      return (
-        <>
-          <Head>
-            <title>Journal</title>
-            <meta name="description" content="abanseka's journal" />
-            <link rel="icon" href="/branch_favicon.png" />
-          </Head>
+## Getting Started 🔥🔥
 
-          <MainContainer>
-            <h1>Journal</h1>
-          </MainContainer>
-        </>
-      );
-    };
+to get started, you need to install the [next.js](https://nextjs.org/docs/getting-started)
+and [mdx](https://github.com/mdx-js/mdx) packages.
 
-    export default index;
-    ```
-
-    ## Getting Started 🔥🔥
-    to get started, you need to install the [next.js](https://nextjs.org/docs/getting-started)
-    and [mdx](https://github.com/mdx-js/mdx) packages.
-
-    - [next.js](https://nextjs.org/docs/installation)
-    - [mdx](https://github.com/mdx-js/mdx)
-    - [npx mdx-cli](https://github.com/mdx-js/mdx/blob/main/packages/mdx-cli/README.mdx)
-
-</>
+- [next.js](https://nextjs.org/docs/installation)
+- [mdx](https://github.com/mdx-js/mdx)
+- [npx mdx-cli](https://github.com/mdx-js/mdx/blob/main/packages/mdx-cli/README.mdx)

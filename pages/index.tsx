@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { getSortedNotesData } from "../lib/notes";
-import Notes from "./notes/notes";
+import { NoteType } from "types/note";
+import NoteCard from "@components/widgets/noteCard";
 
 export async function getStaticProps() {
   const allNotesData = getSortedNotesData();
@@ -21,7 +22,9 @@ export default function Home({ allNotesData }: { allNotesData: any }) {
         <link rel="icon" href="/branch_favicon.png" />
       </Head>
 
-      <Notes allNotesData={allNotesData} />
+      {allNotesData?.map(({ date, title, noteslug }: NoteType) => (
+        <NoteCard key={title} title={title} date={date} noteslug={noteslug} />
+      ))}
     </>
   );
 }

@@ -59,16 +59,20 @@ const index = () => {
           fw="wrap"
         >
           {works.map(
-            ({
-              siteLink,
-              repoLink,
-              workTitle,
-              headerImage,
-              codeLinkIcon,
-              siteLinkIcon,
-              workerDescription,
-            }: WorkCardProps) => (
+            (
+              {
+                siteLink,
+                repoLink,
+                workTitle,
+                headerImage,
+                codeLinkIcon,
+                siteLinkIcon,
+                workerDescription,
+              }: WorkCardProps,
+              idx
+            ) => (
               <WorkCard
+                key={idx}
                 repoLink={repoLink}
                 siteLink={siteLink}
                 workTitle={workTitle}
