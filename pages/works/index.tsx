@@ -51,13 +51,7 @@ const index = () => {
       </Head>
 
       <>
-        <WorkPage
-          gp={1}
-          jc="space-around"
-          className="workpage"
-          ma="0 0 5rem"
-          fw="wrap"
-        >
+        <WorkPage gp={1} jc="space-around" className="workpage" fw="wrap">
           {works.map(
             (
               {

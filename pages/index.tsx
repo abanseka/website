@@ -22,8 +22,14 @@ export default function Home({ allNotesData }: { allNotesData: any }) {
         <link rel="icon" href="/branch_favicon.png" />
       </Head>
 
-      {allNotesData?.map(({ date, title, noteslug }: NoteType) => (
-        <NoteCard key={title} title={title} date={date} noteslug={noteslug} />
+      {allNotesData?.map(({ date, title, noteslug, description }: NoteType) => (
+        <NoteCard
+          key={title}
+          title={title}
+          date={date}
+          noteslug={noteslug}
+          description={description}
+        />
       ))}
     </>
   );

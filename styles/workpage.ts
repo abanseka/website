@@ -4,6 +4,7 @@ import { FlexContainer } from "./flex";
 
 export const WorkPage = styled(FlexContainer)`
   .workpage {
+    min-height: calc(55dvh - 10rem);
     width: 100%;
 
     .workCard:first-child {

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styled from "styled-components";
 import { device, theme } from "theme";
+import { FlexContainer } from "./flex";
 
 export const NavBar = styled.nav`
   max-width: 42rem;
@@ -40,7 +41,7 @@ export const ProfilePhoto = styled(Image)`
   }
 `;
 
-export const Ring = styled.div`
+export const Ring = styled(FlexContainer)`
   width: 5.625rem;
   height: 5.625rem;
   border-radius: 3rem;
