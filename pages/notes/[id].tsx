@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { getAllPostIds, getNotesData } from "../../lib/notes";
+import { NotePage } from "@styledComponents/notePage";
 
 export default function Note({ notes: note }: any) {
   return (
@@ -8,9 +9,9 @@ export default function Note({ notes: note }: any) {
         <title>{note.title}</title>
       </Head>
 
-      <article>
+      <NotePage>
         <div dangerouslySetInnerHTML={{ __html: note.htmlContent }} />
-      </article>
+      </NotePage>
     </>
   );
 }
