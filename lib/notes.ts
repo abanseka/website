@@ -3,6 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
+import prism from "remark-prism";
 
 const notesDirectory = path.join(process.cwd(), "notes");
 
@@ -47,7 +48,10 @@ export async function getNotesData(id: string) {
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
   const matterResult = matter(fileContents);
-  const processedNotes = await remark().use(html).process(matterResult.content);
+  const processedNotes = await remark()
+    .use(html, { sanitize: false })
+    .use(prism)
+    .process(matterResult.content);
   const htmlContent = processedNotes.toString();
 
   return {
