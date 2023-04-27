@@ -26,7 +26,7 @@ const GlobalStyles = createGlobalStyle`
     height: 100vh;
     position: fixed;
     z-index: 300;
-    opacity: 0.4;
+    opacity: 0.5;
     pointer-events: none;
   }
 }

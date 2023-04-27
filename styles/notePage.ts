@@ -12,6 +12,25 @@ export const NotePage = styled.article`
     font-weight: 500;
     letter-spacing: 0.5px;
     margin-bottom: 0.625rem;
+    line-height: 1.25rem;
+  }
+
+  a {
+    color: ${theme.colors.primary};
+  }
+
+  ul {
+    padding: 0 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  ol {
+    padding: 0 1.25rem 0 2rem;
+    margin: 2rem;
+  }
+
+  hr {
+    margin: 2rem 0;
   }
 
   h1,
@@ -23,12 +42,12 @@ export const NotePage = styled.article`
     margin-bottom: 1rem;
   }
 
-  hr {
-    margin: 2rem auto;
-    width: 60%;
+  pre {
+    border-radius: 5px;
   }
 
   @media ${device.tablet} {
     font-size: 0.875rem;
+    padding: 0 0.625rem;
   }
 `;

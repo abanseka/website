@@ -3,6 +3,7 @@ import { ThemeProvider } from "styled-components";
 import { theme } from "theme";
 import Layout from "@components/Layout";
 import GlobalStyles from "@styledComponents/global";
+import "prismjs/themes/prism.css";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
