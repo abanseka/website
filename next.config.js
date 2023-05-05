@@ -1,13 +1,13 @@
 /** @type {import('next').NextConfig} */
 
-const withMdx = require("@next/mdx")();
+const { withContentlayer } = require("next-contentlayer");
 
 const nextConfig = {
-  pageExtensions: ["mdx", "md", "jsx", "js", "tsx", "ts"],
-  reactStrictMode: true,
   compiler: {
     styledComponents: true,
   },
+  swcMinify: true,
+  reactStrictMode: true,
   webpack(config) {
     const fileLoaderRule = config.module.rules.find((rule) =>
       rule.test?.test?.(".svg")
@@ -33,4 +33,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withMdx(nextConfig);
+module.exports = withContentlayer(nextConfig);
