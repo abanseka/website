@@ -20,6 +20,7 @@
       "@assets/*": ["./assets/*"],
       "@styledComponents/*": ["./styles/*"],
       "types/*": ["./types/*"],
+      "utils/*": ["./utils/*"],
       "theme": ["./theme.ts"],
       "contentlayer/generated": ["./.contentlayer/generated"]
     }

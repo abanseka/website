@@ -2,7 +2,6 @@ import type { AppProps } from "next/app";
 import { ThemeProvider } from "styled-components";
 import { theme } from "theme";
 import Layout from "@components/Layout";
-import "prismjs/themes/prism.css";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -38,8 +37,9 @@ export default function App({ Component, pageProps }: AppProps) {
           height: 100vh;
           position: fixed;
           z-index: 300;
-          opacity: 0.5;
+          opacity: 0.8;
           pointer-events: none;
+          mix-blend-mode: multiply;
         }
       `}</style>
     </>

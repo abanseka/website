@@ -1,35 +1,12 @@
-import { defineDocumentType, makeSource } from "contentlayer/source-files";
-
-export const Note = defineDocumentType(() => ({
-  name: "Note",
-  contentType: "mdx",
-  filePathPattern: "**/*.mdx",
-  fields: {
-    title: {
-      required: true,
-      type: "string",
-      description: "The title of the note",
-    },
-    date: {
-      required: true,
-      description: "The date of the note",
-      type: "date",
-    },
-    description: {
-      required: false,
-      type: "string",
-      description: "The Summary of the note",
-    },
-  },
-  computedFields: {
-    url: {
-      type: "string",
-      resolve: (note) => `/notes/${note._raw.flattenedPath}`,
-    },
-  },
-}));
+import { makeSource } from "contentlayer/source-files";
+import rehypePrettyCode from "rehype-pretty-code";
+import rehypePrettyCodeOptions from "./utils/rehyprettyCode";
+import Note from "./utils/NoteSchema";
 
 export default makeSource({
   contentDirPath: "notes",
   documentTypes: [Note],
+  mdx: {
+    rehypePlugins: [[rehypePrettyCode, rehypePrettyCodeOptions]],
+  },
 });

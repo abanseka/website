@@ -1,0 +1,78 @@
+---
+title: "Sample Note"
+date: "2023-04-07"
+description: "lorem ipsum dolor sit amet consectetur adipiscing elit"
+---
+
+**An Images**
+
+![test image from pinterest](https://i.pinimg.com/564x/64/b0/29/64b029d1387ba506547e7a4d0b778fed.jpg)
+
+---
+
+# Test Page 🔥
+
+**Code Block**
+
+```ts title="/src/components/widgets/NavigationMenu"
+const NavigationMenu = ({
+  ma,
+  className,
+  renderIcon = true,
+}: MenuWidgetProps) => {
+  // prettier-ignore
+  const navLinks: navLink[] = [
+    { id: 1, label: "Notes", href: "/", icon: <JournalIcon />, },
+    { id: 2, label: "Works", href: "/works", icon: <WorkIcon />, },
+  ];
+
+  const socialLinks: navLink[] = [
+    {
+      id: 3,
+      label: "GitHub",
+      href: "https://github.com/abanseka",
+      icon: <GitHub />,
+    },
+    {
+      id: 4,
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/abanseka-sylvester/",
+      icon: <Person />,
+    },
+  ];
+
+  return <MenuContainer> {/*code in here*/}</MenuContainer>;
+};
+const;
+```
+
+<br />
+
+Regular text with _emphasis_ and **bold** text 😜.
+here's a nice [link]("#") that'll lead to a Dead End! 💀
+
+{" "}
+
+<br />
+
+**An Un-Ordered List**:
+
+- lorem ipsum dolor sit amet consectetur adipiscing elit
+- lorem ipsum dolor sit amet consectetur adipiscing elit
+- lorem ipsum dolor sit amet consectetur adipiscing elit
+
+---
+
+**An Ordered List**
+
+1.  One
+2.  Two
+3.  Three
+
+---
+
+**Nested List | UL**
+
+- This is a Regular List
+  - this is a nested List
+    - within a nested List 🏀

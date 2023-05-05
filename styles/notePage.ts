@@ -8,7 +8,6 @@ export const NotePage = styled.article`
   p,
   li,
   a {
-    font-weight: 400;
     line-height: 1.5rem;
     letter-spacing: 0.5px;
     margin-bottom: 0.625rem;
@@ -39,10 +38,6 @@ export const NotePage = styled.article`
     color: ${theme.colors.highlight};
   }
 
-  pre {
-    border-radius: 5px;
-  }
-
   img {
     border-radius: 10px;
   }
@@ -50,5 +45,34 @@ export const NotePage = styled.article`
   @media ${device.tablet} {
     font-size: 0.875rem;
     padding: 0 0.625rem;
+  }
+
+  pre {
+    padding: 1rem;
+    border-radius: 0 0 5px 5px;
+
+    code {
+      display: grid;
+      counter-reset: line;
+      line-height: 1.325rem;
+
+      .line::before {
+        content: counter(line);
+        display: inline-block;
+        width: 1rem;
+        margin-right: 2rem;
+        text-align: right;
+        color: gray;
+        counter-increment: line;
+      }
+    }
+  }
+
+  [data-rehype-pretty-code-title] {
+    font-size: 0.875rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px 5px 0 0;
+    color: ${theme.colors.offWhite};
+    background: ${theme.colors.accent};
   }
 `;
