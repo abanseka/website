@@ -2,31 +2,26 @@ import styled from "styled-components";
 import { device, theme } from "theme";
 
 export const NotePage = styled.article`
-  min-height: calc(50dvh - 10rem);
   padding: 0 1.25rem;
-  color: ${theme.colors.accent};
+  min-height: calc(50dvh - 10rem);
 
   p,
   li,
   a {
-    font-weight: 500;
+    line-height: 1.5rem;
     letter-spacing: 0.5px;
     margin-bottom: 0.625rem;
-    line-height: 1.25rem;
   }
 
   a {
-    color: ${theme.colors.primary};
+    font-weight: 600;
+    color: ${theme.colors.highlight};
   }
 
+  ol,
   ul {
     padding: 0 1.25rem;
-    margin-bottom: 1rem;
-  }
-
-  ol {
-    padding: 0 1.25rem 0 2rem;
-    margin: 2rem;
+    margin-bottom: 2rem;
   }
 
   hr {
@@ -39,15 +34,55 @@ export const NotePage = styled.article`
   h4,
   h5,
   h6 {
-    margin-bottom: 1rem;
+    margin: 1.2rem 0;
+    color: ${theme.colors.highlight};
   }
 
-  pre {
-    border-radius: 5px;
+  img {
+    border-radius: 10px;
   }
 
   @media ${device.tablet} {
     font-size: 0.875rem;
     padding: 0 0.625rem;
+  }
+
+  pre {
+    padding: 1rem;
+    border-radius: 0 0 5px 5px;
+    line-height: 1.325rem;
+    overflow-x: scroll;
+
+    code {
+      display: grid;
+      counter-reset: line;
+
+      .line::before {
+        content: counter(line);
+        display: inline-block;
+        width: 1rem;
+        margin-right: 2rem;
+        text-align: right;
+        color: gray;
+        counter-increment: line;
+      }
+    }
+
+    @media ${device.tablet} {
+      font-size: 0.625rem;
+      line-height: 1rem;
+    }
+  }
+
+  [data-rehype-pretty-code-title] {
+    font-size: 0.875rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px 5px 0 0;
+    color: ${theme.colors.offWhite};
+    background: ${theme.colors.accent};
+
+    @media ${device.tablet} {
+      font-size: 0.625rem;
+    }
   }
 `;

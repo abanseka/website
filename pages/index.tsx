@@ -1,18 +1,21 @@
 import Head from "next/head";
-import { getSortedNotesData } from "../lib/notes";
+import { compareDesc, format, parseISO } from "date-fns";
+import { allNotes } from "contentlayer/generated";
 import { NoteType } from "types/note";
 import NoteCard from "@components/widgets/noteCard";
 
 export async function getStaticProps() {
-  const allNotesData = getSortedNotesData();
+  const notes = allNotes.sort((a: NoteType, b: NoteType) =>
+    compareDesc(+a.date, +b.date)
+  );
   return {
     props: {
-      allNotesData,
+      notes,
     },
   };
 }
 
-export default function Home({ allNotesData }: { allNotesData: any }) {
+export default function Home({ notes }: { notes: any }) {
   return (
     <>
       <Head>
@@ -22,13 +25,13 @@ export default function Home({ allNotesData }: { allNotesData: any }) {
         <link rel="icon" href="/branch_favicon.png" />
       </Head>
 
-      {allNotesData?.map(({ date, title, noteslug, description }: NoteType) => (
+      {notes.map((note: NoteType) => (
         <NoteCard
-          key={title}
-          title={title}
-          date={date}
-          noteslug={noteslug}
-          description={description}
+          key={note.title}
+          title={note.title}
+          date={format(parseISO(note.date), "d MMMM, yyyy")}
+          url={note.url}
+          description={note.description}
         />
       ))}
     </>
