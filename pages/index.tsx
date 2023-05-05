@@ -1,10 +1,13 @@
 import Head from "next/head";
+import { compareDesc, format, parseISO } from "date-fns";
 import { allNotes } from "contentlayer/generated";
 import { NoteType } from "types/note";
 import NoteCard from "@components/widgets/noteCard";
 
 export async function getStaticProps() {
-  const notes = allNotes;
+  const notes = allNotes.sort((a: NoteType, b: NoteType) =>
+    compareDesc(+a.date, +b.date)
+  );
   return {
     props: {
       notes,
@@ -26,7 +29,7 @@ export default function Home({ notes }: { notes: any }) {
         <NoteCard
           key={note.title}
           title={note.title}
-          date={note.date}
+          date={format(parseISO(note.date), "d MMMM, yyyy")}
           url={note.url}
           description={note.description}
         />
