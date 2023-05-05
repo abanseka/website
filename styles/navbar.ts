@@ -9,7 +9,7 @@ export const NavBar = styled.nav`
   padding: ${({ pd }: { pd?: string }) => pd};
 
   @media ${device.tablet} {
-    .navbar {
+    .navbar,.company {
       flex-direction: column-reverse;
       align-items: center;
 

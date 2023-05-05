@@ -1,6 +1,6 @@
 export type NoteType = {
   date: string;
   title: string;
-  noteslug: string;
+  url: string;
   description?: string;
 };

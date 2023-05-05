@@ -3,8 +3,8 @@ import { FlexContainer } from "@styledComponents/flex";
 import { NoteCardStyled } from "@styledComponents/noteCard";
 import { SmallText, TitleText } from "@styledComponents/typography";
 
-const NoteCard = ({ title, date, noteslug, description }: NoteType) => (
-  <NoteCardStyled href={`notes/${noteslug}`}>
+const NoteCard = ({ title, date, url: noteslug, description }: NoteType) => (
+  <NoteCardStyled href={`${noteslug}`}>
     <FlexContainer fd="column" gp={0.625} ai="flex-start">
       <TitleText>{title}</TitleText>
       <SmallText>{date}</SmallText>
@@ -12,5 +12,4 @@ const NoteCard = ({ title, date, noteslug, description }: NoteType) => (
     </FlexContainer>
   </NoteCardStyled>
 );
-
 export default NoteCard;

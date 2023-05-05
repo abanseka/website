@@ -8,7 +8,6 @@ export const NotePage = styled.article`
   p,
   li,
   a {
-    font-size: 1.125rem;
     font-weight: 400;
     line-height: 1.5rem;
     letter-spacing: 0.5px;
@@ -36,8 +35,7 @@ export const NotePage = styled.article`
   h4,
   h5,
   h6 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    margin: 1.2rem 0;
     color: ${theme.colors.highlight};
   }
 

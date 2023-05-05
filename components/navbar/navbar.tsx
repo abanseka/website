@@ -41,7 +41,11 @@ const Navbar = () => {
           </LogoText>
 
           <NormalText ta="center">Front-end developer</NormalText>
-          <NavLink href="https://archisacademy.com" target="blank">
+          <NavLink
+            href="https://archisacademy.com"
+            target="blank"
+            className="company"
+          >
             <BlockIcon />
             <SmallText>@archisacademy</SmallText>
           </NavLink>
