@@ -10,14 +10,11 @@ export const NoteCardStyled = styled(Link)`
   text-decoration: none !important;
   color: ${theme.colors.accent};
   transition: all 0.3s ease-in-out;
+  border: 2px solid ${theme.colors.accent};
 
   &:hover {
     cursor: pointer;
     color: ${theme.colors.offWhite};
     background: ${theme.colors.accent};
-  }
-
-  &:active {
-    background: ${theme.colors.highlight};
   }
 `;

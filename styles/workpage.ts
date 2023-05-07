@@ -6,11 +6,11 @@ export const WorkPage = styled(FlexContainer)`
   .workpage {
     min-height: calc(55dvh - 10rem);
     width: 100%;
+  }
 
-    .workCard:first-child {
-      .workLinks {
-        justify-content: center;
-      }
+  .workCard:first-child {
+    .workLinks {
+      justify-content: center;
     }
   }
 

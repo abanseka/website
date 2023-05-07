@@ -3,7 +3,7 @@ import { device } from "theme";
 
 type text = { ta?: "left" | "center" | "right" };
 export const SmallText = styled.p`
-  font-size: 1rem;
+  font-size: 1.025rem;
   font-weight: 300;
   line-height: 1.2;
   text-align: ${({ ta = "left" }: text) => ta};
@@ -28,7 +28,7 @@ export const NormalText = styled.p`
 export const TitleText = styled.h2`
   line-height: 1.2;
   font-weight: 500;
-  font-size: 1.125rem;
+  font-size: 1.325rem;
   text-transform: capitalize;
   text-align: ${({ ta = "left" }: text) => ta};
   @media ${device.mobileL} {
