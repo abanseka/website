@@ -2,20 +2,30 @@ import styled from "styled-components";
 import { device, theme } from "theme";
 
 export const NotePage = styled.article`
-  padding: 0 1.25rem;
   min-height: calc(50dvh - 10rem);
 
   p,
   li,
   a {
+    font-size: 1.125rem;
     line-height: 1.5rem;
-    letter-spacing: 0.5px;
-    margin-bottom: 0.625rem;
   }
 
   a {
     font-weight: 600;
     color: ${theme.colors.highlight};
+  }
+
+  p,
+  hr,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  code {
+    margin: 2rem 0;
   }
 
   ol,
@@ -24,22 +34,22 @@ export const NotePage = styled.article`
     margin-bottom: 2rem;
   }
 
-  hr {
-    margin: 2rem 0;
-  }
-
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    margin: 1.2rem 0;
     color: ${theme.colors.highlight};
   }
 
   img {
+    width: 100%;
+    height: 500px;
+    margin: 0 auto;
+    object-fit: cover;
     border-radius: 10px;
+    border: 2px solid ${theme.colors.accent};
   }
 
   @media ${device.tablet} {
@@ -49,9 +59,15 @@ export const NotePage = styled.article`
 
   pre {
     padding: 1rem;
+    font-size: 0.825rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.025em;
     border-radius: 0 0 5px 5px;
-    line-height: 1.325rem;
     overflow-x: scroll;
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
 
     code {
       display: grid;

@@ -7,8 +7,8 @@ const NoteCard = ({ title, date, url: noteslug, description }: NoteType) => (
   <NoteCardStyled href={`${noteslug}`}>
     <FlexContainer fd="column" gp={0.625} ai="flex-start">
       <TitleText>{title}</TitleText>
-      <SmallText>{date}</SmallText>
       <SmallText>{description}</SmallText>
+      <SmallText>{date}</SmallText>
     </FlexContainer>
   </NoteCardStyled>
 );

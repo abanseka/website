@@ -21,7 +21,8 @@ export default function App({ Component, pageProps }: AppProps) {
         }
 
         body {
-          font-family: "JetBrains Mono", sans-serif;
+          font-family: "Kanit", sans-serif;
+          letter-spacing: 1px;
           color: ${theme.colors.accent};
           background: ${theme.colors.offWhite};
           position: relative;
