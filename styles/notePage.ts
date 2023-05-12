@@ -7,7 +7,7 @@ export const NotePage = styled.article`
   p,
   li,
   a {
-    font-size: 1.125rem;
+    font-size: 1.325rem;
     line-height: 1.5rem;
   }
 
@@ -59,11 +59,10 @@ export const NotePage = styled.article`
 
   pre {
     padding: 1rem;
-    font-size: 0.825rem;
-    line-height: 1.5rem;
-    letter-spacing: 0.025em;
     border-radius: 0 0 5px 5px;
     overflow-x: scroll;
+    border: 2px solid ${theme.colors.highlight};
+    border-top: none;
 
     ::-webkit-scrollbar {
       display: none;
@@ -72,6 +71,9 @@ export const NotePage = styled.article`
     code {
       display: grid;
       counter-reset: line;
+      line-height: 1.5rem;
+      font-family: Kanit;
+      font-size: 1.125rem;
 
       .line::before {
         content: counter(line);
@@ -91,9 +93,10 @@ export const NotePage = styled.article`
   }
 
   [data-rehype-pretty-code-title] {
-    font-size: 0.875rem;
     padding: 0.2rem 0.5rem;
     border-radius: 5px 5px 0 0;
+    border: 2px solid ${theme.colors.highlight};
+    border-bottom: none;
     color: ${theme.colors.offWhite};
     background: ${theme.colors.accent};
 
