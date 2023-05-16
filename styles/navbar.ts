@@ -9,7 +9,8 @@ export const NavBar = styled.nav`
   padding: ${({ pd }: { pd?: string }) => pd};
 
   @media ${device.tablet} {
-    .navbar,.company {
+    .navbar,
+    .company {
       flex-direction: column-reverse;
       align-items: center;
 
@@ -22,7 +23,7 @@ export const NavBar = styled.nav`
 
 export const Word = styled.span`
   font-weight: 800;
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: ${({ cl = "black" }: { cl?: string }) => cl};
   @media ${device.mobileL} {
     font-size: 1.625rem;
@@ -34,17 +35,18 @@ export const LogoText = styled.h1`
 `;
 
 export const ProfilePhoto = styled(Image)`
-  width: 5rem;
   border-radius: 3rem;
-  @media ${device.mobileL} {
-    width: 3.5rem;
-  }
+  aspect-ratio: 1;
+  width: 100%;
+  heigh: auto;
+  border: 2px solid ${theme.colors.accent};
 `;
 
 export const Ring = styled(FlexContainer)`
   width: 5.625rem;
   height: 5.625rem;
   border-radius: 3rem;
+  padding: 0.5rem;
   background: ${theme.colors.highlight};
   @media ${device.mobileL} {
     width: 4rem;

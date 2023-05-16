@@ -2,11 +2,11 @@ import { useContext } from "react";
 import { themeType } from "types/common";
 import { ThemeContext } from "styled-components";
 import {
+  LogoText,
+  NavBar,
+  ProfilePhoto,
   Ring,
   Word,
-  NavBar,
-  LogoText,
-  ProfilePhoto,
 } from "@styledComponents/navbar";
 import { FlexContainer } from "@styledComponents/flex";
 import { NormalText, SmallText } from "@styledComponents/typography";
@@ -57,11 +57,12 @@ const Navbar = () => {
           </Ring>
 
           <Button
-            label="whatsapp"
+            label="DM"
             props={{
               sx: 1.025,
               bg: theme.colors.accent,
               cl: theme.colors.offWhite,
+              pd: "0.25rem 0.5rem",
               dp: "none",
             }}
             icon={<PhoneIcon fill={theme.colors.offWhite} width="2rem" />}

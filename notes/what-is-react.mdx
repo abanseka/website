@@ -1,0 +1,144 @@
+---
+title: "What is React"
+date: "2023-05-16"
+description: "A Breif General Overview Of React"
+---
+
+![Pinterest art from art station](https://i.pinimg.com/564x/c3/e3/a6/c3e3a6fcbbc3432c24913d5963459497.jpg)
+
+<a href="https://opensea.io/collection/synthetic-heartbeats" target="_blank">
+  ##### Arts By Synthetic Heartbeats
+</a>
+
+- what is react ?
+- why use it ?
+- is it even worth learning it in 2023?
+
+👊 We'll just take a brief overview of what React is. Just Enought to get you
+curious and start off digging on your own.
+
+⚖ I'll be assumimg that you have a general understandidng of the basic web
+technologies:
+
+- HMTL 5
+- CSS
+- JS
+
+### So! What is React?
+
+It is a javascript library that makes it easy to build user interfaces.
+
+Let me explain 😎
+
+> 💡 library
+>
+> Someone elses code made available for you to use. usually containing functions
+> that already do the things you'd manually not want to implement. or maintain
+
+so what are this things you'd want to do UI wise? 🤔
+
+- Build a UI.
+- Compose Dynamic layouts.
+- Modularize your Code for re-use.
+- Easily update UI elements etc.
+
+#### But all these can be done using vanilla Js.
+
+**Fair Point. But it can really get hairy and hard to maintain when you start
+putting together something a bit more complex. for small sized applications and
+practice this is no issue.It all comes down to managing the codebase. i.e easily
+making changes as needed without having to swim through your entire code base**
+
+Since this code belongs to someone else, I need to know how to make use of it,
+to achieve my goals. that is where the documentation comes in. In there I'll
+find all the functions and features available to me.
+
+---
+
+### Broad overview
+
+A good example for this would be a select menu. Every single front-end developer
+would hate to implement this one in particular over and over especially with the
+HTML _Select_ tag. that thing is widely known for being an anti-stylalble
+element 😂
+
+**Vanilla Js**
+
+```html title="custom select-menu markup"
+<div class="dropdown-menu">
+  <p class="menu-item default"> default option </p>
+
+  <div class="select-menu">
+    <p class="menu-item">option 1</li>
+    <p class="menu-item">option 2</li>
+    <p class="menu-item">option 3</li>
+  </div>
+</div>
+```
+
+> say you had about 4 select elements on a page? you'll repeat ☝ this 5. times.
+> you could manage it would js programatically. however it's just going to be
+> more headache
+
+**React**
+
+```javascript title="custom select-menu markup"
+const SelectMenu = ()=> {
+
+return (
+    <div class="dropdown-menu">
+      <p class="menu-item default"> default option </p>
+
+      <div class="select-menu">
+        <p class="menu-item">option 1</li>
+        <p class="menu-item">option 2</li>
+        <p class="menu-item">option 3</li>
+      </div>
+    </div>
+)}
+
+export default SelectMenu;
+```
+
+**Rendering**
+
+> Now just like the _Vanilla JS_ example. if we need 5 select elements we'll
+> simply import this into the page as a component. it could become even more
+> complex with things like _Props_ and _State_. But we'll keep things simple
+
+```javascript title="custom select-menu markup"
+import SelectMenu from "path-to-component/SelectMenu";
+
+<div class="App">
+  <SelectMenu />
+  <SelectMenu />
+  <SelectMenu />
+  <SelectMenu />
+  <SelectMenu />
+</div>;
+```
+
+At this point there are a couple of things the author(s) of the library, has
+taken care of. which would have been done manually in vanilla js. an example of
+this is rendering the component to the _DOM_. This is where part of the magic
+happens. 🧙
+
+- No selecting of elements on the page
+- No Hairy Computations with the DOM API
+- No Templates to be created time and again to render your UI's
+
+A lot of the manual work of processing before rendering a UI has been taken care
+of. All you need to focus on is: Composing your UI layout
+
+There's a lot more to react especially since it is an unopinonoated library. it
+can easily integrate with a ton of other things. whilst giving you the liberty
+to cook however you please | **So long as you don't break the rules**
+
+---
+
+### Conclusion
+
+in this article we looked at React from a broad perspective. mainly for the
+problem it solves. Now that you've gotten the bigger picture. You're set to
+start digging on your own. Visit the [documentation](https://react.dev/learn) to
+learn more
