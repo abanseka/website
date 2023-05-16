@@ -5,9 +5,10 @@ import { NoteType } from "types/note";
 import NoteCard from "@components/widgets/noteCard";
 
 export async function getStaticProps() {
-  const notes = allNotes.sort((a: NoteType, b: NoteType) =>
-    compareDesc(+a.date, +b.date)
-  );
+  const notes = allNotes
+    .sort((a: NoteType, b: NoteType) => compareDesc(+a.date, +b.date))
+    .reverse();
+
   return {
     props: {
       notes,
