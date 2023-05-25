@@ -40,7 +40,9 @@ const Navbar = () => {
             <Word cl={theme.colors.highlight}>.dev</Word>
           </LogoText>
 
-          <NormalText ta="center">Front-end developer</NormalText>
+          <NormalText ta="center" cl->
+            Front-end developer
+          </NormalText>
           <NavLink
             href="https://archisacademy.com"
             target="blank"
