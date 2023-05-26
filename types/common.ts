@@ -33,6 +33,6 @@ export interface WorkCardProps {
   workTitle: string;
   codeLinkIcon: ReactNode;
   headerImage: ReactNode;
-  workerDescription: string;
+  workDescription: string;
   siteLinkIcon?: ReactNode;
 }

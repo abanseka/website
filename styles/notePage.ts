@@ -1,31 +1,24 @@
 import styled from "styled-components";
 import { device, theme } from "theme";
 
+const { primary, highlight, offWhite } = theme.colors;
+
 export const NotePage = styled.article`
   min-height: calc(50dvh - 10rem);
-
-  p,
-  li,
-  a {
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
+  font-weight: 500;
 
   a {
+    color: ${highlight};
     font-weight: 600;
-    color: ${theme.colors.highlight};
   }
 
   p,
   hr,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
+  ol,
+  ul,
   code {
     margin: 1.2rem 0;
+    font-size: 1.125rem;
   }
 
   ol,
@@ -34,23 +27,26 @@ export const NotePage = styled.article`
     margin-bottom: 1rem;
   }
 
+  strong {
+    font-size: 1rem;
+    opacity: 0.8;
+  }
+
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    color: ${theme.colors.highlight};
-  }
-
-  strong {
-    font-size: 1rem;
+    color: ${highlight};
+    margin: 1.2rem 0;
   }
 
   blockquote {
+    padding: 10px;
     margin: 5px 0;
     border-radius: 0.625rem;
-    border: 2px solid ${theme.colors.accent};
+    border: 2px solid ${primary};
     p {
       margin: 5px;
     }
@@ -62,7 +58,7 @@ export const NotePage = styled.article`
     margin: 0 auto;
     object-fit: cover;
     border-radius: 10px;
-    border: 2px solid ${theme.colors.accent};
+    border: 2px solid ${primary};
   }
 
   @media ${device.tablet} {
@@ -74,7 +70,7 @@ export const NotePage = styled.article`
     padding: 1rem;
     border-radius: 0 0 5px 5px;
     overflow-x: scroll;
-    border: 2px solid ${theme.colors.highlight};
+    border: 2px solid #69548b;
     border-top: none;
 
     ::-webkit-scrollbar {
@@ -87,7 +83,7 @@ export const NotePage = styled.article`
       line-height: 1.5rem;
       font-family: Kanit;
       font-size: 0.875rem;
-      font-weight: 300;
+      font-family: "Titillium Web", sans-serif;
 
       .line::before {
         content: counter(line);
@@ -109,10 +105,10 @@ export const NotePage = styled.article`
   [data-rehype-pretty-code-title] {
     padding: 0.2rem 0.5rem;
     border-radius: 5px 5px 0 0;
-    border: 2px solid ${theme.colors.highlight};
+    border: 2px solid ${primary};
     border-bottom: none;
-    color: ${theme.colors.offWhite};
-    background: ${theme.colors.accent};
+    color: ${offWhite};
+    background: ${primary};
 
     @media ${device.tablet} {
       font-size: 0.625rem;

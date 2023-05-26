@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { device, theme } from "theme";
 import { FlexContainer } from "./flex";
 
+const { colors } = theme;
+
 export const NavBar = styled.nav`
   max-width: 42rem;
   margin: auto;
@@ -24,7 +26,8 @@ export const NavBar = styled.nav`
 export const Word = styled.span`
   font-weight: 800;
   font-size: 2.5rem;
-  color: ${({ cl = "black" }: { cl?: string }) => cl};
+  color: ${({ color }) => color ?? colors.primary};
+
   @media ${device.mobileL} {
     font-size: 1.625rem;
   }
@@ -39,7 +42,6 @@ export const ProfilePhoto = styled(Image)`
   aspect-ratio: 1;
   width: 100%;
   heigh: auto;
-  border: 2px solid ${theme.colors.accent};
 `;
 
 export const Ring = styled(FlexContainer)`

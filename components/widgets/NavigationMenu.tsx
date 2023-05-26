@@ -5,6 +5,11 @@ import JournalIcon from "@assets/journal.svg";
 import WorkIcon from "@assets/work.svg";
 import GitHub from "@assets/rocket.svg";
 import Person from "@assets/person.svg";
+import { NormalText } from "@styledComponents/typography";
+import { ThemeContext } from "styled-components";
+import { useContext } from "react";
+import { themeType } from "types/common";
+import { font } from "theme";
 
 type navLink = {
   id: number;
@@ -24,10 +29,14 @@ const NavigationMenu = ({
   className,
   renderIcon = true,
 }: MenuWidgetProps) => {
+  const theme: themeType = useContext(ThemeContext);
+  const { highlight } = theme.colors;
+  const { bold } = font.fontWeight;
+
   // prettier-ignore
   const navLinks: navLink[] = [
-    { id: 1, label: "Notes", href: "/", icon: <JournalIcon />, },
-    { id: 2, label: "Works", href: "/works", icon: <WorkIcon />, },
+    { id: 1, label: "Notes", href: "/", icon: <JournalIcon /> },
+    { id: 2, label: "Works", href: "/works", icon: <WorkIcon /> },
   ];
 
   const socialLinks: navLink[] = [
@@ -55,7 +64,9 @@ const NavigationMenu = ({
           </NavLink>
         ))}
 
-        {"|"}
+        <NormalText color={highlight} fw={bold}>
+          |
+        </NormalText>
 
         {socialLinks.map((link: navLink) => (
           <NavLink href={link.href} key={link.id}>

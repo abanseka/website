@@ -3,6 +3,8 @@ import { ThemeProvider } from "styled-components";
 import { theme } from "theme";
 import Layout from "@components/Layout";
 
+const { colors } = theme;
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
@@ -23,9 +25,9 @@ export default function App({ Component, pageProps }: AppProps) {
 
           body {
             font-family: "Titillium Web", sans-serif;
-            letter-spacing: 1px;
-            color: ${theme.colors.accent};
-            background: ${theme.colors.offWhite};
+            letter-spacing: 0.8px;
+            color: ${colors.primary};
+            background: ${colors.offWhite};
             position: relative;
           }
 

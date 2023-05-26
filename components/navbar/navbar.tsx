@@ -13,12 +13,19 @@ import { NormalText, SmallText } from "@styledComponents/typography";
 import { NavLink } from "@styledComponents/links";
 import NavigationMenu from "@components/widgets/NavigationMenu";
 import dp from "@assets/dp_template.jpeg";
-import Button from "@components/button/Button";
-import PhoneIcon from "@assets/phoneInbox.svg";
 import BlockIcon from "@assets/block.svg";
+import { font } from "theme";
 
 const Navbar = () => {
   const theme: themeType = useContext(ThemeContext);
+  const { highlight } = theme.colors;
+  const { bold } = font.fontWeight;
+
+  const workprops = {
+    href: "https://archisacademy.com",
+    target: "blank",
+    className: "company",
+  };
 
   return (
     <NavBar>
@@ -37,17 +44,14 @@ const Navbar = () => {
         >
           <LogoText>
             <Word>abanseka</Word>
-            <Word cl={theme.colors.highlight}>.dev</Word>
+            <Word color={highlight}>.dev</Word>
           </LogoText>
 
-          <NormalText ta="center" cl->
+          <NormalText color={highlight} fw={bold}>
             Front-end developer
           </NormalText>
-          <NavLink
-            href="https://archisacademy.com"
-            target="blank"
-            className="company"
-          >
+
+          <NavLink {...workprops}>
             <BlockIcon />
             <SmallText>@archisacademy</SmallText>
           </NavLink>
@@ -57,18 +61,6 @@ const Navbar = () => {
           <Ring jc="center" ai="center">
             <ProfilePhoto src={dp} alt="cartoon character" priority />
           </Ring>
-
-          <Button
-            label="DM"
-            props={{
-              sx: 1.025,
-              bg: theme.colors.accent,
-              cl: theme.colors.offWhite,
-              pd: "0.25rem 0.5rem",
-              dp: "none",
-            }}
-            icon={<PhoneIcon fill={theme.colors.offWhite} width="2rem" />}
-          />
         </FlexContainer>
       </FlexContainer>
     </NavBar>

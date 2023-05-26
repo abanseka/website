@@ -21,7 +21,7 @@ const index = () => {
   const works: WorkCardProps[] = [
     {
       workTitle: "Personal Webstite",
-      workerDescription: "My Corner of the internet",
+      workDescription: "My Corner of the internet",
 
       siteLink: "https://abanseka.vercel.app/",
       repoLink: "https://github.com/abanseka/website",
@@ -31,7 +31,7 @@ const index = () => {
     },
     {
       workTitle: "Viginere Cipher",
-      workerDescription: "A mini ecryption application ",
+      workDescription: "A mini ecryption application ",
 
       siteLink: "https://viginerecipher-begonia-9b5138.netlify.app/",
       repoLink: "https://github.com/abanseka/viginere-cipher",
@@ -61,7 +61,7 @@ const index = () => {
                 headerImage,
                 codeLinkIcon,
                 siteLinkIcon,
-                workerDescription,
+                workDescription,
               }: WorkCardProps,
               idx
             ) => (
@@ -73,7 +73,7 @@ const index = () => {
                 headerImage={headerImage}
                 siteLinkIcon={siteLinkIcon}
                 codeLinkIcon={codeLinkIcon}
-                workerDescription={workerDescription}
+                workDescription={workDescription}
               />
             )
           )}

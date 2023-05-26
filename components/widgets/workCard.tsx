@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { WorkCardProps } from "types/common";
 import { FlexContainer } from "@styledComponents/flex";
-import { theme } from "theme";
+import { font, theme } from "theme";
 import { SmallText, TitleText } from "@styledComponents/typography";
 import { LinkIcon } from "@styledComponents/links";
 
@@ -12,9 +12,10 @@ const WorkCard: FC<WorkCardProps> = ({
   headerImage,
   codeLinkIcon,
   siteLinkIcon,
-  workerDescription,
+  workDescription,
 }) => {
   const { primary, highlight } = theme.colors;
+  const { bold } = font.fontWeight;
 
   return (
     <FlexContainer
@@ -28,9 +29,9 @@ const WorkCard: FC<WorkCardProps> = ({
       bd={`2px solid ${primary}`}
     >
       {headerImage}
-      <TitleText ta="center">{workTitle}</TitleText>
-      <SmallText ta="center" style={{ color: highlight }}>
-        {workerDescription}
+      <TitleText>{workTitle}</TitleText>
+      <SmallText color={highlight} fw={bold}>
+        {workDescription}
       </SmallText>
 
       <FlexContainer

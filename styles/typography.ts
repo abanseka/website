@@ -1,38 +1,45 @@
 import styled from "styled-components";
-import { device } from "theme";
+import { device, font, theme } from "theme";
 
-type text = { ta?: "left" | "center" | "right" };
-export const SmallText = styled.p`
-  font-size: 1.025rem;
-  font-weight: 300;
-  line-height: 1.2;
-  text-align: ${({ ta = "left" }: text) => ta};
+type fontType = {
+  fs?: string;
+  fw?: number;
+  lh?: number;
+  tt?: string;
+};
+
+const { primary } = theme.colors;
+const { fontSize, fontWeight, lineHeight, textTransform } = font;
+const text = styled.p<fontType>`
+  font-weight: ${({ fw }) => fw ?? fontWeight.normal};
+  line-height: ${({ lh }) => lh ?? lineHeight.narrow};
+  font-size: ${({ fs }) => fs ?? fontSize.normal};
+  color: ${({ color }) => color ?? primary};
+  text-transform: ${({ tt }) => tt ?? textTransform.capz};
+`;
+
+export const SmallText = styled(text)`
+  font-size: ${fontSize.small};
   @media ${device.mobileL} {
     word-break: break-word;
-    font-size: 0.8rem;
+    font-size: ${fontSize.tiny};
   }
 `;
 
-export const NormalText = styled.p`
-  line-height: 1;
-  font-weight: 400;
-  font-size: 1.125rem;
-  text-align: ${({ ta }: text) => ta};
+export const NormalText = styled(text)`
+  line-height: ${lineHeight.wide};
   @media ${device.tablet} {
     word-break: break-word;
-    font-size: 0.8rem;
-    line-height: unset;
+    font-size: ${fontSize.small};
+    line-height: ${lineHeight.rs};
   }
 `;
 
-export const TitleText = styled.h2`
-  line-height: 1.2;
-  font-weight: 500;
-  font-size: 1.325rem;
-  text-transform: capitalize;
-  text-align: ${({ ta = "left" }: text) => ta};
+export const TitleText = styled(text)`
+  line-height: ${lineHeight.wide};
+  font-weight: ${fontWeight.bold};
   @media ${device.mobileL} {
     word-break: break-word;
-    font-size: 1rem;
+    font-size: ${fontSize.normal};
   }
 `;

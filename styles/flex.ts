@@ -24,21 +24,21 @@ type FlexContainerProps = {
   bd?: string;
 };
 
-export const FlexContainer = styled.div`
-  width: ${({ wd }: FlexContainerProps) => `${wd}%`};
-  max-width: ${({ mw }: FlexContainerProps) => `${mw}%`};
-  margin: ${({ ma }: FlexContainerProps) => ma};
-  padding: ${({ pd }: FlexContainerProps) => pd};
+export const FlexContainer = styled.div<FlexContainerProps>`
+  width: ${({ wd }) => wd + "%"};
+  max-width: ${({ mw }) => mw + "%"};
+  margin: ${({ ma }) => ma};
+  padding: ${({ pd }) => pd};
 
   display: flex;
-  gap: ${({ gp }: FlexContainerProps) => `${gp}rem`};
-  flex-direction: ${({ fd }: FlexContainerProps) => fd};
-  justify-content: ${({ jc }: FlexContainerProps) => jc};
-  align-items: ${({ ai = "center" }: FlexContainerProps) => ai};
+  gap: ${({ gp }) => gp + "rem"};
+  flex-direction: ${({ fd }) => fd};
+  justify-content: ${({ jc }) => jc};
+  align-items: ${({ ai = "center" }) => ai};
 
-  flex-wrap: ${({ fw }: FlexContainerProps) => fw};
-  flex-grow: ${({ fg }: FlexContainerProps) => fg};
+  flex-wrap: ${({ fw }) => fw};
+  flex-grow: ${({ fg }) => fg};
 
-  border-radius: ${({ br }: FlexContainerProps) => br};
-  border: ${({ bd }: FlexContainerProps) => bd};
+  border-radius: ${({ br }) => br};
+  border: ${({ bd }) => bd};
 `;
