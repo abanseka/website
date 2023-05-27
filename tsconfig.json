@@ -17,8 +17,8 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["./components/*"],
+      "@styles/*": ["./styles/components/*"],
       "@assets/*": ["./assets/*"],
-      "@styledComponents/*": ["./styles/*"],
       "types/*": ["./types/*"],
       "utils/*": ["./utils/*"],
       "theme": ["./theme.ts"],

@@ -1,0 +1,17 @@
+@use "@styles/container.module.scss" as *;
+@use "@styles/text.module.scss" as *;
+@use "@styles/oneliners.module.scss" as *;
+
+.navlinks,
+.linkwrapper {
+  @extend %container, .flex;
+}
+
+.divider {
+  @extend %text, .bold, .accent;
+  padding: 5px;
+}
+
+.link {
+  @extend %navlink;
+}

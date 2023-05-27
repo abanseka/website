@@ -1,0 +1,58 @@
+@use "@styles/variables.module.scss" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: $primary;
+  background: $offWhite;
+  position: relative;
+  letter-spacing: 0.8px;
+  font-family: "Titillium Web", sans-serif;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .noisePattern {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 300;
+    opacity: 0.8;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+  }
+
+  .mainContainer {
+    margin: auto;
+    max-width: 42rem;
+    min-height: calc(55dvh - 10rem);
+
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 0.625rem;
+    gap: 1rem;
+  }
+
+  .appContainer {
+    height: 100vh;
+    height: 100dvh;
+    overflow-y: scroll;
+    padding: 15rem 0.625rem 0;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    html {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+  }
+}

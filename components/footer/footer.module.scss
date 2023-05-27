@@ -1,0 +1,11 @@
+@use "@styles/container.module.scss" as *;
+@use "@styles/text.module.scss" as *;
+@use "@styles/oneliners.module.scss" as *;
+
+.footer {
+  @extend %container, .maxwidth, .p16;
+
+  .footertext {
+    @extend %text, .small, .bold, .accent;
+  }
+}

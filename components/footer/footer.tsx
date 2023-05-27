@@ -1,24 +1,14 @@
-import { useContext } from "react";
-import { ThemeContext } from "styled-components";
-import { themeType } from "types/common";
-import NavigationMenu from "@components/widgets/NavigationMenu";
-import { FooterStyled } from "@styledComponents/footer";
-import { SmallText } from "@styledComponents/typography";
-import { font } from "theme";
+import Navlinks from "@components/navlinks/navlinks";
+import style from "./footer.module.scss";
 
 const Footer = () => {
-  const theme: themeType = useContext(ThemeContext);
-  const { highlight } = theme.colors;
-  const { bold } = font.fontWeight;
-
   return (
-    <FooterStyled>
+    <footer className={style.footer}>
       <hr />
-      <NavigationMenu renderIcon={false} className="footerMenu" />
-      <SmallText color={highlight} fw={bold}>
-        Built with Next.js, Styled Components and Vercel
-      </SmallText>
-    </FooterStyled>
+
+      <Navlinks renderIcon={false} />
+      <p className={style.footertext}>Built with Next.js,scss and Vercel</p>
+    </footer>
   );
 };
 

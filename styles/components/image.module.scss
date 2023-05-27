@@ -1,0 +1,37 @@
+@use "./variables.module.scss" as *;
+
+%image {
+  &.w100 {
+    width: 100px;
+  }
+
+  &.h100 {
+    height: 100px;
+  }
+
+  &.round {
+    border-radius: 1000px;
+  }
+
+  &.ring {
+    border: 10px solid $accent;
+  }
+}
+
+%svg {
+  &.accent {
+    fill: $accent;
+  }
+
+  &.primary {
+    fill: $primary;
+  }
+
+  &.wlarge {
+    width: 250px;
+  }
+
+  &.hlarge {
+    height: 250px;
+  }
+}

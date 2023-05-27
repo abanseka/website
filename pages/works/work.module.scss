@@ -1,0 +1,30 @@
+@use "../../styles/sass/container.module.scss" as *;
+@use "../../styles/sass/_text.module.scss" as *;
+@use "../../styles/sass/_styling.module" as *;
+@use "../../styles/sass/_var.sass" as *;
+
+.workpage {
+  @extend %container, .around, .wrap;
+  .workcard {
+    @extend %container, .column, .wrap, .p16, .b2, .br10, .fg1;
+
+    .worktitle {
+      @extend %text, .bold;
+    }
+
+    .workdescription {
+      @extend %text, .small, .bold, .accent;
+    }
+
+    .linkcontainer {
+      @extend %container, .between, .wfull;
+      .worklink {
+        @extend %navlink;
+      }
+    }
+
+    svg {
+      fill: $accent;
+    }
+  }
+}

@@ -1,7 +1,5 @@
 import { ReactNode } from "react";
 import Navbar from "@components/navbar/navbar";
-import { AppContainer } from "@styledComponents/global";
-import { MainContainer } from "@styledComponents/maincontainer";
 import Footer from "@components/footer/footer";
 
 interface LayoutProps {
@@ -10,10 +8,10 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <AppContainer>
+    <main className="appContainer">
       <Navbar />
-      <MainContainer>{children}</MainContainer>
+      <div className="mainContainer">{children}</div>
       <Footer />
-    </AppContainer>
+    </main>
   );
 }

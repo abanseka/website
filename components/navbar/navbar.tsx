@@ -1,69 +1,42 @@
-import { useContext } from "react";
-import { themeType } from "types/common";
-import { ThemeContext } from "styled-components";
-import {
-  LogoText,
-  NavBar,
-  ProfilePhoto,
-  Ring,
-  Word,
-} from "@styledComponents/navbar";
-import { FlexContainer } from "@styledComponents/flex";
-import { NormalText, SmallText } from "@styledComponents/typography";
-import { NavLink } from "@styledComponents/links";
-import NavigationMenu from "@components/widgets/NavigationMenu";
+import Link from "next/link";
+import Image from "next/image";
+import NavLinks from "@components/navlinks/navlinks";
 import dp from "@assets/dp_template.jpeg";
 import BlockIcon from "@assets/block.svg";
-import { font } from "theme";
+import style from "./nav.module.scss";
 
 const Navbar = () => {
-  const theme: themeType = useContext(ThemeContext);
-  const { highlight } = theme.colors;
-  const { bold } = font.fontWeight;
-
   const workprops = {
     href: "https://archisacademy.com",
     target: "blank",
-    className: "company",
   };
 
   return (
-    <NavBar>
-      <NavigationMenu className="headerMenu" />
+    <nav className={style.navbar}>
+      <NavLinks />
 
-      <FlexContainer
-        pd="1.25rem 0.625rem"
-        jc="space-between"
-        className="navbar"
-      >
-        <FlexContainer
-          fd="column"
-          ai="flex-start"
-          className="details"
-          gp={0.125}
-        >
-          <LogoText>
-            <Word>abanseka</Word>
-            <Word color={highlight}>.dev</Word>
-          </LogoText>
+      <div className={style.profiledetails}>
+        <div className={style.details}>
+          <div className={style.logowrapper}>
+            <p className={style.logoblack}>abanseka</p>
+            <p className={style.logolight}>.dev</p>
+          </div>
 
-          <NormalText color={highlight} fw={bold}>
-            Front-end developer
-          </NormalText>
-
-          <NavLink {...workprops}>
+          <h5 className={style.role}>Front-end developer</h5>
+          <Link {...workprops} className={style.companywrapper}>
             <BlockIcon />
-            <SmallText>@archisacademy</SmallText>
-          </NavLink>
-        </FlexContainer>
+            <span className={style.company}>@archisacademy</span>
+          </Link>
+        </div>
 
-        <FlexContainer fd="column" gp={1}>
-          <Ring jc="center" ai="center">
-            <ProfilePhoto src={dp} alt="cartoon character" priority />
-          </Ring>
-        </FlexContainer>
-      </FlexContainer>
-    </NavBar>
+        <Image
+          src={dp}
+          priority
+          alt="cartoon character"
+          className={style.profile}
+        />
+      </div>
+    </nav>
   );
 };
 

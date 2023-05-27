@@ -1,14 +1,11 @@
-import styled from "styled-components";
-import { device, theme } from "theme";
+@use "../../styles/sass/_var.sass" as *;
 
-const { primary, highlight, offWhite } = theme.colors;
-
-export const NotePage = styled.article`
+.notepage {
   min-height: calc(50dvh - 10rem);
   font-weight: 500;
 
   a {
-    color: ${highlight};
+    color: $accent;
     font-weight: 600;
   }
 
@@ -30,6 +27,7 @@ export const NotePage = styled.article`
   strong {
     font-size: 1rem;
     opacity: 0.8;
+    color: none;
   }
 
   h1,
@@ -38,7 +36,7 @@ export const NotePage = styled.article`
   h4,
   h5,
   h6 {
-    color: ${highlight};
+    color: $accent;
     margin: 1.2rem 0;
   }
 
@@ -46,7 +44,8 @@ export const NotePage = styled.article`
     padding: 10px;
     margin: 5px 0;
     border-radius: 0.625rem;
-    border: 2px solid ${primary};
+    border: 2px solid $primary;
+
     p {
       margin: 5px;
     }
@@ -58,12 +57,7 @@ export const NotePage = styled.article`
     margin: 0 auto;
     object-fit: cover;
     border-radius: 10px;
-    border: 2px solid ${primary};
-  }
-
-  @media ${device.tablet} {
-    font-size: 0.875rem;
-    padding: 0 0.625rem;
+    border: 2px solid $primary;
   }
 
   pre {
@@ -73,7 +67,7 @@ export const NotePage = styled.article`
     border: 2px solid #69548b;
     border-top: none;
 
-    ::-webkit-scrollbar {
+    &::-webkit-scrollbar {
       display: none;
     }
 
@@ -95,23 +89,14 @@ export const NotePage = styled.article`
         counter-increment: line;
       }
     }
-
-    @media ${device.tablet} {
-      font-size: 0.625rem;
-      line-height: 1rem;
-    }
   }
 
   [data-rehype-pretty-code-title] {
     padding: 0.2rem 0.5rem;
     border-radius: 5px 5px 0 0;
-    border: 2px solid ${primary};
+    border: 2px solid $primary;
     border-bottom: none;
-    color: ${offWhite};
-    background: ${primary};
-
-    @media ${device.tablet} {
-      font-size: 0.625rem;
-    }
+    color: $offWhite;
+    background: $primary;
   }
-`;
+}

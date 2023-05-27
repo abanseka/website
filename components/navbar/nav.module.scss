@@ -1,0 +1,41 @@
+@use "@styles/container.module.scss" as *;
+@use "@styles/text.module.scss" as *;
+@use "@styles/oneliners.module.scss" as *;
+@use "@styles/image.module.scss" as *;
+
+.navbar {
+  @extend %container, .maxwidth;
+
+  .profiledetails {
+    @extend %container, .between;
+  }
+
+  .profile {
+    @extend %image, .w100, .h100, .ring, .round;
+  }
+
+  .details {
+    @extend %container, .column, .start;
+
+    .role {
+      @extend %text, .bold, .accent;
+    }
+
+    .logowrapper {
+      @extend %container, .nogap;
+
+      .logoblack,
+      .logolight {
+        @extend %text, .max, .heavy;
+      }
+
+      .logolight {
+        @extend %text, .accent;
+      }
+    }
+
+    .companywrapper {
+      @extend %navlink;
+    }
+  }
+}

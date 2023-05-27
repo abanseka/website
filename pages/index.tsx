@@ -2,7 +2,7 @@ import Head from "next/head";
 import { compareDesc, format, parseISO } from "date-fns";
 import { allNotes } from "contentlayer/generated";
 import { NoteType } from "types/note";
-import NoteCard from "@components/widgets/noteCard";
+import NoteCard from "@components/notecard/noteCard";
 
 export async function getStaticProps() {
   const notes = allNotes
@@ -28,11 +28,11 @@ export default function Home({ notes }: { notes: any }) {
 
       {notes.map((note: NoteType) => (
         <NoteCard
+          url={note.url}
           key={note.title}
           title={note.title}
-          date={format(parseISO(note.date), "d MMMM, yyyy")}
-          url={note.url}
           description={note.description}
+          date={format(parseISO(note.date), "d MMMM, yyyy")}
         />
       ))}
     </>
