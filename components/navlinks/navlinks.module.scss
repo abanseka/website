@@ -2,6 +2,10 @@
 @use "@styles/text.module.scss" as *;
 @use "@styles/oneliners.module.scss" as *;
 
+.navlinks {
+  margin: 1rem 0;
+}
+
 .navlinks,
 .linkwrapper {
   @extend %container, .flex;

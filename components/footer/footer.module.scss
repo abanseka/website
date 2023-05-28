@@ -3,9 +3,10 @@
 @use "@styles/oneliners.module.scss" as *;
 
 .footer {
-  @extend %container, .maxwidth, .p16;
+  @extend %container, .maxwidth;
 
   .footertext {
     @extend %text, .small, .bold, .accent;
+    margin-bottom: 2rem;
   }
 }

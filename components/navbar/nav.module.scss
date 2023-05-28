@@ -15,7 +15,7 @@
   }
 
   .details {
-    @extend %container, .column, .start;
+    @extend %container, .column, .start, .gp5;
 
     .role {
       @extend %text, .bold, .accent;

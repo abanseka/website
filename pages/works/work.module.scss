@@ -1,7 +1,8 @@
-@use "../../styles/sass/container.module.scss" as *;
-@use "../../styles/sass/_text.module.scss" as *;
-@use "../../styles/sass/_styling.module" as *;
-@use "../../styles/sass/_var.sass" as *;
+@use "@styles/container.module.scss" as *;
+@use "@styles/text.module.scss" as *;
+@use "@styles/oneliners.module.scss" as *;
+@use "@styles/image.module.scss" as *;
+@use "@styles/variables.module.scss" as *;
 
 .workpage {
   @extend %container, .around, .wrap;

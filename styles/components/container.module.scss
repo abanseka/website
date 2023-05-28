@@ -1,7 +1,6 @@
 @use "./variables.module.scss" as *;
 
 %container {
-  padding: 5px;
   height: fit-content;
 
   &.flex {

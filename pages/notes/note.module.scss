@@ -1,12 +1,15 @@
-@use "../../styles/sass/_var.sass" as *;
+@use "@styles/variables.module.scss" as *;
+@use "@styles/container.module.scss" as *;
+@use "@styles/text.module.scss" as *;
+@use "@styles/oneliners.module.scss" as *;
+@use "@styles/image.module.scss" as *;
 
 .notepage {
   min-height: calc(50dvh - 10rem);
   font-weight: 500;
 
   a {
-    color: $accent;
-    font-weight: 600;
+    @extend %text, .bold, .accent;
   }
 
   p,
@@ -42,7 +45,7 @@
 
   blockquote {
     padding: 10px;
-    margin: 5px 0;
+    margin: 10px 0;
     border-radius: 0.625rem;
     border: 2px solid $primary;
 
@@ -61,42 +64,14 @@
   }
 
   pre {
-    padding: 1rem;
-    border-radius: 0 0 5px 5px;
-    overflow-x: scroll;
+    border-radius: 5px;
     border: 2px solid #69548b;
-    border-top: none;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
+    padding: 10px 25px;
 
     code {
-      display: grid;
+      @extend %text, .tiny, .bold;
       counter-reset: line;
       line-height: 1.5rem;
-      font-family: Kanit;
-      font-size: 0.875rem;
-      font-family: "Titillium Web", sans-serif;
-
-      .line::before {
-        content: counter(line);
-        display: inline-block;
-        width: 1rem;
-        margin-right: 2rem;
-        text-align: right;
-        color: gray;
-        counter-increment: line;
-      }
     }
-  }
-
-  [data-rehype-pretty-code-title] {
-    padding: 0.2rem 0.5rem;
-    border-radius: 5px 5px 0 0;
-    border: 2px solid $primary;
-    border-bottom: none;
-    color: $offWhite;
-    background: $primary;
   }
 }
