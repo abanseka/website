@@ -1,9 +1,13 @@
 @use "@styles/container.module.scss" as *;
 @use "@styles/text.module.scss" as *;
 @use "@styles/oneliners.module.scss" as *;
+@use "@styles/variables.module.scss" as *;
 
 .footer {
   @extend %container, .maxwidth;
+  @media (max-width: $tablet) {
+    text-align: center;
+  }
 
   .footertext {
     @extend %text, .small, .bold, .accent;

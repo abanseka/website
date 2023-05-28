@@ -2,12 +2,18 @@
 @use "@styles/text.module.scss" as *;
 @use "@styles/oneliners.module.scss" as *;
 @use "@styles/image.module.scss" as *;
+@use "@styles/variables.module.scss" as *;
 
 .navbar {
   @extend %container, .maxwidth;
 
   .profiledetails {
     @extend %container, .between;
+    margin-top: 15px;
+    @media (max-width: $tablet) {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
   }
 
   .profile {
@@ -16,6 +22,9 @@
 
   .details {
     @extend %container, .column, .start, .gp5;
+    @media (max-width: $tablet) {
+      align-items: center !important;
+    }
 
     .role {
       @extend %text, .bold, .accent;
@@ -27,6 +36,9 @@
       .logoblack,
       .logolight {
         @extend %text, .max, .heavy;
+        @media (max-width: $mobileM) {
+          font-size: 24px;
+        }
       }
 
       .logolight {

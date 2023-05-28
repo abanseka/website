@@ -19,6 +19,9 @@
   code {
     margin: 1.2rem 0;
     font-size: 1.125rem;
+    @media (max-width: $tablet) {
+      font-size: 1rem;
+    }
   }
 
   ol,
@@ -67,6 +70,13 @@
     border-radius: 5px;
     border: 2px solid #69548b;
     padding: 10px 25px;
+
+    @media (max-width: $tablet) {
+      overflow-x: scroll;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
 
     code {
       @extend %text, .tiny, .bold;

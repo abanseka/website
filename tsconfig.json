@@ -2,15 +2,45 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["./components/*"],
-      "@styles/*": ["./styles/components/*"],
-      "@assets/*": ["./assets/*"],
-      "types/*": ["./types/*"],
-      "utils/*": ["./utils/*"],
-      "theme": ["./theme.ts"],
-      "contentlayer/generated": ["./.contentlayer/generated"]
-    }
-    "target": "es5,es2015,es2016,es2017,es2018,es2019,es2020,es2021",
+      "@components/*": [
+        "./components/*"
+      ],
+      "@styles/*": [
+        "./styles/components/*"
+      ],
+      "@assets/*": [
+        "./assets/*"
+      ],
+      "types/*": [
+        "./types/*"
+      ],
+      "utils/*": [
+        "./utils/*"
+      ],
+      "theme": [
+        "./theme.ts"
+      ],
+      "contentlayer/generated": [
+        "./.contentlayer/generated"
+      ]
+    },
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve"
   },
   "include": [
     "next-env.d.ts",
@@ -18,5 +48,7 @@
     "**/*.tsx",
     ".contentlayer/generated"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }

@@ -14,6 +14,11 @@
     flex-direction: column;
   }
 
+  &.center {
+    @extend .flex;
+    justify-content: center !important;
+  }
+
   &.between {
     @extend .flex;
     justify-content: space-between;

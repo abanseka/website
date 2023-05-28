@@ -9,6 +9,12 @@
   .workcard {
     @extend %container, .column, .wrap, .p16, .b2, .br10, .fg1;
 
+    &:first-child {
+      .linkcontainer {
+        @extend %container, .center;
+      }
+    }
+
     .worktitle {
       @extend %text, .bold;
     }
