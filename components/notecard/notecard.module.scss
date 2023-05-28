@@ -1,0 +1,27 @@
+@use "@styles/container.module.scss" as *;
+@use "@styles/text.module.scss" as *;
+@use "@styles/oneliners.module.scss" as *;
+@use "@styles/variables.module.scss" as *;
+
+.notecard {
+  @extend %navlink, .wfull, .br10, .b2, .p16;
+  @extend %container, .column, .start;
+
+  &:hover {
+    background: $primary;
+    .notetitle,
+    .notedescription {
+      color: $offWhite !important;
+    }
+  }
+
+  .notetitle {
+    @extend %text, .heavy;
+  }
+  .notedescription {
+    @extend %text, .bold, .dim;
+  }
+  .notedate {
+    @extend %text, .small, .bold, .accent;
+  }
+}

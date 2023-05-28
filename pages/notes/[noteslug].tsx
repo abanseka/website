@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { allNotes } from "contentlayer/generated";
-import { NotePage } from "@styledComponents/notePage";
 import { useMDXComponent } from "next-contentlayer/hooks";
+import style from "./note.module.scss";
 
 export async function getStaticPaths() {
   const paths = allNotes.map((note: any) => note.url);
@@ -29,9 +29,9 @@ export default function Note({ note }: any) {
         <title>{note.title}</title>
       </Head>
 
-      <NotePage>
+      <article className={style.notepage}>
         <MDXContent />
-      </NotePage>
+      </article>
     </>
   );
 }

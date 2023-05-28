@@ -5,31 +5,27 @@
   "module": "es6",
   "scripts": {
     "dev": "next dev",
-    "build": "contentlayer build & next build",
     "start": "next start",
-    "lint": "next lint"
+    "build": "contentlayer build & next build"
   },
   "dependencies": {
     "@mdx-js/loader": "^2.3.0",
     "@mdx-js/react": "^2.3.0",
-    "@next/mdx": "^13.3.0",
     "contentlayer": "^0.3.2",
     "date-fns": "^2.30.0",
-    "gray-matter": "^4.0.3",
     "next": "^13.3.0",
     "next-contentlayer": "^0.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rehype-pretty-code": "^0.9.5",
+    "sass": "^1.62.1",
     "sharp": "^0.32.0",
-    "shiki": "^0.14.2",
-    "styled-components": "^5.3.9"
+    "shiki": "^0.14.2"
   },
   "devDependencies": {
     "@svgr/webpack": "^7.0.0",
     "@types/node": "18.15.11",
     "@types/react": "18.0.33",
-    "@types/styled-components": "^5.1.26",
     "typescript": "5.0.4"
   }
 }

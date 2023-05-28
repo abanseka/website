@@ -1,0 +1,53 @@
+@use "./variables.module.scss" as *;
+
+%container {
+  height: fit-content;
+
+  &.flex {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &.column {
+    @extend .flex;
+    flex-direction: column;
+  }
+
+  &.center {
+    @extend .flex;
+    justify-content: center !important;
+  }
+
+  &.between {
+    @extend .flex;
+    justify-content: space-between;
+  }
+
+  &.around {
+    @extend .flex;
+    justify-content: space-around;
+  }
+
+  &.start {
+    @extend .flex;
+    justify-content: flex-start !important ;
+    align-items: flex-start !important;
+  }
+
+  &.wrap {
+    @extend .flex;
+    flex-wrap: wrap;
+  }
+
+  &.maxwidth {
+    max-width: 42rem;
+    margin: auto;
+  }
+
+  // resets
+  &.nogap {
+    @extend .flex;
+    gap: 0;
+  }
+}

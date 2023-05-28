@@ -1,30 +1,10 @@
 import { ReactNode } from "react";
 
-export type themeType = {
-  colors: {
-    accent: string;
-    offWhite: string;
-    primary: string;
-    highlight: string;
-    dimmed: string;
-  };
-};
-
-export type screens = {
-  mobileS: string;
-  mobileM: string;
-  mobileL: string;
-  tablet: string;
-  laptop: string;
-  laptopL: string;
-  desktop: string;
-};
-
-export type post = {
-  id: number;
+export type NoteProps = {
+  date: string;
   title: string;
-  content: string;
-  summary: string;
+  url: string;
+  description?: string;
 };
 
 export interface WorkCardProps {
@@ -33,6 +13,6 @@ export interface WorkCardProps {
   workTitle: string;
   codeLinkIcon: ReactNode;
   headerImage: ReactNode;
-  workerDescription: string;
+  workDescription: string;
   siteLinkIcon?: ReactNode;
 }

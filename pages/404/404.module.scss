@@ -1,0 +1,15 @@
+@use "@styles/container.module.scss" as *;
+@use "@styles/text.module.scss" as *;
+@use "@styles/oneliners.module.scss" as *;
+@use "@styles/image.module.scss" as *;
+
+.deadEnd {
+  @extend %container, .column;
+
+  .notfoundicon {
+    @extend %svg, .primary, .wlarge, .hlarge;
+  }
+  .notfoundtext {
+    @extend %text, .bold, .medium, .accent;
+  }
+}

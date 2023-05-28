@@ -1,0 +1,87 @@
+@use "@styles/variables.module.scss" as *;
+@use "@styles/container.module.scss" as *;
+@use "@styles/text.module.scss" as *;
+@use "@styles/oneliners.module.scss" as *;
+@use "@styles/image.module.scss" as *;
+
+.notepage {
+  min-height: calc(50dvh - 10rem);
+  font-weight: 500;
+
+  a {
+    @extend %text, .bold, .accent;
+  }
+
+  p,
+  hr,
+  ol,
+  ul,
+  code {
+    margin: 1.2rem 0;
+    font-size: 1.125rem;
+    @media (max-width: $tablet) {
+      font-size: 1rem;
+    }
+  }
+
+  ol,
+  ul {
+    padding: 0 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  strong {
+    font-size: 1rem;
+    opacity: 0.8;
+    color: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $accent;
+    margin: 1.2rem 0;
+  }
+
+  blockquote {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 0.625rem;
+    border: 2px solid $primary;
+
+    p {
+      margin: 5px;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 500px;
+    margin: 0 auto;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid $primary;
+  }
+
+  pre {
+    border-radius: 5px;
+    border: 2px solid #69548b;
+    padding: 10px 25px;
+
+    @media (max-width: $tablet) {
+      overflow-x: scroll;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    code {
+      @extend %text, .tiny, .bold;
+      counter-reset: line;
+      line-height: 1.5rem;
+    }
+  }
+}

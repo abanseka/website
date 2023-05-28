@@ -1,0 +1,37 @@
+@use "@styles/container.module.scss" as *;
+@use "@styles/text.module.scss" as *;
+@use "@styles/oneliners.module.scss" as *;
+@use "@styles/image.module.scss" as *;
+@use "@styles/variables.module.scss" as *;
+
+.workpage {
+  @extend %container, .around, .wrap;
+  .workcard {
+    @extend %container, .column, .wrap, .p16, .b2, .br10, .fg1;
+
+    &:first-child {
+      .linkcontainer {
+        @extend %container, .center;
+      }
+    }
+
+    .worktitle {
+      @extend %text, .bold;
+    }
+
+    .workdescription {
+      @extend %text, .small, .bold, .accent;
+    }
+
+    .linkcontainer {
+      @extend %container, .between, .wfull;
+      .worklink {
+        @extend %navlink;
+      }
+    }
+
+    svg {
+      fill: $accent;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@use "./variables.module.scss" as *;
+
+// width
+.wfull {
+  width: 100%;
+}
+
+// padding
+.p16 {
+  padding: 16px;
+}
+
+// gap
+.gp5 {
+  gap: 5px;
+}
+
+// border
+.b2 {
+  border: 2px solid $primary;
+}
+
+// border-radius
+.br10 {
+  border-radius: 10px;
+}
+
+// flex
+.fg1 {
+  flex-grow: 1;
+}

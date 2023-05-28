@@ -1,29 +1,46 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": [
+        "./components/*"
+      ],
+      "@styles/*": [
+        "./styles/components/*"
+      ],
+      "@assets/*": [
+        "./assets/*"
+      ],
+      "types/*": [
+        "./types/*"
+      ],
+      "utils/*": [
+        "./utils/*"
+      ],
+      "theme": [
+        "./theme.ts"
+      ],
+      "contentlayer/generated": [
+        "./.contentlayer/generated"
+      ]
+    },
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
+    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
+    "incremental": true,
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
-    "baseUrl": ".",
-    "paths": {
-      "@components/*": ["./components/*"],
-      "@assets/*": ["./assets/*"],
-      "@styledComponents/*": ["./styles/*"],
-      "types/*": ["./types/*"],
-      "utils/*": ["./utils/*"],
-      "theme": ["./theme.ts"],
-      "contentlayer/generated": ["./.contentlayer/generated"]
-    }
+    "jsx": "preserve"
   },
   "include": [
     "next-env.d.ts",
@@ -31,5 +48,7 @@
     "**/*.tsx",
     ".contentlayer/generated"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }

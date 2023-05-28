@@ -1,15 +1,14 @@
-import NavigationMenu from "@components/widgets/NavigationMenu";
-import { FooterStyled } from "@styledComponents/footer";
-import { SmallText } from "@styledComponents/typography";
+import Navlinks from "@components/navlinks/navlinks";
+import style from "./footer.module.scss";
 
-const Footer = () => {
-  return (
-    <FooterStyled>
-      <hr />
-      <NavigationMenu renderIcon={false} className="footerMenu" />
-      <SmallText>Built with Next.js, Styled Components and Vercel</SmallText>
-    </FooterStyled>
-  );
-};
+const Footer = () => (
+  <footer className={style.footer}>
+    <hr />
+    <>
+      <Navlinks renderIcon={false} />
+      <p className={style.footertext}>Built with Next.js,scss and Vercel</p>
+    </>
+  </footer>
+);
 
 export default Footer;
