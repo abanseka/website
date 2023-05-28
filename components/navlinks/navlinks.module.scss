@@ -14,9 +14,6 @@
 .divider {
   @extend %text, .bold, .accent;
   padding: 5px;
-  @media (max-width: $mobileS) {
-    display: none;
-  }
 }
 
 .link {
