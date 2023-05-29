@@ -6,6 +6,12 @@ import NoteCard from "@components/notecard/noteCard";
 
 export async function getStaticProps() {
   const notes = allNotes
+    .map((notes: NoteProps) => ({
+      title: notes.title,
+      description: notes.description,
+      date: notes.date,
+      url: notes.url,
+    }))
     .sort((a: NoteProps, b: NoteProps) => compareDesc(+a.date, +b.date))
     .reverse();
 
