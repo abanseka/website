@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import NavLinks from "@components/navlinks/navlinks";
-import dp from "@assets/dp_template.jpeg";
+import dp from "../../public/assets/IMG_0525-EDIT.jpg";
 import BlockIcon from "@assets/block.svg";
 import style from "./nav.module.scss";
 
@@ -18,8 +18,8 @@ const Navbar = () => {
       <div className={style.profiledetails}>
         <div className={style.details}>
           <div className={style.logowrapper}>
-            <p className={style.logoblack}>Abanseka</p>
-            <p className={style.logolight}>.Dev</p>
+            <p className={style.logoblack}>abanseka</p>
+            <p className={style.logolight}>.dev</p>
           </div>
 
           <h5 className={style.role}>Front-end developer</h5>
