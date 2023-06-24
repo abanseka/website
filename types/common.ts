@@ -1,7 +1,6 @@
 import { ReactNode } from "react";
 
 export type NoteProps = {
-  date: string;
   title: string;
   url: string;
   description?: string;

@@ -15,8 +15,6 @@ export type Note = {
   type: 'Note'
   /** The title of the note */
   title: string
-  /** The date of the note */
-  date: IsoDateTimeString
   /** The Summary of the note */
   description?: string | undefined
   /** MDX file body */
