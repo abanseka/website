@@ -10,11 +10,6 @@ const Note = defineDocumentType(() => ({
       type: "string",
       description: "The title of the note",
     },
-    date: {
-      required: true,
-      description: "The date of the note",
-      type: "date",
-    },
     description: {
       required: false,
       type: "string",

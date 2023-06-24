@@ -4,10 +4,9 @@ import style from "./footer.module.scss";
 const Footer = () => (
   <footer className={style.footer}>
     <hr />
-    <>
-      <Navlinks renderIcon={false} />
-      <p className={style.footertext}>Built with Next.js,scss and Vercel</p>
-    </>
+    <br />
+    <Navlinks renderIcon={false} />
+    <p className={style.footertext}>Built with NEXT.JS, SCSS & VERCEL</p>
   </footer>
 );
 

@@ -2,33 +2,15 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@components/*": [
-        "./components/*"
-      ],
-      "@styles/*": [
-        "./styles/components/*"
-      ],
-      "@assets/*": [
-        "./assets/*"
-      ],
-      "types/*": [
-        "./types/*"
-      ],
-      "utils/*": [
-        "./utils/*"
-      ],
-      "theme": [
-        "./theme.ts"
-      ],
-      "contentlayer/generated": [
-        "./.contentlayer/generated"
-      ]
+      "@components/*": ["./components/*"],
+      "@styles/*": ["./styles/components/*"],
+      "@assets/*": ["./public/assets/*"],
+      "types/*": ["./types/*"],
+      "utils/*": ["./utils/*"],
+      "theme": ["./theme.ts"],
+      "contentlayer/generated": ["./.contentlayer/generated"]
     },
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -48,7 +30,5 @@
     "**/*.tsx",
     ".contentlayer/generated"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }

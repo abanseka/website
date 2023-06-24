@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { compareDesc, format, parseISO } from "date-fns";
 import { allNotes } from "contentlayer/generated";
 import { NoteProps } from "types/common";
 import NoteCard from "@components/notecard/noteCard";
@@ -9,10 +8,8 @@ export async function getStaticProps() {
     .map((notes: NoteProps) => ({
       title: notes.title,
       description: notes.description,
-      date: notes.date,
       url: notes.url,
     }))
-    .sort((a: NoteProps, b: NoteProps) => compareDesc(+a.date, +b.date))
     .reverse();
 
   return {
@@ -38,7 +35,6 @@ export default function Home({ notes }: { notes: any }) {
           key={note.title}
           title={note.title}
           description={note.description}
-          date={format(parseISO(note.date), "d MMMM, yyyy")}
         />
       ))}
     </>

@@ -18,8 +18,8 @@ const Navbar = () => {
       <div className={style.profiledetails}>
         <div className={style.details}>
           <div className={style.logowrapper}>
-            <p className={style.logoblack}>abanseka</p>
-            <p className={style.logolight}>.dev</p>
+            <p className={style.logoblack}>Abanseka</p>
+            <p className={style.logolight}>.Dev</p>
           </div>
 
           <h5 className={style.role}>Front-end developer</h5>
