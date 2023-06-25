@@ -12,7 +12,7 @@ body {
   background: $offWhite;
   position: relative;
   letter-spacing: 0.8px;
-  font-family: "Titillium Web", sans-serif;
+  font-family: $primary-font;
 
   img {
     max-width: 100%;

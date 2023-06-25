@@ -6,7 +6,7 @@
 
 .notepage {
   min-height: calc(50dvh - 10rem);
-  font-weight: 500;
+  font-family: $handwriting;
 
   a {
     @extend %text, .bold, .accent;
@@ -44,6 +44,7 @@
   h6 {
     color: $accent;
     margin: 1.2rem 0;
+    font-family: $primary-font;
   }
 
   blockquote {
@@ -79,9 +80,12 @@
     }
 
     code {
-      @extend %text, .tiny, .bold;
+      @extend %text, .tiny;
       counter-reset: line;
-      line-height: 1.5rem;
     }
+  }
+
+  [data-rehype-pretty-code-title] {
+    font-family: $primary-font;
   }
 }
