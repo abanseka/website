@@ -1,5 +1,13 @@
 import { ReactNode } from "react";
 
+
+export type navLink = {
+  id: number;
+  label: string;
+  href: string;
+  icon?: React.ReactNode;
+};
+
 export type NoteProps = {
   title: string;
   url: string;
@@ -15,3 +23,5 @@ export interface WorkCardProps {
   workDescription: string;
   siteLinkIcon?: ReactNode;
 }
+
+

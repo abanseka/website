@@ -16,11 +16,11 @@
     }
 
     .worktitle {
-      @extend %text, .bold;
+      @extend %text, .bold, .medium;
     }
 
     .workdescription {
-      @extend %text, .small, .bold, .accent;
+      @extend %text, .moderate, .bold, .accent;
     }
 
     .linkcontainer {

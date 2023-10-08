@@ -6,7 +6,7 @@
 
 .notepage {
   min-height: calc(50dvh - 10rem);
-  font-weight: 500;
+  font-weight: 600;
 
   a {
     @extend %text, .bold, .accent;
@@ -18,9 +18,20 @@
   ul,
   code {
     margin: 1.2rem 0;
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     @media (max-width: $tablet) {
-      font-size: 1rem;
+      font-size: 0.875rem;
+    }
+  }
+
+  p code {
+    @extend %text, .moderate, .bold;
+    background: #f8f9fc;
+    border-radius: 5px;
+    padding: 2px 5px;
+
+    @media (max-width: $tablet) {
+      font-size: 0.8rem;
     }
   }
 
@@ -31,9 +42,8 @@
   }
 
   strong {
-    font-size: 1rem;
     opacity: 0.8;
-    color: none;
+    color: $accent;
   }
 
   h1,
@@ -44,6 +54,7 @@
   h6 {
     color: $accent;
     margin: 1.2rem 0;
+    font-family: $primary-font;
   }
 
   blockquote {
@@ -68,20 +79,27 @@
 
   pre {
     border-radius: 5px;
-    border: 2px solid #69548b;
+    border: 2px solid $accent;
     padding: 10px 25px;
+    background: #f8f9fc;
+    overflow-x: scroll;
 
-    @media (max-width: $tablet) {
-      overflow-x: scroll;
-      &::-webkit-scrollbar {
-        display: none;
-      }
+    &::-webkit-scrollbar {
+      display: none;
     }
 
     code {
-      @extend %text, .tiny, .bold;
       counter-reset: line;
       line-height: 1.5rem;
+      font-size: 1rem;
+
+      @media (max-width: $tablet) {
+        font-size: 0.8rem;
+      }
     }
+  }
+
+  [data-rehype-pretty-code-title] {
+    font-family: $primary-font;
   }
 }
