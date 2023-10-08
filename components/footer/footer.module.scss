@@ -10,7 +10,7 @@
   }
 
   .footertext {
-    @extend %text, .small, .bold, .accent;
+    @extend %text, .moderate, .bold, .accent;
     margin: 10px 0 2rem;
   }
 }

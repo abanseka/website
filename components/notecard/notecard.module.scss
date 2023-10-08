@@ -5,7 +5,7 @@
 
 .notecard {
   @extend %navlink, .wfull, .br10, .b2, .p16;
-  @extend %container, .column, .start;
+  @extend %container, .column, .start, .gp10;
 
   &:hover {
     background: $primary;
@@ -16,10 +16,10 @@
   }
 
   .notetitle {
-    @extend %text, .heavy;
+    @extend %text, .medium, .heavy;
   }
   .notedescription {
-    @extend %text, .bold, .dim;
+    @extend %text, .moderate, .bold, .dim;
   }
   .notedate {
     @extend %text, .small, .bold, .accent;
