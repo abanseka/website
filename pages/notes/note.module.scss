@@ -18,17 +18,17 @@
   ul,
   code {
     margin: 1.2rem 0;
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     @media (max-width: $tablet) {
       font-size: 0.875rem;
     }
   }
 
   p code {
-    @extend %text, .moderate, .bold;
-    background: #f8f9fc;
+    font-size: 0.875rem;
     border-radius: 5px;
     padding: 2px 5px;
+    background: lightsalmon;
 
     @media (max-width: $tablet) {
       font-size: 0.8rem;
@@ -91,7 +91,7 @@
     code {
       counter-reset: line;
       line-height: 1.5rem;
-      font-size: 1rem;
+      font-size: 0.875rem;
 
       @media (max-width: $tablet) {
         font-size: 0.8rem;
