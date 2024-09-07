@@ -19,19 +19,24 @@
   code {
     margin: 1.2rem 0;
     font-size: 1.125rem;
+
     @media (max-width: $tablet) {
       font-size: 0.875rem;
     }
   }
 
-  p code {
-    font-size: 0.875rem;
-    border-radius: 5px;
-    padding: 2px 5px;
-    background: lightsalmon;
+  p,
+  ul,
+  ol {
+    code {
+      font-size: 0.875rem;
+      border-radius: 5px;
+      padding: 2px 5px;
+      background: lightsalmon;
 
-    @media (max-width: $tablet) {
-      font-size: 0.8rem;
+      @media (max-width: $tablet) {
+        font-size: 0.8rem;
+      }
     }
   }
 
@@ -54,7 +59,33 @@
   h6 {
     color: $accent;
     margin: 1.2rem 0;
+    padding: 2px 5px;
+    border-radius: 10px;
     font-family: $primary-font;
+  }
+
+  h1 {
+    background: lightgreen
+  }
+
+  h2 {
+    background: lightblue
+  }
+
+  h3 {
+    background: lightpink
+  }
+
+  h4 {
+    background: lightsteelblue
+  }
+
+  h5 {
+    background: lightcoral
+  }
+
+  h6 {
+    background: lightyellow
   }
 
   blockquote {
