@@ -3,10 +3,11 @@ title: Factory Functions
 description: Pump Out New Objects from a Function
 ---
 
-![Image By California Dispensary](https://i.pinimg.com/564x/01/80/0a/01800aa691ce14492ec46beca85aa7c1.jpg)
-<a href="https://i.pinimg.com/originals/01/80/0a/01800aa691ce14492ec46beca85aa7c1.jpg" >Image By Califonia Dispensary</a>
----
+## ![Image By California Dispensary](https://i.pinimg.com/564x/01/80/0a/01800aa691ce14492ec46beca85aa7c1.jpg)
 
+<a href="https://i.pinimg.com/originals/01/80/0a/01800aa691ce14492ec46beca85aa7c1.jpg">
+  Image By Califonia Dispensary
+</a>
 
 A **factory function** is a function that returns a new object. The key feature of a factory is that its only job is to _pump out those items_, just like an actual factory.
 
@@ -16,35 +17,35 @@ The simplest factory function returns a static object of keys and values. Ever n
 const createPerson = (name, twitterHandle) => ({
   name,
   twitterHandle: `@${twitterHandle}`,
-})
+});
 
-const kyle = createPerson('Kyle', 'kyleshevlin')
-console.log(kyle.twitterHandle) // '@kyleshevlin'
+const kyle = createPerson("Kyle", "kyleshevlin");
+console.log(kyle.twitterHandle); // '@kyleshevlin'
 ```
 
 That's not all that interesting, but it can be a useful way to generate objects. If you had a long list of person-related tuples like this, you could use `createPerson` with `Array.map` to turn them into props for a React component.
 
 ```jsx
 const people = [
-  ['Kyle', 'kyleshevlin'],
-  ['Jane', 'janeDoe12345'],
-  ['John', 'johnDoe67890'],
-]
+  ["Kyle", "kyleshevlin"],
+  ["Jane", "janeDoe12345"],
+  ["John", "johnDoe67890"],
+];
 
 function PeopleList() {
   return (
     <ul>
-      {people.map(personTuple => {
-        const person = createPerson(...personTuple)
+      {people.map((personTuple) => {
+        const person = createPerson(...personTuple);
 
         return (
           <li key={person.name}>
             <Person {...person} />
           </li>
-        )
+        );
       })}
     </ul>
-  )
+  );
 }
 ```
 
@@ -54,37 +55,37 @@ This is a great use of a factory function, but let's move on to a more interesti
 
 The place I use factories most often is when I want to return an object with methods but use closures to create private methods and values. Even better, I _never_ have to even think about the `this` keyword.
 
-When I created my [data structures and algorithms course on egghead](https://kyleshevl.in/dsa), I used factory functions to create the data structures. Let's make a `createQueue` factory to show you how this strategy works.
+When I created my [data structures and algorithms course on egghead](https://kyleshevl.in/dsa), I used factory functions to create the data structures. Let's make a `createQueue` factory to show you how this strategy projects.
 
 ```javascript
 function createQueue() {
   // Create an array in closure. This is a private variable.
-  const queue = []
+  const queue = [];
 
-  // This could have been a private method, if 
+  // This could have been a private method, if
   // we didn't also want to expose it
   // Notice how simple this is to understand. No need for `this`
-  const isEmpty = () => queue.length === 0
+  const isEmpty = () => queue.length === 0;
 
   return {
     enqueue(x) {
-      queue.push(x)
+      queue.push(x);
     },
     dequeue() {
-      return queue.shift()
+      return queue.shift();
     },
     peek() {
-      if (isEmpty()) return undefined
-      return queue[queue.length - 1]
+      if (isEmpty()) return undefined;
+      return queue[queue.length - 1];
     },
     get length() {
-      return queue.length
+      return queue.length;
     },
     isEmpty,
-  }
+  };
 }
 
-const queue1 = createQueue()
+const queue1 = createQueue();
 ```
 
 What's great about this pattern is that it's compatible in _every_ browser. Private fields and private methods for JavaScript classes are widely implemented, but not every where (and never will be).
@@ -108,11 +109,11 @@ First, we can make factories that `createBird`s and `createFish`, they will crea
 ```js
 const createBird = () => ({
   hasWings: true,
-})
+});
 
 const createFish = () => ({
   hasFins: true,
-})
+});
 ```
 
 There are more properties we could add, but we should be careful with adding too many to the base object. Next, we can create factories for objects based on what they do. Focusing on what something does, versus what it _is_ is a great way to find these kinds of compositional pieces:
@@ -123,14 +124,14 @@ const createFlyer = () => ({
   fly(vx, vy, vz) {
     // Do something with the velocities
   },
-})
+});
 
 const createSwimmer = () => ({
   canSwim: true,
   swim(vx, vy, vz) {
     // Do something with the velocities
   },
-})
+});
 ```
 
 Now that we have those, we can create compositions to create our various animal factories easily:
@@ -139,18 +140,18 @@ Now that we have those, we can create compositions to create our various animal 
 const createHawk = () => ({
   ...createBird(),
   ...createFlyer(),
-})
+});
 
 const createPenguin = () => ({
   ...createBird(),
   ...createSwimmer(),
-})
+});
 
 const createFlyingFish = () => ({
   ...createFish(),
   ...createFlyer(),
   ...createSwimmer(),
-})
+});
 ```
 
 Look how clean that is! Ahh, just fills my heart with joy. Imagine trying to do that with classes?
@@ -160,4 +161,5 @@ Look how clean that is! Ahh, just fills my heart with joy. Imagine trying to do 
 Factory functions are functions that return objects. We can use factory functions and closures to have private variables and private functions, only exposing what we want to our consumer through the object we return, all while avoiding the `this` keyword. Factories make for easy composition of values and functionality. Use them when inheritance can't solve your problems.
 
 ---
-[SOURCE](https://kyleshevlin.com/what-is-a-factory-function) 
+
+[SOURCE](https://kyleshevlin.com/what-is-a-factory-function)

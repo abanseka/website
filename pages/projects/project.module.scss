@@ -1,0 +1,39 @@
+@use "@styles/container.module.scss" as *;
+@use "@styles/text.module.scss" as *;
+@use "@styles/oneliners.module.scss" as *;
+@use "@styles/image.module.scss" as *;
+@use "@styles/variables.module.scss" as *;
+
+.projectsPage {
+  .projectsDivider {
+    margin-block: 30px;
+  }
+
+  .projectContainer {
+    @extend %container, .flex-start, .wrap, .gp32;
+
+    .projectcard {
+      @extend %container, .column, .column-start, .p16, .b2, .br10, .fg1;
+
+      .projectTitle {
+        @extend %text, .bold, .moderate;
+      }
+
+      .projectDescription {
+        @extend %text, .small, .bold, .accent;
+      }
+
+      .linkContainer {
+        @extend %container, .between, .wfull, .gp0;
+
+        .projectLink {
+          @extend %navlink;
+        }
+      }
+
+      svg {
+        fill: $accent;
+      }
+    }
+  }
+}

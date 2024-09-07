@@ -1,0 +1,32 @@
+---
+title: Cookies
+description: Little bits of delicious information from a web server
+---
+
+## ![Futuristic House Concept](https://i.pinimg.com/564x/f2/77/4e/f2774ebf2ad52a9bc44ebd2f959e504c.jpg)
+
+<a href="https://www.pinterest.com/pin/70437488500757/">
+  Futuristic House Concept | Pinterest
+</a>
+
+> Little bits of delicious information from a web server
+
+Ah cookies. Little bites of delicious information from a web server. This technology has been around for a long time, is tried and true, and projects very well if implemented correctly.
+
+Now I say if implemented correctly, and there is a reason for that. Cookies contain information. Keeping secret information secret is a top priority. If that information isn't secret anymore, something bad can happen. This leads to the easiest way ever to decide if a cookie should be encrypted:
+
+#### Does this cookie contain sensitive information?
+
+- Yes: `ENCRYPT`
+- No: `Whatever`
+
+**So how should you encrypt the cookie? Well that depends on the type of cookie:**
+
+1. _`Session/Server Side:`_ Never let the user modify it (private, done on server only)
+2. _`Private user data:`_ symmetric, secure encryption so that the user can use the information inside of it
+
+After that it's all about checking to make sure you're using the correct algorithms to encrypt your data securely, and have enough checks and balances to make sure they aren't tampered with
+
+> think `J`ason `W`web `T`okens 🪙🪙🪙🪙🪙
+
+[SOURCE](https://security.stackexchange.com/questions/113415/in-what-case-should-one-encrypt-cookies)

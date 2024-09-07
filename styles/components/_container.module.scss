@@ -6,12 +6,25 @@
   &.flex {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     gap: 10px;
   }
 
   &.column {
     @extend .flex;
     flex-direction: column;
+  }
+
+  &.column-start {
+    @extend .flex;
+    justify-content: flex-start !important;
+    align-items: flex-start !important
+  }
+
+  &.column-end {
+    @extend .flex;
+    justify-content: flex-end !important;
+    align-items: flex-end !important
   }
 
   &.center {
@@ -29,10 +42,15 @@
     justify-content: space-around;
   }
 
-  &.start {
+  &.flex-start {
     @extend .flex;
-    justify-content: flex-start !important ;
-    align-items: flex-start !important;
+    justify-content: flex-start !important;
+  }
+
+
+  &.flex-end {
+    @extend .flex;
+    justify-content: flex-end !important;
   }
 
   &.wrap {
@@ -41,7 +59,7 @@
   }
 
   &.maxwidth {
-    max-width: 42rem;
+    max-width: 48rem;
     margin: auto;
   }
 

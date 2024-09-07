@@ -5,19 +5,27 @@
 
 .navlinks,
 .linkwrapper {
-  @extend %container, .flex, .gp16;
+  @extend %container, .between, .gp16, .wrap;
+
   @media (max-width: $tablet) {
-    margin: 10px auto;
+    margin: 10px;
+    gap: 10px
   }
 }
 
-.divider {
-  @extend %text, .bold, .accent;
-  padding: 5px;
+.homeIcon {
+  @extend %navlink;
+
+  svg {
+    width: 1.4rem;
+    height: 1.4rem
+  }
 }
 
 .link {
   @extend %navlink;
+  @extend %text, .capitalize, .bold;
+
   @media (max-width: $mobileL) {
     display: flex;
     flex-direction: column;

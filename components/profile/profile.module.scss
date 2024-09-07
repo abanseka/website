@@ -18,17 +18,18 @@
   }
 
   .profile {
-    @extend %image, .w200, .h200, .ring, .round;
+    @extend %image, .w100, .h100, .ring, .round;
   }
 
   .details {
-    @extend %container, .column, .start, .gp5;
+    @extend %container, .column, .column-start, .gp5;
+
     @media (max-width: $tablet) {
       align-items: center !important;
     }
 
     .role {
-      @extend %text, .medium, .bold, .accent;
+      @extend %text, .moderate, .bold, .accent;
     }
 
     .logowrapper {
@@ -37,6 +38,7 @@
       .logoblack,
       .logolight {
         @extend %text, .max, .heavy;
+
         @media (max-width: $mobileM) {
           font-size: 24px;
         }

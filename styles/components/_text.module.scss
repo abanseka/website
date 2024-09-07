@@ -2,7 +2,7 @@
 
 %navlink {
   color: $primary;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
 
@@ -15,8 +15,8 @@
   }
 
   svg {
-    width: 1.625rem;
-    height: 1.625rem;
+    width: 1.4rem;
+    height: 1.4rem;
     fill: $primary;
   }
 }
@@ -31,6 +31,7 @@
   &.accent {
     color: $accent;
   }
+
   &.dim {
     color: $primarydim;
   }
@@ -39,9 +40,11 @@
   &.start {
     text-align: start;
   }
+
   &.center {
     text-align: center;
   }
+
   &.end {
     text-align: end;
   }
@@ -50,34 +53,45 @@
   &.tiny {
     font-size: 12px;
   }
+
   &.small {
     font-size: 14px;
   }
+
   &.moderate {
     font-size: 18px;
   }
+
   &.medium {
     font-size: 24px;
   }
+
   &.large {
     font-size: 32px;
   }
+
   &.max {
     font-size: 40px;
   }
 
   // transform
-  &.cap {
+  &.capitalize {
     text-transform: capitalize;
+  }
+
+  &.uppercase {
+    text-transform: uppercase;
   }
 
   //weight
   &.normal {
     font-weight: 400;
   }
+
   &.bold {
     font-weight: 600;
   }
+
   &.heavy {
     font-weight: 800;
   }
