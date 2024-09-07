@@ -16,10 +16,10 @@ export type NoteProps = {
 
 export interface ProjectCardProps {
   siteLink: string;
-  repoLink: string;
   projectTitle: string;
-  projectIcon: ReactNode;
   headerImage: ReactNode;
   projectDescription: string;
+  repoLink?: string;
+  projectIcon?: ReactNode;
   projectLiveIcon?: ReactNode;
 }

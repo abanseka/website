@@ -5,30 +5,35 @@
 @use "@styles/variables.module.scss" as *;
 
 .projectsPage {
-  @extend %container, .flex-start, .wrap;
+  .projectsDivider {
+    margin-block: 30px;
+  }
 
-  .projectcard {
-    @extend %container, .column, .column-start, .p16, .b2, .br10, .fg1;
-    max-width: max-content;
+  .projectContainer {
+    @extend %container, .flex-start, .wrap, .gp32;
 
-    .projectTitle {
-      @extend %text, .bold, .moderate;
-    }
+    .projectcard {
+      @extend %container, .column, .column-start, .p16, .b2, .br10, .fg1;
 
-    .projectDescription {
-      @extend %text, .small, .bold, .accent;
-    }
-
-    .linkContainer {
-      @extend %container, .between, .wfull, .gp0;
-
-      .projectLink {
-        @extend %navlink;
+      .projectTitle {
+        @extend %text, .bold, .moderate;
       }
-    }
 
-    svg {
-      fill: $accent;
+      .projectDescription {
+        @extend %text, .small, .bold, .accent;
+      }
+
+      .linkContainer {
+        @extend %container, .between, .wfull, .gp0;
+
+        .projectLink {
+          @extend %navlink;
+        }
+      }
+
+      svg {
+        fill: $accent;
+      }
     }
   }
 }
