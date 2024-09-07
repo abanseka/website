@@ -1,7 +1,7 @@
 import { navLink } from "types/common";
 
 import JournalIcon from "@assets/journal.svg";
-import projectIcon from "@assets/project.svg";
+import ProjectIcon from "@assets/projects.svg";
 import GitHub from "@assets/github.svg";
 import LinkedIn from "@assets/linkedIn.svg";
 import Mail from "@assets/mail.svg";
@@ -9,7 +9,7 @@ import Whatsapp from "@assets/whatsapp.svg";
 
 export const navLinks: navLink[] = [
   { id: 1, label: "Notes", href: "/", icon: <JournalIcon /> },
-  { id: 2, label: "Projects", href: "/projects", icon: <projectIcon /> },
+  { id: 2, label: "Projects", href: "/projects", icon: <ProjectIcon /> },
 ];
 
 export const socialLinks: navLink[] = [
