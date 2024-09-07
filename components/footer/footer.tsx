@@ -6,7 +6,9 @@ const Footer = () => (
     <hr />
     <br />
     <Navlinks renderIcon={false} />
-    <p className={style.footertext}>Built with NEXT.JS, SCSS & VERCEL</p>
+    <p className={style.footertext}>
+      Copyright © {new Date().getFullYear()} abanseka. All rights reserved.
+    </p>
   </footer>
 );
 

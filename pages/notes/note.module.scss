@@ -4,6 +4,17 @@
 @use "@styles/oneliners.module.scss" as *;
 @use "@styles/image.module.scss" as *;
 
+
+.backArrow {
+  @extend %navlink;
+  @extend %container, .flex;
+
+  svg {
+    width: 1.4rem;
+    height: 1.4rem
+  }
+}
+
 .notepage {
   min-height: calc(50dvh - 10rem);
   font-weight: 600;

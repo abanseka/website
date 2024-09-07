@@ -5,10 +5,11 @@
 
 .notecard {
   @extend %navlink, .wfull, .br10, .b2, .p16;
-  @extend %container, .column, .start, .gp10;
+  @extend %container, .column, .column-start, .gp10;
 
   &:hover {
     background: $primary;
+
     .notetitle,
     .notedescription {
       color: $offWhite !important;
@@ -16,12 +17,14 @@
   }
 
   .notetitle {
-    @extend %text, .medium, .heavy;
+    @extend %text, .moderate, .heavy;
   }
+
   .notedescription {
-    @extend %text, .moderate, .bold, .dim;
+    @extend %text, .small, .bold, .dim;
   }
+
   .notedate {
-    @extend %text, .small, .bold, .accent;
+    @extend %text, .tiny, .bold, .accent;
   }
 }

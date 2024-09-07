@@ -1,11 +1,11 @@
 import { ReactNode } from "react";
 
-
 export type navLink = {
   id: number;
   label: string;
   href: string;
-  icon?: React.ReactNode;
+  icon?: ReactNode;
+  renderSocialIcon?: boolean;
 };
 
 export type NoteProps = {
@@ -14,14 +14,12 @@ export type NoteProps = {
   description?: string;
 };
 
-export interface WorkCardProps {
+export interface ProjectCardProps {
   siteLink: string;
   repoLink: string;
-  workTitle: string;
-  codeLinkIcon: ReactNode;
+  projectTitle: string;
+  projectIcon: ReactNode;
   headerImage: ReactNode;
-  workDescription: string;
-  siteLinkIcon?: ReactNode;
+  projectDescription: string;
+  projectLiveIcon?: ReactNode;
 }
-
-

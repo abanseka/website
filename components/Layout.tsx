@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import Navbar from "@components/navbar/navbar";
+import Profile from "@components/profile/profile";
 import Footer from "@components/footer/footer";
 
 interface LayoutProps {
@@ -9,7 +9,7 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   return (
     <main className="appContainer">
-      <Navbar />
+      <Profile />
       <div className="mainContainer">{children}</div>
       <Footer />
     </main>

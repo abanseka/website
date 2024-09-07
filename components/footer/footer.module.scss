@@ -5,12 +5,19 @@
 
 .footer {
   @extend %container, .maxwidth;
+
   @media (max-width: $tablet) {
     text-align: center;
   }
 
   .footertext {
-    @extend %text, .moderate, .bold, .accent;
-    margin: 10px 0 2rem;
+    @extend %container, .flex;
+    @extend %text, .tiny, .bold, .accent;
+    margin: 10px;
+
+    .toolIcon {
+      width: 20px;
+      height: 20px;
+    }
   }
 }
