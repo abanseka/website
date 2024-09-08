@@ -17,8 +17,8 @@ const Profile = () => {
       <div className={style.profiledetails}>
         <div className={style.details}>
           <div className={style.logowrapper}>
-            <p className={style.logoblack}>@</p>
-            <p className={style.logolight}>abanseka</p>
+            <p className={style.logoblack}>A</p>
+            <p className={style.logolight}>banseka</p>
           </div>
 
           <h5 className={style.role}>Front-end developer</h5>
