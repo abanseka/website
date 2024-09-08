@@ -5,6 +5,7 @@
       "@components/*": ["./components/*"],
       "@styles/*": ["./styles/components/*"],
       "@assets/*": ["./public/assets/*"],
+      "@public/*": ["./public/*"],
       "types/*": ["./types/*"],
       "utils/*": ["./utils/*"],
       "theme": ["./theme.ts"],
