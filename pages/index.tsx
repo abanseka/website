@@ -4,6 +4,7 @@ import { NoteProps } from "types/common";
 import { CSSProperties } from "react";
 import PenIcon from "@assets/penIcon.svg";
 import NoteCard from "@components/notecard/noteCard";
+import { openGraphData } from "datastore/OG";
 
 export async function getStaticProps() {
   const notes = allNotes
@@ -37,9 +38,20 @@ export default function Home({ notes }: { notes: any }) {
     <>
       <Head>
         <title>abanseka</title>
-        <meta name="description" content="abanseka's website" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/branch_favicon.png" />
+        <meta name="description" content={openGraphData?.description} />
+
+        <meta property="og:url" content="https://abanseka.vercel.app/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="abanseka" />
+        <meta property="og:description" content={openGraphData?.description} />
+        <meta property="og:image" content={openGraphData?.image} />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="abanseka.vercel.app" />
+        <meta property="twitter:url" content="https://abanseka.vercel.app/" />
+        <meta name="twitter:title" content="abanseka" />
+        <meta name="twitter:description" content={openGraphData?.description} />
+        <meta name="twitter:image" content={openGraphData?.image} />
       </Head>
 
       <h5 style={chipContainerStyle}>
