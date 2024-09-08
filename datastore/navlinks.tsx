@@ -4,7 +4,7 @@ import JournalIcon from "@assets/journal.svg";
 import ProjectIcon from "@assets/projects.svg";
 import GitHub from "@assets/github.svg";
 import LinkedIn from "@assets/linkedIn.svg";
-import Mail from "@assets/mail.svg";
+// import Mail from "@assets/mail.svg";
 import Whatsapp from "@assets/whatsapp.svg";
 
 export const navLinks: navLink[] = [
