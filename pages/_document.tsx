@@ -22,7 +22,7 @@ export default function Document() {
       <body>
         <svg className="noisePattern">
           <filter id="noiseFilter">
-            <feTurbulence type="fractalNoise" baseFrequency="0.65" />
+            <feTurbulence type="fractalNoise" baseFrequency="0.8" />
           </filter>
 
           <rect width="100%" height="100%" filter="url(#noiseFilter)" />

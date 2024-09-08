@@ -14,17 +14,17 @@ export const navLinks: navLink[] = [
 
 export const socialLinks: navLink[] = [
   {
-    id: 3,
-    label: "", //GitHub
-    href: "https://github.com/abanseka",
-    icon: <GitHub />,
-    renderSocialIcon: true,
-  },
-  {
     id: 4,
     label: "", //LinkedIn
     href: "https://www.linkedin.com/in/abanseka-sylvester/",
     icon: <LinkedIn />,
+    renderSocialIcon: true,
+  },
+  {
+    id: 3,
+    label: "", //GitHub
+    href: "https://github.com/abanseka",
+    icon: <GitHub />,
     renderSocialIcon: true,
   },
   {
@@ -34,11 +34,11 @@ export const socialLinks: navLink[] = [
     icon: <Whatsapp />,
     renderSocialIcon: true,
   },
-  {
-    id: 5,
-    label: "", //Gmail
-    href: "mailto:abansekasly98@gmail.com",
-    icon: <Mail />,
-    renderSocialIcon: false,
-  },
+  // {
+  //   id: 5,
+  //   label: "", //Gmail
+  //   href: "mailto:abansekasly98@gmail.com",
+  //   icon: <Mail />,
+  //   renderSocialIcon: false,
+  // },
 ];

@@ -3,6 +3,7 @@ import { navLinks, socialLinks } from "datastore/navlinks";
 import { navLink } from "types/common";
 import HomeIcon from "@assets/home.svg";
 import style from "./navlinks.module.scss";
+import classNames from "classnames";
 
 type MenuWidgetProps = {
   renderIcon?: boolean;
@@ -16,7 +17,13 @@ const Navlinks = ({ renderIcon = true }: MenuWidgetProps) => (
 
     <div className={style.linkwrapper}>
       {navLinks.map(({ href, id, icon, label }: navLink) => (
-        <Link href={href} key={id} className={style.link}>
+        <Link
+          href={href}
+          key={id}
+          className={classNames(style.link, {
+            [style.solid]: true,
+          })}
+        >
           {renderIcon && icon}
           {label}
         </Link>
@@ -26,7 +33,7 @@ const Navlinks = ({ renderIcon = true }: MenuWidgetProps) => (
         ({ href, id, icon, label, renderSocialIcon }: navLink) => (
           <Link href={href} key={id} className={style.link}>
             {(renderSocialIcon && icon) || (renderIcon && icon)}
-            {label}
+            {label !== "" && label}
           </Link>
         ),
       )}

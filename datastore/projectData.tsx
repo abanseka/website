@@ -29,7 +29,7 @@ export const projectData: Record<projectType, ProjectCardProps[]> = {
     {
       projectTitle: "DepoBurasi",
       projectDescription: "Turkish Based Ecommerce Platform",
-      siteLink: "https://www.depoburda.com",
+      siteLink: "https://depoburda.com",
       projectLiveIcon: <LiveIcon />,
       headerImage: <ImageHolder style={projectCardImageStyle} />,
     },
