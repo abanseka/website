@@ -43,5 +43,14 @@ export const projectData: Record<projectType, ProjectCardProps[]> = {
       projectIcon: <GitHubIcon />,
       headerImage: <ImageHolder style={projectCardImageStyle} />,
     },
+    {
+      projectTitle: "Static Weather App ",
+      projectDescription: "used to teach api & Open graph integration",
+      siteLink: "https://wio.netlify.app/",
+      repoLink: "https://github.com/abanseka/weatherio",
+      projectIcon: <GitHubIcon />,
+      projectLiveIcon: <LiveIcon />,
+      headerImage: <ImageHolder style={projectCardImageStyle} />,
+    },
   ],
 };
