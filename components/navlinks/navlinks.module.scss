@@ -26,6 +26,15 @@
   @extend %navlink;
   @extend %text, .capitalize, .bold;
 
+  &.solid {
+    @extend %text, .b1, .p5, .br10;
+
+    &:hover {
+      background: $primary;
+      color: $offWhite !important;
+    }
+  }
+
   @media (max-width: $mobileL) {
     display: flex;
     flex-direction: column;
