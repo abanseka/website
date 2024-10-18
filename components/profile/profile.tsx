@@ -27,7 +27,12 @@ const Profile = () => {
           </Link>
         </div>
 
-        <Image src={dp} priority alt="my dp" className={style.profile} />
+        <Image
+          src={dp}
+          alt="my dp"
+          fetchPriority="high"
+          className={style.profile}
+        />
       </div>
     </nav>
   );
