@@ -1,0 +1,153 @@
+---
+title: Sveltekit sass + icon-font config issues
+description: fixes for issues encounted with sass + icon-font + sveltekit
+---
+
+## dart sass deprecation warning log
+
+`vite.config.js(ts)`
+
+```js
+import { defineConfig } from "vite";
+import { sveltekit } from "@sveltejs/kit/vite";
+
+export default defineConfig({
+  plugins: [sveltekit()],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: "modern-compiler", // or "modern"
+      },
+    },
+  },
+});
+```
+
+> this tells the compiler to ues the modern verion of the sass api
+
+alternatively the logs can be silenced with
+
+```js
+import { defineConfig } from "vite";
+import { sveltekit } from "@sveltejs/kit/vite";
+
+export default defineConfig({
+  plugins: [sveltekit()],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        silenceDeprecations: ["legacy-js-api"],
+      },
+    },
+  },
+});
+```
+
+### Deprecation after running build
+
+`install sass-migrator`
+
+```bash
+npm i -g sass-migrator
+```
+
+`migrate the deprecated source`
+
+```bash
+ sass-migrator module node_modules/material-symbols/_core.scss
+```
+
+## Preloading Fonts in svelte
+
+source: [fontsource](https://fontsource.org/);
+
+this project enables the use of locally hosted fonts from google
+which can be used to preload fonts
+
+example: sveltekit
+
+install font with desired package manager | pnpm in my case
+
+```bash
+pnpm install @fontsource/<font-familly>
+```
+
+usage
+
+```css
+import "@fontsource/open-sans/500.css"; // Weight 500.
+import "@fontsource/open-sans/900-italic.css"; // Italic variant.
+```
+
+or
+
+```css
+import "@fontsource/open-sans"; // defaults to normal (weight: 400).
+```
+
+if using sass. just prepend the `~` to the import path. this enables vite (recommended)
+to resolve the path of the font
+
+> 🥊 I foundout that this doesn't work in sass as the compiler still complains of missing font ie the path not resolved
+> however the official specs show that these are imported in the root layout. so in svelte this will be in '+layout.svelte' at the routes root
+
+`+layout.svelte`
+
+```svelte
+<script>
+	import "@fontsource-variable/montserrat"
+	import "@fontsource/poppins/300.css"
+	import "@fontsource/poppins/400.css"
+	import "@fontsource/poppins/500.css"
+	import "@fontsource/poppins/600.css"
+	import "@fontsource/poppins/700.css"
+	import "@fontsource/poppins/800.css"
+	import "styles/global.scss"
+</script>
+
+```
+
+**usage**
+
+```scss
+@import "~@fontsource/open-sans";
+```
+
+depending on the use case, you can either install variable or static fonts
+which will enable you to use the varying font weights (variable) from a single source font install
+or by installing individual fonts weights of the same font (statis)
+
+## How to preload google font icons via an npm
+
+source: [google material symbols](https://github.com/marella/material-symbols/tree/main/material-symbols#readme)
+source: [icon reference](https://marella.me/material-symbols/demo/#sharp)
+
+**install**
+
+```bash
+pnpm install material-symbols@latest
+```
+
+`+layout.svelte`
+
+```svelte
+<script>
+    import 'material-symbols';
+</script>
+
+<span class="material-symbols-outlined">face</span>
+<span class="material-symbols-rounded">face</span>
+<span class="material-symbols-sharp">face</span>
+```
+
+> 💡 TIP | to reduce build size only import the type you'd use
+
+- rounded
+- outlined
+- sharp
+
+```svelte
+<script>
+    import 'material-symbols/sharp.scss';
+</script>
+```
