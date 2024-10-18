@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { allNotes } from "contentlayer/generated";
+import { allNotes } from ".contentlayer/generated";
 import { NoteProps } from "types/common";
 import { CSSProperties } from "react";
 import PenIcon from "@assets/penIcon.svg";
