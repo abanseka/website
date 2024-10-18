@@ -4,8 +4,10 @@
 @use "@styles/variables.module.scss" as *;
 
 .notecard {
-  @extend %navlink, .wfull, .br10, .b2, .p16;
+  @extend %navlink, .wfull, .p16;
   @extend %container, .column, .column-start, .gp10;
+  border-bottom: 1px dashed $primarydim;
+  transition: all 300ms ease;
 
   &:hover {
     background: $primary;

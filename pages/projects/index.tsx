@@ -10,19 +10,17 @@ import style from "./project.module.scss";
 const ProjectCard = (project: ProjectCardProps) => (
   <article className={style.projectcard}>
     {project.headerImage}
-    <h3 className={style.projectTitle}>{project.projectTitle}</h3>
+
+    <Link className={style.projectLink} href={project.siteLink}>
+      <h3 className={style.projectTitle}>{project.projectTitle}</h3>
+    </Link>
+
     <p className={style.projectDescription}>{project.projectDescription}</p>
 
     <div className={style.linkContainer}>
       {project.repoLink && (
         <Link className={style.projectLink} href={project.repoLink}>
           {project.projectIcon}
-        </Link>
-      )}
-
-      {project.projectLiveIcon && (
-        <Link className={style.projectLink} href={project.siteLink}>
-          {project.projectLiveIcon}
         </Link>
       )}
     </div>

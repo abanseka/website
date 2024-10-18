@@ -26,7 +26,7 @@ export async function getStaticProps({ params }: any) {
 const PageBackArrow = ({ note }: any) => (
   <Link href="/" className={style.backArrow}>
     <BackIcon />
-    <h1>{note}</h1>
+    <h5>{note}</h5>
   </Link>
 );
 
