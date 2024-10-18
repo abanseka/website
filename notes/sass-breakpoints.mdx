@@ -83,3 +83,15 @@ $large-desktop: 1280px;
   }
 }
 ```
+
+## BONUS
+
+easily convert px to rem
+
+```scss
+@use "sass:math";
+
+@function rem($px) {
+  @return math.div($px, 16) + rem;
+}
+```

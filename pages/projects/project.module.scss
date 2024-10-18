@@ -13,10 +13,13 @@
     @extend %container, .flex-start, .wrap, .gp32;
 
     .projectcard {
-      @extend %container, .column, .column-start, .p16, .b2, .br10, .fg1;
+      @extend %container, .column, .column-start, .p16, .fg1;
+      border-bottom: 1px dashed $primarydim;
+      transition: all 300ms ease;
 
       .projectTitle {
         @extend %text, .bold, .moderate;
+
       }
 
       .projectDescription {
@@ -25,10 +28,11 @@
 
       .linkContainer {
         @extend %container, .between, .wfull, .gp0;
+      }
 
-        .projectLink {
-          @extend %navlink;
-        }
+      .projectLink {
+        @extend %navlink;
+        text-decoration: underline;
       }
 
       svg {
