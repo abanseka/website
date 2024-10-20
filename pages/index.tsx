@@ -80,7 +80,9 @@ export default function Home({ notes }: { notes: any }) {
           />
 
           {/* prettier-ignore */}
-          <a style={{ fontSize: 12, marginBlock: 10 }}> arts by 心琳 蔣 on Pinterest{" "} </a>
+          <a 
+            href="https://www.pinterest.com/pin/3799980929646402/"
+            style={{ fontSize: 12, marginBlock: 10,color:"teal",textDecoration:"none" }}> arts by 心琳 蔣 on Pinterest{" "} </a>
         </div>
       </div>
 

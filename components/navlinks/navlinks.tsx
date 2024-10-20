@@ -18,8 +18,8 @@ const Navlinks = ({ renderIcon = true }: MenuWidgetProps) => (
     <div className={style.linkwrapper}>
       {navLinks.map(({ href, id, icon, label }: navLink) => (
         <Link
-          href={href}
           key={id}
+          href={href}
           className={classNames(style.link, {
             [style.solid]: true,
           })}
