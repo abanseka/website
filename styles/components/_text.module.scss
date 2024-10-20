@@ -1,8 +1,9 @@
 @use "./variables.module.scss" as *;
+@use "./functions.module.scss" as *;
 
 %navlink {
   color: $primary;
-  font-size: 1rem;
+  font-size: rem(16);
   font-weight: 600;
   text-decoration: none;
 
@@ -15,8 +16,8 @@
   }
 
   svg {
-    width: 1.4rem;
-    height: 1.4rem;
+    width: rem(18);
+    height: rem(18);
     fill: $primary;
   }
 }
@@ -51,27 +52,27 @@
 
   // size
   &.tiny {
-    font-size: 12px;
+    font-size: rem(12);
   }
 
   &.small {
-    font-size: 14px;
+    font-size: rem(14);
   }
 
   &.moderate {
-    font-size: 18px;
+    font-size: rem(18);
   }
 
   &.medium {
-    font-size: 24px;
+    font-size: rem(24);
   }
 
   &.large {
-    font-size: 32px;
+    font-size: rem(32);
   }
 
   &.max {
-    font-size: 40px;
+    font-size: rem(40);
   }
 
   // transform

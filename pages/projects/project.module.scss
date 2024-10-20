@@ -3,6 +3,8 @@
 @use "@styles/oneliners.module.scss" as *;
 @use "@styles/image.module.scss" as *;
 @use "@styles/variables.module.scss" as *;
+@use "@styles/mixins.module.scss" as *;
+@use "@styles/functions.module.scss" as *;
 
 .projectsPage {
   .projectsDivider {
@@ -13,17 +15,33 @@
     @extend %container, .flex-start, .wrap, .gp32;
 
     .projectcard {
+      width: 200px;
       @extend %container, .column, .column-start, .p16, .fg1;
       border-bottom: 1px dashed $primarydim;
       transition: all 300ms ease;
+      border-radius: 4px;
+      @include underlineOnHover(100%, 100%, 0);
+
+      &:hover {
+        color: $offWhite;
+        transform: translateY(30px);
+        border: none;
+
+        .projectLink,
+        .projectTitle,
+        .projectDescription {
+          color: $offWhite;
+        }
+      }
 
       .projectTitle {
-        @extend %text, .bold, .moderate;
+        @extend %text, .bold, .small;
 
       }
 
       .projectDescription {
-        @extend %text, .small, .bold, .accent;
+        @extend %text, .tiny, .bold, .accent;
+        line-height: rem(18)
       }
 
       .linkContainer {

@@ -1,5 +1,7 @@
 @use "sass:color";
 @use "@styles/variables.module.scss" as *;
+@use "@styles/mixins.module.scss" as *;
+@use "@styles/functions.module.scss" as *;
 @use "@styles/container.module.scss" as *;
 @use "@styles/text.module.scss" as *;
 @use "@styles/oneliners.module.scss" as *;
@@ -11,17 +13,16 @@
   @extend %container, .flex;
 
   svg {
-    width: 1.4rem;
-    height: 1.4rem
+    width: rem(18);
+    height: rem(18);
   }
 }
 
 .notepage {
   min-height: calc(50dvh - 10rem);
-  font-weight: 600;
 
   a {
-    @extend %text, .bold, .accent;
+    @extend %text, .bold, .accent, .tiny;
   }
 
   p,
@@ -29,32 +30,27 @@
   ol,
   ul,
   code {
-    margin: 1rem 0;
-    font-size: 1.125rem;
-
-    @media (max-width: $tablet) {
-      font-size: 0.875rem;
-    }
+    margin: rem(14) 0;
+    line-height: rem(22);
+    @extend %text, .tiny;
   }
 
   p,
   ul,
   ol {
     code {
-      font-size: 0.875rem;
+      font-size: rem(10);
       padding: 2px 5px;
-      background: lightsalmon;
+      border-radius: 5px;
+      background: color.adjust(coral, $lightness: 20%);
 
-      @media (max-width: $tablet) {
-        font-size: 0.8rem;
-      }
     }
   }
 
   ol,
   ul {
     padding: 0 1.25rem;
-    margin-bottom: 1rem;
+    margin-bottom: rem(16);
   }
 
   strong {
@@ -69,44 +65,53 @@
   h5,
   h6 {
     color: $accent;
-    margin: 1.2rem 0;
+    margin: rem(40) 0;
     padding: 2px 5px;
+    border-radius: 2px;
+    font-weight: 600;
     font-family: $primary-font;
   }
 
   h1 {
-    background: lightgreen
+    background: lightgreen;
+    font-size: rem(20);
   }
 
   h2 {
-    background: lightblue
+    background: lightblue;
+    font-size: rem(18);
   }
 
   h3 {
-    background: lightpink
+    background: lightpink;
+    font-size: rem(16);
   }
 
   h4 {
-    background: lightsteelblue
+    background: lightsteelblue;
+    font-size: rem(14);
   }
 
   h5 {
-    background: lightcoral
+    background: lightcoral;
+    font-size: rem(12);
   }
 
   h6 {
-    background: lightyellow
+    background: lightyellow;
+    font-size: rem(10);
   }
 
   blockquote {
     padding: 10px;
     margin: 10px 0;
     border: 1px solid color.adjust($primary, $lightness: 40%);
-    background: color.adjust(lime, $lightness: 40%);
-    ;
+    background: color.adjust(lime, $lightness: 45%);
 
     p {
       margin: 5px;
+      line-height: rem(18);
+      color: color.adjust($accent, $hue: 0deg);
     }
   }
 
@@ -115,8 +120,7 @@
     height: 500px;
     margin: 0 auto;
     object-fit: cover;
-    border-radius: 10px;
-    border: 2px solid $primary;
+    border: 2px solid color.adjust($primary, $lightness: 20%);
   }
 
   pre {
@@ -130,12 +134,8 @@
 
     code {
       counter-reset: line;
-      line-height: 1.5rem;
-      font-size: 0.875rem;
-
-      @media (max-width: $tablet) {
-        font-size: 0.8rem;
-      }
+      line-height: rem(24);
+      font-size: rem(12);
     }
   }
 
