@@ -24,14 +24,15 @@ export async function getStaticProps() {
 
 export default function Home({ notes }: { notes: any }) {
   const chipIconstyle: CSSProperties = {
-    width: "1.2rem",
-    height: "1.2rem",
+    width: "1rem",
+    height: "1rem",
   };
 
   const chipContainerStyle: CSSProperties = {
     display: "flex",
     alignItems: "center",
     gap: 8,
+    fontSize: 12,
   };
 
   return (
@@ -53,6 +54,35 @@ export default function Home({ notes }: { notes: any }) {
         <meta name="twitter:description" content={openGraphData?.description} />
         <meta name="twitter:image" content={openGraphData?.image} />
       </Head>
+
+      <div style={{ marginBlockEnd: 40 }}>
+        <p style={{ fontSize: 14, lineHeight: 2, marginBlockEnd: 10 }}>
+          Hi I am abanseka sylvester, a code junkie, anime crackHead and sucker
+          for arts. Here's where I dump my stuff for future references
+        </p>
+
+        <div
+          style={{
+            height: 500,
+            borderRadius: 4,
+            border: "2px solid lightgray",
+          }}
+        >
+          <img
+            alt="banner"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              objectPosition: "top",
+            }}
+            src="https://i.pinimg.com/enabled_hi/564x/b4/fc/fe/b4fcfecd185b6207f90d95360a0568de.jpg"
+          />
+
+          {/* prettier-ignore */}
+          <a style={{ fontSize: 12, marginBlock: 10 }}> arts by 心琳 蔣 on Pinterest{" "} </a>
+        </div>
+      </div>
 
       <h5 style={chipContainerStyle}>
         <PenIcon style={chipIconstyle} />

@@ -29,14 +29,15 @@ const ProjectCard = (project: ProjectCardProps) => (
 
 const index = () => {
   const chipIconstyle: CSSProperties = {
-    width: "1.3rem",
-    height: "1.3rem",
+    width: "1rem",
+    height: "1rem",
   };
 
   const chipContainerStyle: CSSProperties = {
     display: "flex",
     alignItems: "center",
     gap: 8,
+    fontSize: 12,
   };
 
   return (

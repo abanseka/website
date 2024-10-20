@@ -22,14 +22,14 @@
   }
 
   .details {
-    @extend %container, .column, .column-start, .gp5;
+    @extend %container, .column, .column-start, .gp10;
 
     @media (max-width: $tablet) {
       align-items: center !important;
     }
 
     .role {
-      @extend %text, .moderate, .bold, .accent;
+      @extend %text, .small, .bold, .accent;
     }
 
     .logowrapper {
@@ -51,6 +51,7 @@
 
     .companywrapper {
       @extend %navlink;
+      @extend %text, .tiny;
     }
   }
 }

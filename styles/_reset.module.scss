@@ -36,13 +36,14 @@ body {
 
   .mainContainer {
     margin: 1rem auto;
-    max-width: 45rem;
+    max-width: 35rem;
     min-height: 65dvh;
 
     display: flex;
     flex-direction: column;
     padding: 3rem 0.625rem;
     gap: 1rem;
+
   }
 
   .appContainer {
