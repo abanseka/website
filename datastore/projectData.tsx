@@ -26,13 +26,13 @@ export const projectData: Record<projectType, ProjectCardProps[]> = {
       projectLiveIcon: <LiveIcon />,
       headerImage: <ImageHolder style={projectCardImageStyle} />,
     },
-    {
-      projectTitle: "DepoBurasi",
-      projectDescription: "Turkish Based Ecommerce Platform",
-      siteLink: "https://depoburda.com",
-      projectLiveIcon: <LiveIcon />,
-      headerImage: <ImageHolder style={projectCardImageStyle} />,
-    },
+    // {
+    //   projectTitle: "DepoBurasi",
+    //   projectDescription: "Turkish Based Ecommerce Platform",
+    //   siteLink: "https://depoburda.com",
+    //   projectLiveIcon: <LiveIcon />,
+    //   headerImage: <ImageHolder style={projectCardImageStyle} />,
+    // },
   ],
   personal: [
     {
@@ -44,13 +44,20 @@ export const projectData: Record<projectType, ProjectCardProps[]> = {
       headerImage: <ImageHolder style={projectCardImageStyle} />,
     },
     {
-      projectTitle: "Static Weather App ",
-      projectDescription: "used to teach api & Open graph integration",
-      siteLink: "https://wio.netlify.app/",
-      repoLink: "https://github.com/abanseka/weatherio",
+      projectTitle: "Berikids NGO",
+      projectDescription: "a non profit organisation ",
+      siteLink: "https://berikids.netlify.app/",
       projectIcon: <GitHubIcon />,
-      projectLiveIcon: <LiveIcon />,
       headerImage: <ImageHolder style={projectCardImageStyle} />,
     },
+    // {
+    //   projectTitle: "Static Weather App ",
+    //   projectDescription: "used to teach api & Open graph integration",
+    //   siteLink: "https://wio.netlify.app/",
+    //   repoLink: "https://github.com/abanseka/weatherio",
+    //   projectIcon: <GitHubIcon />,
+    //   projectLiveIcon: <LiveIcon />,
+    //   headerImage: <ImageHolder style={projectCardImageStyle} />,
+    // },
   ],
 };
