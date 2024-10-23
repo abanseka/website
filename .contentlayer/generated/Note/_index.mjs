@@ -6,5 +6,6 @@ import notetakingMdx from './notetaking.mdx.json' assert { type: 'json' }
 import reactNativeFirstStepsMdx from './react-native-first-steps.mdx.json' assert { type: 'json' }
 import sassBreakpointsMdx from './sass-breakpoints.mdx.json' assert { type: 'json' }
 import sveltekitSassIconfontMdx from './sveltekit-sass-iconfont.mdx.json' assert { type: 'json' }
+import easConfigMdx from './eas-config.mdx.json' assert { type: 'json' }
 
-export const allNotes = [cookiesMdx, factoryFunctionsMdx, notetakingMdx, reactNativeFirstStepsMdx, sassBreakpointsMdx, sveltekitSassIconfontMdx]
+export const allNotes = [cookiesMdx, factoryFunctionsMdx, notetakingMdx, reactNativeFirstStepsMdx, sassBreakpointsMdx, sveltekitSassIconfontMdx, easConfigMdx]

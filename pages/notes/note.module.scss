@@ -36,14 +36,13 @@
   }
 
   p,
-  ul,
+  l,
   ol {
     code {
       font-size: rem(10);
       padding: 2px 5px;
       border-radius: 5px;
       background: color.adjust(coral, $lightness: 20%);
-
     }
   }
 

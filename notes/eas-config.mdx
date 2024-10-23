@@ -1,0 +1,437 @@
+---
+title: EAS Config
+description: logs and notes on eas config guide
+---
+
+## ![loish](https://i.pinimg.com/enabled_hi/564x/fc/7a/56/fc7a560bd89fad78967b1c499bb6a18a.jpg)
+
+<a href="https://www.pinterest.com/pin/4644405859339708/">
+  By Loish, posted on Pinterest by kukricat
+</a>
+
+## EAS (Expo Application Services)
+
+> build apps for Android and iOS using Expo Application Services (EAS). covers Build, Update, and Submit workflows.
+
+**Dev Build (dev env)** : project version optimized for quick iterations. contains the `expo-dev-client` lib
+
+1. install `expo-dev-client` lib
+
+```bash
+pnpx expo install expo-dev-client
+```
+
+2.  init a development build
+
+- install EAS CLI system wide
+
+```bash
+npm i -g eas-cli
+```
+
+- auth into expo account
+
+```bash
+eas login
+```
+
+    - init and link project to the EAS
+
+```bash
+eas init
+```
+
+    _Logs_
+
+```bash
+eas login
+Log in to EAS with email or username (exit and run eas login --help to see other login options)
+✔ Email or username … syl_ves_ter
+✔ Password … *********
+Logged in
+
+eas init
+✔ Would you like to create a project for @syl_ves_ter/rn-beginner? … yes
+✔ Created @syl_ves_ter/rn-beginner: https://expo.dev/accounts/syl_ves_ter/projects/rn-beginner
+✔ Project successfully linked (ID: 2fd3f393-6567-43b8-a04e-84dc68a831f9) (modified app.json)
+```
+
+3.  Configure project for EAS build
+
+    - setup
+
+```bash
+eas build:configure
+```
+
+_logs_
+
+```bash
+eas build:configure
+💡 The following process will configure your iOS and/or Android project to be compatible with EAS Build. These changes only apply to your local project files and you can safely revert them at any time.
+
+✔ Which platforms would you like to configure for EAS Build? › All
+
+✔ Generated eas.json. Learn more: https://docs.expo.dev/build-reference/eas-json/
+
+🎉 Your project is ready to build.
+
+- Run eas build when you are ready to create your first build.
+- Once the build is completed, run eas submit to upload the app to app stores.
+- Learn more about other capabilities of EAS Build: https://docs.expo.dev/build/introduction
+```
+
+### Android dev build
+
+- andorid dev builds must be in `.apk`.
+- default format is `.aab` | ideal for G-Play store dist
+  > cannot be installed on an emu or physical device
+
+1. create `.apk`
+
+`eas.json`
+
+```json
+build {
+   development {
+       developmentClient:true
+   }
+}
+```
+
+- run
+
+  - platform _android_
+  - profile: _development_
+
+```bash
+eas build -p android --profile development
+```
+
+- logs
+
+```bash
+
+󰂵       eas build -p android --profile development
+Loaded "env" configuration for the "development" profile: no environment variables specified. Learn more: https://docs.expo.dev/build-reference/variables/
+
+📝  Android application id Learn more: https://expo.fyi/android-package
+✔ What would you like your Android application id to be? … com.syl_ves_ter.rnbeginner
+No remote versions are configured for this project, versionCode will be initialized based on the value from the local project.
+✔ Initialized versionCode with 1.
+✔ Using remote Android credentials (Expo server)
+✔ Generate a new Android Keystore? … yes
+✔ Created keystore
+
+Compressing project files and uploading to EAS Build. Learn more: https://expo.fyi/eas-build-archive
+✔ Uploaded to EAS 4s
+
+Build details: https://expo.dev/accounts/syl_ves_ter/projects/rn-beginner/builds/79a3ebd5-9a8c-4ec6-b55c-d3f9408fafbe
+
+Waiting for build to complete. You can press Ctrl+C to exit.
+✔ Build finished
+
+  ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+  █ ▄▄▄▄▄ █▄▀ ▀ █▄██▀▄▄▄ █ ▀▀ █ █ ▄▄▄▄▄ █
+  █ █   █ █   █▀ ▄ ▄▀  ▀█ ▀ ▄ ▀██ █   █ █
+  █ █▄▄▄█ █▄█▀ ▄▀▀▄▄ ▄  ████▄▀▄ █ █▄▄▄█ █
+  █▄▄▄▄▄▄▄█▄█ █ █▄█ ▀ ▀▄█ █ █▄▀ █▄▄▄▄▄▄▄█
+  █▄▄▄▄▀█▄▀ ▀ ▄▀█▄▄▄▄  ▄ █ ██ █▀▄█▀▄  ▀▄█
+  █▄▀ ██▄▄█  █▄   ▀█▄ █▀▄▄ █▀█▀▄ ▀ ▄█  ▀█
+  █▄▄███▀▄▄▄▄██  ▀ ▄ █ ▀▀▄█▀▄ █   ▀   █ █
+  █▀▀█ █▄▄  ▀ ▀▀▄ ██▄▀ ▄▀ ▀▄▄ ▀ ▀█▀  █▄▀█
+  ███ █ ▄▄▄ ▄▄ ▀ █▀██▄█▀  ▀█ ▀ ██▀▀█▀▄ ▀█
+  █▄█ ▀▄▀▄███▀█ █ ▄ ▀████▄██▄▀▄▄▄▀▀ ▀▄ ▄█
+  █▄  ▀█▄▄▄▄ █▀██▀█ ▄█ ▀▄█▀▄▀█▄▀ █▀▄██ ██
+  █▄▄▄▀▄▄▄▀▀ ▄▄▄  ██▄ ▀ ▄ ▄▀ ▀▀ ▀█▄▄ ▀███
+  ██▀█▀ █▄▄█ ██ ▄  ▄▄▄ ██▄█▀▄▄    ▀ █ ▄ █
+  █▀▄█▀▄█▄█ ▄ ▀██▄▀▀█▄▄▄▀▀▀ ▄██▀▄▄ ██▄▄▀█
+  ███▄▄█▄▄█▀ █ ▀▄  ▀▀▀▄ ▄▄ ▀ ▀▄ ▄▄▄ ▄ ▄ █
+  █ ▄▄▄▄▄ ██▄ ▀▄██ ▄▀ █▄██▀▀▄▀█ █▄█  █  █
+  █ █   █ █▀█▄  █▀█ ▄   ▄▄▀█▀▄█   ▄ █▀▄██
+  █ █▄▄▄█ █ ▀ ▄█▀██▀▄▀█▄▄▄ █ ▀▀█▀▄  ▄ ███
+  █▄▄▄▄▄▄▄█▄█▄██▄██▄▄▄███▄▄▄▄▄███▄▄▄▄▄▄▄█
+
+
+🤖 Open this link on your Android devices (or scan the QR code) to install the app:
+https://expo.dev/accounts/syl_ves_ter/projects/rn-beginner/builds/79a3ebd5-9a8c-4ec6-b55c-d3f9408fafbe
+
+✔ Install and run the Android build on an emulator? … yes
+
+✔ Successfully downloaded app 6m 49s
+
+✔ Select an emulator to run your app on › Pixel_8_API_27
+
+Opening emulator Pixel_8_API_27
+
+Waiting for the Android emulator to start...
+
+Installing your app...
+✔ Successfully installed your app!
+
+Starting your app...
+✔ Successfully started your app!
+
+ cil_vhestr  rn-beginner on  master 
+󰂵  pnpm expo start
+Starting project at /home/abanseka/sandbox/rn-beginner
+Starting Metro Bundler
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+█ ▄▄▄▄▄ █ ▀▀▄ ▀▀▄ ▄██▄▄███▀ █▀█ ▄▄▄▄▄ █
+█ █   █ ███ ▄▄█ ▄▄ █▀█ ▄▄▀  ▄██ █   █ █
+█ █▄▄▄█ █ ▄▄ █▄▄ █▀ █▄▄ ██▄▀█▀█ █▄▄▄█ █
+█▄▄▄▄▄▄▄█ █ ▀ █ ▀ █▄█▄█ █ █▄█ █▄▄▄▄▄▄▄█
+█▄▄▄█▀▄▄█▄▄ ██  ███ ▀██  ▀▀▄▀ ▄  ▄▀▀▄ █
+█ ██▄ ▀▄▀ █▀▄█▀█▄█▄   █ ▄▄▄▀▄▄▀▄▀▀▄██ █
+█▀██▀▀▄▄▄▀  ▄ ▄█▄ █  █▄█▀ ██ ▀▀ ▄█ ▀  █
+█ ▀ ▀▀ ▄ ▀▀█▀ ▄ ▀ █▄▄█▄ ▄▀█  ▀▄█▀▀▀▄▀ █
+█ ▀ ▀▀▄▄▄▀▀▀██  ███  ██▄▀█▀█▀ ▀ ▄█▄█▄▀█
+█▀█▄ ▄ ▄█▄▄▄▄█▀█▄██▄  ▄▀▄ ▄█▄ ▄▄▄▀ █▄▄█
+█▀▄█▄█▄▄  ▀▀▄ ▄█▄ █▄▀▄█ ▀ ▀█▀ █ ██ █  █
+█▄ ▄▄▀▀▄▀▄▄▄▀ ▄ ▀ ▄▀ ▄█▄ ▄▄ ▄▀▀▀▄█▀▄█▄█
+██▀▀▄▀▀▄ ▄▀▀██  █▄█  █▄█ ▀██  ▄ ▀█ █ ▀█
+█▄▄ █ █▄▀▄▄▀▄█▀█▄██ ▄███▄▀▄▀  ▀█▀▄▀█▀▄█
+█▄▄██▄▄▄▄ ▄ ▄ ▄█ █▄█▀██▄ ▀▀█  ▄▄▄ ▄▀█ █
+█ ▄▄▄▄▄ █▀█▀▀ ▄ ▄▄▄ ▄█▄▀ ▀██▀ █▄█ ▀▄█▄█
+█ █   █ ██▀ ██  ▀█▀  ██ ▀██▀ ▄ ▄▄  ▀ ▄█
+█ █▄▄▄█ █ ▄█▄█▀█▄▄▄▄  █▄ ▀▄██  ██  ██▄█
+█▄▄▄▄▄▄▄█▄██▄▄▄█▄██▄▄▄▄██▄█▄█▄▄▄██▄██▄█
+
+› Metro waiting on exp+rn-beginner://expo-development-client/?url=http%3A%2F%2F192.168.1.122%3A8081
+› Scan the QR code above to open the project in a development build. Learn more: https://expo.fyi/start
+
+› Web is waiting on http://localhost:8081
+
+› Using development build
+› Press s │ switch to Expo Go
+
+› Press a │ open Android
+› Press w │ open web
+
+› Press j │ open debugger
+› Press r │ reload app
+› Press m │ toggle menu
+› Press o │ open project code in your editor
+
+› Press ? │ show all commands
+
+Logs for your project will appear below. Press Ctrl+C to exit.
+› Opening on Android...
+› Opening exp+rn-beginner://expo-development-client/?url=http%3A%2F%2F192.168.1.122%3A8081 on Pixel_8_API_27
+› Press ? │ show all commands
+Android Bundled 1243ms node_modules/expo-router/entry.js (1295 modules)
+Android Bundled 71ms node_modules/expo-router/entry.js (1 module)
+
+```
+
+### IOS dev build | !simulator !emulator device
+
+1. register device
+
+```bash
+eas device:create
+```
+
+> ok not officially [registered](https://developer.apple.com/register/) as an ios developer. will just focus on android for now and apply for ios dev later on. it's one dev platform afterall (expo! iz 😜 )
+
+_logs_
+
+```bash
+
+󰂵     eas device:create
+This command lets you register your Apple devices (iPhones, iPads and Macs) for internal distribution of your app.
+Internal distribution means that you won't need to upload your app archive to App Store / Testflight.
+Your app archive (.ipa) will be installable on your equipment as long as you sign your application with an adhoc provisioning profile.
+The provisioning profile needs to contain the UDIDs (unique identifiers) of your iPhones, iPads and Macs.
+
+First of all, choose the Expo account under which you want to register your devices.
+Later, authenticate with Apple and choose your desired Apple Team (if your Apple ID has access to multiple teams).
+
+✔ You're inside the project directory. Would you like to use the syl_ves_ter account? … yes
+› Log in to your Apple Developer account to continue
+✔ Apple ID: … abanyseka98@gmail.com
+› The password is only used to authenticate with Apple and never stored on EAS servers
+  Learn more: https://bit.ly/2VtGWhU
+✔ Password (for my appleID): … *********************
+› Saving Apple ID password to the local Keychain
+  Learn more: https://docs.expo.dev/distribution/security#keychain
+✔ Logged in, verify your Apple account to continue
+Two-factor Authentication (6 digit code) is enabled for abanyseka98@gmail.com. Learn more: https://support.apple.com/en-us/HT204915
+
+✔ How do you want to validate your account? … device / sms
+✔ Please enter the 6 digit code … ******
+✔ Valid code
+✔ Logged in and verified
+Authentication with Apple Developer Portal failed!
+Apple provided the following error info:
+You are not registered as an Apple Developer.  Please visit Apple Developer Registration. https://developer.apple.com/register/
+    Error: device:create command failed.
+```
+
+> 🦊 [respawn point](https://docs.expo.dev/tutorial/eas/ios-development-build-for-devices/#download-and-install-profile)
+
+### App variants
+
+> configure a project to run a build type in
+
+- dev
+- preview
+- prod
+  mod simultaneously on a device
+  each of these requires a unique android appid or ios bundleid
+
+1. rename `app.json` to `app.config.js` for a dynamic config
+
+`app.config.js`
+
+```js
+const IS_DEV = process.env.APP_VARIANT === "development";
+const IS_PREVIEW = process.env.APP_VARIANT === "preview";
+
+const getUniqueIdentifier = () => {
+  if (IS_DEV) return "com.sylvester.rnbeginner.dev";
+  if (IS_PREVIEW) return "com.sylvester.rnbeginner.preview";
+  return "com.sylvester.rnbeginner";
+};
+
+const getAppName = () => {
+  if (IS_DEV) return "rn_beginner (Dev)";
+  if (IS_PREVIEW) return "rn_beginner (Preview)";
+  return "rn_beginner: Emoji Stickers";
+};
+
+export default {
+  expo: {
+    name: getAppName(),
+    slug: "rn-beginner",
+    version: "1.0.0",
+    orientation: "portrait",
+    icon: "./assets/images/icon.png",
+    scheme: "myapp",
+    userInterfaceStyle: "automatic",
+    splash: {
+      image: "./assets/images/splash.png",
+      resizeMode: "contain",
+      backgroundColor: "#25292e",
+    },
+    ios: {
+      supportsTablet: true,
+      bundleIdentifier: getUniqueIdentifier(),
+    },
+    android: {
+      package: getUniqueIdentifier(),
+      adaptiveIcon: {
+        foregroundImage: "./assets/images/adaptive-icon.png",
+        backgroundColor: "#ffffff",
+      },
+    },
+    web: {
+      bundler: "metro",
+      output: "static",
+      favicon: "./assets/images/favicon.png",
+    },
+    plugins: ["expo-router"],
+    experiments: {
+      typedRoutes: true,
+    },
+    extra: {
+      eas: {
+        projectId: "2fd3f393-6567-43b8-a04e-84dc68a831f9",
+      },
+    },
+    owner: "syl_ves_ter",
+  },
+};
+```
+
+- `eas.json`
+
+> add the env vars for each variant
+
+```json
+{
+  "cli": {
+    "version": ">= 12.6.0",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+      "env": {
+        "APP_VARIANT": "development"
+      }
+    },
+    "preview": {
+      "distribution": "internal"
+      "env": {
+        "APP_VARIANT": "preview"
+      }
+    },
+    "production": {
+      "autoIncrement": true
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}
+```
+
+> `eas build --profile development` set's the mode to dev
+
+> 🚨 ensure the application id follows the proper format. convert all `-` to `_`, or use only lowercases .
+> in my case `com.syl_ves_ter.rn-beginner` - `com.syl_ves_ter.rn_beginner` | works only for android builds and fails for ios
+> `com.syl_ves_ter.rn-beginner` - `com.sylvester.rnbeginner` | works for all platforms
+
+- still haven't registered for ios developer tho. so apple build will fail
+
+_logs_
+
+    ```bash
+    ❯ eas build --profile development
+    ✔ Select platform › All
+    Loaded "env" configuration for the "development" profile: APP_VARIANT. Learn more: https://docs.expo.dev/build-reference/variables/
+    No remote versions are configured for this project, versionCode will be initialized based on the value from the local project.
+    ✔ Initialized versionCode with 1.
+
+    🤖 Android build
+    ✔ Using remote Android credentials (Expo server)
+    ✔ Generate a new Android Keystore? … yes
+    ✔ Created keystore
+
+    Compressing project files and uploading to EAS Build. Learn more: https://expo.fyi/eas-build-archive
+    ✔ Uploaded to EAS 7s
+    Loaded "env" configuration for the "development" profile: APP_VARIANT. Learn more: https://docs.expo.dev/build-reference/variables/
+    No remote versions are configured for this project, buildNumber will be initialized based on the value from the local project.
+    ✔ Initialized buildNumber with 1.
+
+    🍏 iOS build
+    ✔ Using remote iOS credentials (Expo server)
+
+    If you provide your Apple account credentials we will be able to generate all necessary build credentials and fully validate them.
+    This is optional, but without Apple account access you will need to provide all the missing values manually and we can only run minimal validation on them.
+    ✔ Do you want to log in to your Apple account? … yes
+
+    › Log in to your Apple Developer account to continue
+    ✔ Apple ID: … abanyseka98@gmail.com
+    › Restoring session /home/abanseka/.app-store/auth/abanyseka98@gmail.com/cookie
+    › Session expired Local session
+    › The password is only used to authenticate with Apple and never stored on EAS servers
+      Learn more: https://bit.ly/2VtGWhU
+    ✔ Password (for my appleid): … *********************
+    › Saving Apple ID password to the local Keychain
+      Learn more: https://docs.expo.dev/distribution/security#keychain
+    ✔ Logged in, verify your Apple account to continue
+    Two-factor Authentication (6 digit code) is enabled for abanyseka98@gmail.com. Learn more: https://support.apple.com/en-us/HT204915
+
+    ✔ How do you want to validate your account? … device / sms
+    ✔ Please enter the 6 digit code … ******
+    ✔ Valid code
+    ✔ Logged in and verified
+    Authentication with Apple Developer Portal failed!
+    Apple provided the following error info:
+    You are not registered as an Apple Developer.  Please visit Apple Developer Registration. https://developer.apple.com/register/
+        Error: build command failed.
+
+    ```
