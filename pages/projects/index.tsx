@@ -48,6 +48,33 @@ const index = () => {
         <link rel="icon" href="/branch_favicon.png" />
       </Head>
 
+      <div style={{ marginBlockEnd: 40 }}>
+        <p style={{ fontSize: 12, marginBlock: 10 }}>my explorations 🔬</p>
+        <div
+          style={{
+            height: 500,
+            borderRadius: 4,
+            border: "2px solid lightgray",
+          }}
+        >
+          <img
+            alt="mr rabbit"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              objectPosition: "top",
+            }}
+            src="https://i.pinimg.com/enabled_hi/564x/a1/43/e6/a143e624615b3997f2018359cff10a2f.jpg"
+          />
+
+          {/* prettier-ignore */}
+          <a 
+            href="https://www.pinterest.com/pin/2392606046257366/"
+            style={{ fontSize: 12, marginBlock: 10,color:"teal",textDecoration:"none" }}> arts by Kiri Oof on Pinterest</a>
+        </div>
+      </div>
+
       <section className={style.projectsPage}>
         <h3 style={chipContainerStyle} className={style.projectsDivider}>
           <ProjectIcon style={chipIconstyle} />
