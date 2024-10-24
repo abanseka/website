@@ -36,8 +36,9 @@ const index = () => {
   const chipContainerStyle: CSSProperties = {
     display: "flex",
     alignItems: "center",
-    gap: 8,
+    paddingInline: 20,
     fontSize: 12,
+    gap: 8,
   };
 
   return (
@@ -48,7 +49,7 @@ const index = () => {
         <link rel="icon" href="/branch_favicon.png" />
       </Head>
 
-      <div style={{ marginBlockEnd: 40 }}>
+      <div style={{ marginBlockEnd: 40, paddingInline: 20 }}>
         <p style={{ fontSize: 12, marginBlock: 10 }}>my explorations 🔬</p>
         <div
           style={{

@@ -30,9 +30,10 @@ export default function Home({ notes }: { notes: any }) {
 
   const chipContainerStyle: CSSProperties = {
     display: "flex",
+    paddingInline: 20,
     alignItems: "center",
-    gap: 8,
     fontSize: 12,
+    gap: 8,
   };
 
   return (
@@ -55,7 +56,7 @@ export default function Home({ notes }: { notes: any }) {
         <meta name="twitter:image" content={openGraphData?.image} />
       </Head>
 
-      <div style={{ marginBlockEnd: 40 }}>
+      <div style={{ marginBlockEnd: 40, paddingInline: 20 }}>
         <p style={{ fontSize: 14, lineHeight: 2, marginBlockEnd: 10 }}>
           Hi I am abanseka sylvester, a code junkie, anime crackHead and sucker
           for arts. Here's where I dump my stuff for future references
