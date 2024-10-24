@@ -20,6 +20,7 @@
 
 .notepage {
   min-height: calc(50dvh - 10rem);
+  padding-inline: 10px;
 
   a {
     @extend %text, .bold, .accent, .tiny;

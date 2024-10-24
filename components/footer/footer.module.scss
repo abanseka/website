@@ -12,8 +12,9 @@
 
   .footertext {
     @extend %container, .flex;
-    @extend %text, .tiny, .bold, .accent;
+    @extend %text, .accent, ;
     margin: 10px;
+    font-size: 10px;
 
     .toolIcon {
       width: 20px;
