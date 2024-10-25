@@ -1,0 +1,180 @@
+---
+title: Gradle build failed with unknown error
+description: How to fix the gradlew build failure during expo eas build
+---
+
+## ![Image By California Dispensary](https://i.pinimg.com/564x/67/ae/12/67ae12b8f320f49de50b6f72580d6397.jpg)
+
+<a href="https://www.pinterest.com/pin/68744001290/">
+  Image By H O R U S on Pinterest
+</a>
+
+# Gradle build failed with unknown error
+
+encountered this issue while preparing a preview build for android platform
+solution source: [source](https://github.com/expo/expo-cli/issues/4524#issuecomment-1306776942)
+
+> ensure expo-cli is installed globally `npm install -g expo-cli`
+
+1. ensure expo-doctor is available and updated
+
+```bash
+npx expo-doctor@latest
+```
+
+_logs_
+
+```bash
+Need to install the following packages:
+expo-doctor@1.11.2
+Ok to proceed? (y) y
+✔ Check Expo config for common issues
+✔ Check package.json for common issues
+✔ Check native tooling versions
+✖ Check if the project meets version requirements for submission to app stores
+✖ Check dependencies for packages that should not be installed directly
+✔ Check for common project setup issues
+✔ Check for app config fields that may not be synced in a non-CNG project
+✔ Check npm/ yarn versions
+✔ Check for issues with Metro config
+✔ Check Expo config (app.json/ app.config.js) schema
+✖ Check that packages match versions required by installed Expo SDK
+✔ Check for legacy global CLI installed locally
+✔ Check that native modules do not use incompatible support packages
+✖ Check that native modules use compatible support package versions for installed Expo SDK
+
+Detailed check results:
+
+Expected package @expo/config-plugins@~7.2.2
+Found invalid:
+  @expo/config-plugins@5.0.4
+  @expo/config-plugins@8.0.10
+  (for more info, run: npm why @expo/config-plugins)
+Expected package @expo/prebuild-config@~6.2.4
+Found invalid:
+  @expo/prebuild-config@5.0.7
+  @expo/prebuild-config@7.0.9
+  (for more info, run: npm why @expo/prebuild-config)
+Advice: Upgrade dependencies that are using the invalid package versions.
+
+The package "expo-app-loading" has been removed as of SDK 49. You should use expo-splash-screen instead. Learn more: https://docs.expo.dev/versions/latest/sdk/splash-screen/
+
+This project is using an SDK version that by default targets Android API level 33 or lower. To submit your app to the Google Play Store after August 31 2024, you must target Android API level 34 or higher.
+Advice: Upgrade to Expo SDK 50 or later, which by default supports Android API level 34 Learn more: https://support.google.com/googleplay/android-developer/answer/11926878?hl=en
+
+Some dependencies are incompatible with the installed expo version:
+  expo-dev-client@4.0.28 - expected version: ~2.4.13
+  react-native@0.72.4 - expected version: 0.72.10
+Your project may not work correctly until you install the correct versions of the packages.
+Fix with: npx expo install --fix
+Found outdated dependencies
+Advice: Use 'npx expo install --check' to review and upgrade your dependencies.
+
+One or more checks failed, indicating possible issues with the project.
+```
+
+> 🚨 `expo doctor --fix-dependencies` is deprecated
+
+```bash
+❯ expo doctor --fix-dependencies
+WARNING: The legacy expo-cli does not support Node +17. Migrate to the new local Expo CLI: https://blog.expo.dev/the-new-expo-cli-f4250d8e3421.
+┌───────────────────────────────────────────────────────────────────────────┐
+│                                                                           │
+│   The global expo-cli package has been deprecated.                        │
+│                                                                           │
+│   The new Expo CLI is now bundled in your project in the expo package.    │
+│   Learn more: https://blog.expo.dev/the-new-expo-cli-f4250d8e3421.        │
+│                                                                           │
+│   To use the local CLI instead (recommended in SDK 46 and higher), run:   │
+│   › npx expo <command>                                                    │
+│                                                                           │
+└───────────────────────────────────────────────────────────────────────────┘
+'expo-cli doctor' is not supported for SDK 46 and higher. Use 'npx expo-doctor' instead.
+
+```
+
+2 use the recommended expo-doctor command to address the depencies issues
+
+```bash
+npx expo install --check
+Some dependencies are incompatible with the installed expo version:
+  expo-dev-client@4.0.28 - expected version: ~2.4.13
+  react-native@0.72.4 - expected version: 0.72.10
+Your project may not work correctly until you install the correct versions of the packages.
+Fix with: npx expo install --fix
+✔ Fix dependencies? … yes
+› Installing 2 SDK 49.0.0 compatible native modules using yarn
+> yarn add expo-dev-client@~2.4.13 react-native@0.72.10
+yarn add v1.22.22
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+[3/4] Linking dependencies...
+warning "expo-splash-screen > @expo/prebuild-config@6.2.6" has unmet peer dependency "expo-modules-autolinking@>=0.8.1".
+warning "expo-app-loading > expo-splash-screen > @expo/prebuild-config@5.0.7" has unmet peer dependency "expo-modules-autolinking@>=0.8.1".
+warning "eslint-config-expo > @typescript-eslint/eslint-plugin@7.18.0" has incorrect peer dependency "eslint@^8.56.0".
+warning "eslint-config-expo > @typescript-eslint/parser@7.18.0" has incorrect peer dependency "eslint@^8.56.0".
+warning "eslint-config-expo > eslint-plugin-react-hooks@4.6.2" has incorrect peer dependency "eslint@^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0".
+warning "eslint-config-expo > @typescript-eslint/eslint-plugin > @typescript-eslint/type-utils@7.18.0" has incorrect peer dependency "eslint@^8.56.0".
+warning "eslint-config-expo > @typescript-eslint/eslint-plugin > @typescript-eslint/utils@7.18.0" has incorrect peer dependency "eslint@^8.56.0".
+warning "eslint-config-expo > @typescript-eslint/eslint-plugin > ts-api-utils@1.3.0" has unmet peer dependency "typescript@>=4.2.0".
+warning "react-native > @react-native/codegen@0.72.8" has unmet peer dependency "@babel/preset-env@^7.1.6".
+warning "react-native > @react-native/codegen > jscodeshift@0.14.0" has unmet peer dependency "@babel/preset-env@^7.1.6".
+[4/4] Building fresh packages...
+success Saved lockfile.
+success Saved 21 new dependencies.
+info Direct dependencies
+├─ expo-dev-client@2.4.13
+└─ react-native@0.72.10
+info All dependencies
+├─ @react-native-community/cli-clean@11.3.10
+├─ @react-native-community/cli-doctor@11.3.10
+├─ @react-native-community/cli-hermes@11.3.10
+├─ @react-native-community/cli-plugin-metro@11.3.10
+├─ @react-native-community/cli-types@11.3.10
+├─ @react-native-community/cli@11.3.10
+├─ @react-native/codegen@0.72.8
+├─ deprecated-react-native-prop-types@4.2.3
+├─ expo-dev-client@2.4.13
+├─ expo-dev-launcher@2.4.15
+├─ expo-dev-menu@3.2.4
+├─ expo-json-utils@0.7.1
+├─ expo-manifests@0.7.2
+├─ expo-updates-interface@0.10.1
+├─ metro-file-map@0.76.8
+├─ metro-inspector-proxy@0.76.8
+├─ metro-minify-terser@0.76.8
+├─ metro-minify-uglify@0.76.8
+├─ metro-react-native-babel-transformer@0.76.8
+├─ metro-transform-worker@0.76.8
+└─ react-native@0.72.10
+Done in 93.71s.
+```
+
+> ✅ Success
+
+```bash
+yarn preview:android
+yarn run v1.22.22
+$ eas build -p android --profile preview
+The EAS build profile does not specify a Node.js version. Using the version specified in .nvmrc: v20.9.0
+Loaded "env" configuration for the "preview" profile: APP_VARIANT. Learn more: https://docs.expo.dev/build-reference/variables/
+✔ Using remote Android credentials (Expo server)
+✔ Using Keystore from configuration: Build Credentials 8e7zHpxciB (default)
+
+Compressing project files and uploading to EAS Build. Learn more: https://expo.fyi/eas-build-archive
+✔ Uploaded to EAS 4s
+Build details: https://expo.dev/accounts/ahamadch/projects/archis-mobile-app/builds/ba6c3ec2-e11a-48ac-893f-0f4b60f911a7
+Waiting for build to complete. You can press Ctrl+C to exit.
+✔ Build finished
+🤖 Open this link on your Android devices (or scan the QR code) to install the app:
+https://expo.dev/accounts/ahamadch/projects/archis-mobile-app/builds/ba6c3ec2-e11a-48ac-893f-0f4b60f911a7
+✔ Install and run the Android build on an emulator? … yes
+✔ Successfully downloaded app 1m 8s
+Using open emulator: Pixel_8_API_27
+Installing your app...
+✔ Successfully installed your app!
+
+Starting your app...
+✔ Successfully started your app!
+Done in 516.00s.
+```
