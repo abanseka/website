@@ -25,6 +25,14 @@ export default function Document() {
         </svg>
         <Main />
         <NextScript />
+
+        {/* Cloudflare Web Analytics  */}
+        <script
+          defer
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "3f56f43aed094cf49a82a10547d1c198"}'
+        ></script>
+        {/* End Cloudflare Web Analytics */}
       </body>
     </Html>
   );
