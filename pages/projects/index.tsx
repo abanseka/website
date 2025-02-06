@@ -37,7 +37,7 @@ const index = () => {
     display: "flex",
     alignItems: "center",
     paddingInline: 20,
-    fontSize: 12,
+    fontSize: 14,
     gap: 8,
   };
 
@@ -49,13 +49,14 @@ const index = () => {
         <link rel="icon" href="/branch_favicon.png" />
       </Head>
 
-      <div style={{ marginBlockEnd: 40, paddingInline: 20 }}>
-        <p style={{ fontSize: 12, marginBlock: 10 }}>my explorations 🔬</p>
+      <div style={{ marginBlockEnd: 40 }}>
+        <p style={{ fontSize: 14, marginBlock: 10 }}>my explorations 🔬</p>
         <div
           style={{
-            height: 500,
-            borderRadius: 4,
+            height: 600,
+            borderRadius: 8,
             border: "2px solid lightgray",
+            overflow: "hidden",
           }}
         >
           <img
@@ -68,12 +69,19 @@ const index = () => {
             }}
             src="https://i.pinimg.com/enabled_hi/564x/a1/43/e6/a143e624615b3997f2018359cff10a2f.jpg"
           />
-
-          {/* prettier-ignore */}
-          <a 
-            href="https://www.pinterest.com/pin/2392606046257366/"
-            style={{ fontSize: 12, marginBlock: 10,color:"teal",textDecoration:"none" }}> arts by Kiri Oof on Pinterest</a>
         </div>
+        <a
+          href="https://www.pinterest.com/pin/2392606046257366/"
+          style={{
+            fontSize: 14,
+            marginBlock: 10,
+            color: "darkred",
+            textDecoration: "none",
+          }}
+        >
+          {" "}
+          arts by Kiri Oof on Pinterest
+        </a>
       </div>
 
       <section className={style.projectsPage}>

@@ -18,15 +18,20 @@
   @extend %navlink;
 
   svg {
-    width: 1.4rem;
-    height: 1.4rem
+    width: 2rem;
+    height: 2rem
   }
 }
 
 .link {
   @extend %navlink;
-  @extend %text, .capitalize, .small, .bold;
+  @extend %text, .capitalize, .moderate, .bold;
   transition: all 300ms ease;
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem
+  }
 
   &.solid {
     @extend %text, .p5;
