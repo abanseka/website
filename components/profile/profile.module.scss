@@ -51,7 +51,7 @@
 
     .companywrapper {
       @extend %navlink;
-      @extend %text, .tiny;
+      @extend %text, .small;
     }
   }
 }

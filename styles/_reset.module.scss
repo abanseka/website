@@ -16,9 +16,9 @@ body {
   font-family: $primary-font;
 
   background-size: 30px 30px;
-  background-image:
-    linear-gradient(to right, color.adjust($primary, $lightness: 70%) 1px, transparent 1px),
-    linear-gradient(to bottom, color.adjust($primary, $lightness: 70%) 1px, transparent 1px);
+  // background-image:
+  //   linear-gradient(to right, color.adjust($primary, $lightness: 70%) 1px, transparent 1px),
+  //   linear-gradient(to bottom, color.adjust($primary, $lightness: 70%) 1px, transparent 1px);
 
   img {
     max-width: 100%;

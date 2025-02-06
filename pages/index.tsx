@@ -32,7 +32,7 @@ export default function Home({ notes }: { notes: any }) {
     display: "flex",
     paddingInline: 20,
     alignItems: "center",
-    fontSize: 12,
+    fontSize: 14,
     gap: 8,
   };
 
@@ -56,7 +56,7 @@ export default function Home({ notes }: { notes: any }) {
         <meta name="twitter:image" content={openGraphData?.image} />
       </Head>
 
-      <div style={{ marginBlockEnd: 40, paddingInline: 20 }}>
+      <div style={{ marginBlockEnd: 40 }}>
         <p
           style={{
             fontSize: 14,
@@ -73,9 +73,10 @@ export default function Home({ notes }: { notes: any }) {
 
         <div
           style={{
-            height: 500,
-            borderRadius: 4,
+            height: 600,
+            borderRadius: 8,
             border: "2px solid lightgray",
+            overflow: "hidden",
           }}
         >
           <img
@@ -88,12 +89,18 @@ export default function Home({ notes }: { notes: any }) {
             }}
             src="https://i.pinimg.com/enabled_hi/564x/b4/fc/fe/b4fcfecd185b6207f90d95360a0568de.jpg"
           />
-
-          {/* prettier-ignore */}
-          <a 
-            href="https://www.pinterest.com/pin/3799980929646402/"
-            style={{ fontSize: 12, marginBlock: 10,color:"teal",textDecoration:"none" }}> arts by 心琳 蔣 on Pinterest{" "} </a>
         </div>
+        <a
+          href="https://www.pinterest.com/pin/3799980929646402/"
+          style={{
+            fontSize: 14,
+            marginBlock: 10,
+            color: "darkred",
+            textDecoration: "none",
+          }}
+        >
+          arts by 心琳 蔣 on Pinterest{" "}
+        </a>
       </div>
 
       <h5 style={chipContainerStyle}>
