@@ -4,7 +4,7 @@ import rehypePrettyCode from "rehype-pretty-code";
 
 // utils/rehyprettyCode.ts
 var rehypePrettyCodeOptions = {
-  theme: "github-light"
+  theme: "github-dark"
 };
 var rehyprettyCode_default = rehypePrettyCodeOptions;
 
@@ -46,4 +46,4 @@ var contentlayer_config_default = makeSource({
 export {
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-2XM3FM5Q.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-UCO4DUP4.mjs.map

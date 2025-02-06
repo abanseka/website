@@ -46,7 +46,7 @@ export const projectData: Record<projectType, ProjectCardProps[]> = {
     {
       projectTitle: "Berikids NGO",
       projectDescription: "a non profit organisation ",
-      siteLink: "https://berikids.netlify.app/",
+      siteLink: "https://berikids.org/",
       projectIcon: <GitHubIcon />,
       headerImage: <ImageHolder style={projectCardImageStyle} />,
     },
