@@ -23,7 +23,7 @@
   padding-inline: 10px;
 
   a {
-    @extend %text, .bold, .accent, .tiny;
+    @extend %text, .bold, .accent, .small;
   }
 
   p,
@@ -32,24 +32,25 @@
   ul,
   code {
     margin: rem(14) 0;
-    line-height: rem(22);
-    @extend %text, .tiny;
+    line-height: rem(24);
+    @extend %text, .small;
   }
 
   p,
   l,
   ol {
     code {
-      font-size: rem(10);
-      padding: 2px 5px;
-      border-radius: 5px;
-      background: color.adjust(coral, $lightness: 20%);
+      font-size: rem(12);
+      padding: 4px 8px;
+      background: $primary;
+      border-radius: 8px;
+      color: $offWhite;
     }
   }
 
   ol,
   ul {
-    padding: 0 1.25rem;
+    padding: 0 rem(24);
     margin-bottom: rem(16);
   }
 
@@ -66,8 +67,8 @@
   h6 {
     color: $accent;
     margin: rem(40) 0;
-    padding: 2px 5px;
-    border-radius: 2px;
+    padding: 4px 8px;
+    border-radius: 8px;
     font-weight: 600;
     font-family: $primary-font;
   }
@@ -105,13 +106,12 @@
   blockquote {
     padding: 10px;
     margin: 10px 0;
-    border: 1px solid color.adjust($primary, $lightness: 40%);
-    background: color.adjust(lime, $lightness: 45%);
+    background: $primary;
+    border-radius: 8px;
 
     p {
       margin: 5px;
-      line-height: rem(18);
-      color: color.adjust($accent, $hue: 0deg);
+      color: $offWhite;
     }
   }
 
@@ -120,13 +120,14 @@
     height: 500px;
     margin: 0 auto;
     object-fit: cover;
-    border: 2px solid color.adjust($primary, $lightness: 20%);
+    border-radius: 16px;
   }
 
   pre {
     padding: 10px 25px;
     overflow-x: scroll;
-    border: 1px dashed color.adjust($primary, $lightness: 40%);
+    border-radius: 8px;
+    background-color: $primary;
 
     &::-webkit-scrollbar {
       display: none;
@@ -134,7 +135,6 @@
 
     code {
       counter-reset: line;
-      line-height: rem(24);
       font-size: rem(12);
     }
   }

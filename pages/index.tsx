@@ -57,9 +57,18 @@ export default function Home({ notes }: { notes: any }) {
       </Head>
 
       <div style={{ marginBlockEnd: 40, paddingInline: 20 }}>
-        <p style={{ fontSize: 14, lineHeight: 2, marginBlockEnd: 10 }}>
-          Hi I am abanseka sylvester, a code junkie, anime crackHead and sucker
-          for arts. Here's where I dump my stuff for future references
+        <p
+          style={{
+            fontSize: 14,
+            lineHeight: 2,
+            marginBlockEnd: 10,
+            fontWeight: 600,
+          }}
+        >
+          Hi, I’m Abanseka Sylvester a developer who enjoys building sleek,
+          functional, and efficient web experiences. This is where I document my
+          work, experiments, and ideas. If you’re looking for clean code and
+          no-nonsense problem-solving, you’re in the right place.
         </p>
 
         <div
