@@ -1,0 +1,148 @@
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  src: url("./assets/fonts/SpaceGrotesk-VariableFont_wght.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "Agdasima-Bold";
+  font-style: normal;
+  src: url("./assets/fonts/Agdasima-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Agdasima-Regular";
+  font-style: normal;
+  src: url("./assets/fonts/Agdasima-Regular.ttf") format("truetype");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+:root {
+  --white: #fcf0e0;
+  --offwhite: #eae1d2;
+  --red: #f43230;
+  --black: #070706;
+  --grey: #babdb6;
+  --font-1: "Agdasima-Bold";
+  --font-2: "Agdasima-Regular";
+  --font-3: "Space Grotesk";
+}
+
+body {
+  min-height: 100dvh;
+  color: var(--black);
+  font-family: var(--font-3);
+  background-color: var(--white);
+  background-size: 200px;
+  background-image: linear-gradient(
+    to right,
+    var(--offwhite) 1px,
+    transparent 1px
+  );
+}
+
+.main {
+  max-width: 768px;
+  height: fit-content;
+  margin-inline: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  position: absolute;
+  margin: auto;
+  inset: 0;
+}
+
+.logo-wrapper {
+  max-width: 150px;
+  margin-left: auto;
+  display: grid;
+  place-items: center;
+}
+
+.logo {
+  width: 100%;
+  object-fit: contain;
+}
+
+.title {
+  font-weight: 700;
+  font-size: clamp(3rem, 5vw, 6rem);
+  font-family: var(--font-2);
+}
+
+.title .highlight {
+  color: var(--red);
+}
+
+.backdrop-title {
+  width: 100%;
+  overflow: hidden;
+  font-size: clamp(10rem, 20vw, 20rem);
+  position: absolute;
+  bottom: 0;
+  gap: 25px;
+  opacity: 0.03;
+  text-align: center;
+  mix-blend-mode: multiply;
+  z-index: -1;
+}
+
+.summary {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+.inline-logo {
+  width: 80px;
+}
+
+a {
+  width: fit-content;
+  color: var(--red);
+  font-weight: 500px;
+  display: inline-flex;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+.socials .social-url {
+  color: var(--black);
+  display: grid;
+  place-items: center;
+}
+
+.socials .social-icon {
+  width: 25px;
+  height: 25px;
+}
+
+.trim {
+  width: 100%;
+  min-height: 30px;
+  background-image: url("./assets/trim.png");
+}
+
+@media (max-width: 768px) {
+  .main {
+    width: 100%;
+  }
+
+  .logo-wrapper {
+    max-width: 100px;
+  }
+}
