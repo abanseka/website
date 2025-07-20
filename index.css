@@ -169,6 +169,7 @@ a {
 @media (max-width: 768px) {
   .main {
     width: 100%;
+    height: unset;
     position: unset;
     margin-block-start: 50px;
   }
