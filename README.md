@@ -1,1 +1,1 @@
-# [abanseka.dev](https://abanseka.netlify.app)
+# [ekadev.me](https://ekadev.me/)
