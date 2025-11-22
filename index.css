@@ -171,12 +171,6 @@ a {
   }
 }
 
-.trim {
-  width: 100%;
-  min-height: 30px;
-  background-image: url("./assets/trim.png");
-}
-
 @media (max-width: 768px) {
   .main {
     width: 100%;
