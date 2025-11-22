@@ -41,12 +41,6 @@ body {
   color: var(--black);
   font-family: var(--font-3);
   background-color: var(--white);
-  background-size: 200px;
-  background-image: linear-gradient(
-    to right,
-    var(--offwhite) 1px,
-    transparent 1px
-  );
 }
 
 .main {
@@ -61,6 +55,20 @@ body {
   position: absolute;
   margin: auto;
   inset: 0;
+}
+
+.noiseTexture {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  margin: auto;
+  opacity: 0.5;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  z-index: 1000;
 }
 
 .profile-wrapper {
@@ -113,20 +121,6 @@ body {
   text-decoration: underline;
 }
 
-.backdrop-title {
-  width: 100%;
-  overflow: hidden;
-  font-size: clamp(10rem, 20vw, 20rem);
-  position: absolute;
-  display: unset;
-  bottom: 0;
-  gap: 25px;
-  opacity: 0.03;
-  text-align: center;
-  mix-blend-mode: multiply;
-  z-index: -1;
-}
-
 .summary {
   font-size: clamp(1rem, 2vw, 1.5rem);
 }
@@ -158,6 +152,23 @@ a {
 .socials .social-icon {
   width: 25px;
   height: 25px;
+}
+
+.email {
+  color: var(--red);
+}
+
+.quote {
+  opacity: 0.3;
+}
+
+.cta-container {
+  display: flex;
+  align-items: center;
+  gap: calc(8 / 16 * 1rem);
+  .cta-text {
+    font-size: clamp(0.5rem, 2vw, 1rem);
+  }
 }
 
 .trim {
