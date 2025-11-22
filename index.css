@@ -1,20 +1,19 @@
 @font-face {
   font-family: "Space Grotesk";
   font-style: normal;
-  src: url("./assets/fonts/SpaceGrotesk-VariableFont_wght.ttf")
-    format("truetype");
+  src: url("/fonts/SpaceGrotesk-VariableFont_wght.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Agdasima-Bold";
   font-style: normal;
-  src: url("./assets/fonts/Agdasima-Bold.ttf") format("truetype");
+  src: url("/fonts/Agdasima-Bold.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Agdasima-Regular";
   font-style: normal;
-  src: url("./assets/fonts/Agdasima-Regular.ttf") format("truetype");
+  src: url("/fonts/Agdasima-Regular.ttf") format("truetype");
 }
 
 * {
