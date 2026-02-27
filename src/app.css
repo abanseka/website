@@ -1,0 +1,194 @@
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  src: url("/fonts/SpaceGrotesk-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Agdasima-Bold";
+  font-style: normal;
+  src: url("/fonts/Agdasima-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Agdasima-Regular";
+  font-style: normal;
+  src: url("/fonts/Agdasima-Regular.ttf") format("truetype");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+:root {
+  --white: #fcf0e0;
+  --offwhite: #eae1d2;
+  --red: #f43230;
+  --black: #070706;
+  --grey: #babdb6;
+  --font-1: "Agdasima-Bold";
+  --font-2: "Agdasima-Regular";
+  --font-3: "Space Grotesk";
+}
+
+body {
+  min-height: 100dvh;
+  color: var(--black);
+  font-family: var(--font-3);
+  background-color: var(--white);
+}
+
+.main {
+  max-width: 768px;
+  height: fit-content;
+  margin-inline: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  position: absolute;
+  margin: auto;
+  inset: 0;
+}
+
+.noiseTexture {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  margin: auto;
+  opacity: 0.5;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  z-index: 1000;
+}
+
+.profile-wrapper {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  margin-inline: 4px;
+  border-radius: 50%;
+  mix-blend-mode: multiply;
+  display: grid;
+  place-items: center;
+}
+
+.profile-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.name-phonetic {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo-wrapper {
+  max-width: 150px;
+  margin-left: auto;
+  display: grid;
+  place-items: center;
+}
+
+.logo {
+  width: 100%;
+  object-fit: contain;
+}
+
+.title {
+  font-weight: 400;
+  font-size: clamp(3rem, 5vw, 5rem);
+  font-family: var(--font-2);
+  text-decoration: underline;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.title .highlight {
+  color: var(--red);
+  text-decoration: underline;
+}
+
+.summary {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+.inline-logo {
+  width: 80px;
+}
+
+a {
+  width: fit-content;
+  color: var(--red);
+  font-weight: 500px;
+  display: inline-flex;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+.socials .social-url {
+  color: var(--black);
+  display: grid;
+  place-items: center;
+}
+
+.socials .social-icon {
+  width: 25px;
+  height: 25px;
+}
+
+.email {
+  color: var(--red);
+}
+
+.quote {
+  opacity: 0.3;
+}
+
+.cta-container {
+  display: flex;
+  align-items: center;
+  gap: calc(8 / 16 * 1rem);
+}
+
+.cta-container .cta-text {
+  font-size: clamp(0.5rem, 2vw, 1rem);
+}
+
+@media (max-width: 768px) {
+  .main {
+    width: 100%;
+    height: unset;
+    position: unset;
+    margin-block-start: 50px;
+  }
+
+  .profile-wrapper {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    z-index: -1;
+    left: 70%;
+    bottom: calc(100% + 10px);
+  }
+
+  .logo-wrapper {
+    max-width: 100px;
+  }
+}
