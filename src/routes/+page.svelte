@@ -30,12 +30,12 @@
 <ThemeToggle />
 
 <main class="main">
-  <p class="name-phonetic">
+  <p class="name-phonetic" title="Abanseka Sylvester">
     <code>/ˈa.banˈse.kə/</code>
     <code>/sɪlˈvɛs.tər/</code>
   </p>
 
-  <h1 class="title">
+  <h1 class="title" title="Abanseka Sylvester">
     &#193;b&#224;ns<span class="highlight">&#399;ka</span>
     &nbsp;
 
@@ -47,11 +47,11 @@
     <span class="highlight">&#x031A;</span>
   </h1>
 
-  <p class="summary">
+  <p class="summary" title="occupation">
     I'm a frontend developer focused on building clean, reliable, and
     user-friendly web solutions. currently working at
 
-    <a href="https://archisacademy.com">
+    <a href="https://archisacademy.com" title="Archis Academy">
       <img
         src="/archis.svg"
         alt="archis"
@@ -61,14 +61,14 @@
     </a>
     and recently launched
 
-    <a href="https://berikids.org">berikids.org</a> for an NGO supporting
-    orphans in Cameroon.
+    <a href="https://berikids.org" title="Berikids NGO">berikids.org</a> for an
+    NGO supporting orphans in Cameroon.
     <br />
   </p>
 
   <p class="email-cta-wrapper">
     you can always reach me at
-    <a href="mailto:abansekasly98@pm.me" class="email">
+    <a href="mailto:abansekasly98@pm.me" class="email" title="Send Gmail">
       <AtSign strokeWidth={2} size={16} />
       abansekasly98
     </a>
@@ -76,11 +76,7 @@
 
   <Socials />
 
-  <div class="logo-wrapper">
-    <img alt="logo" class="logo" src="/signature.svg" />
-  </div>
-
-  <p class="quote">{displayedText}</p>
+  <p class="quote" title="Drive">{displayedText}</p>
 </main>
 
 <style>
@@ -113,6 +109,7 @@
     mix-blend-mode: multiply;
     display: grid;
     place-items: center;
+    pointer-events: none;
   }
 
   :global([data-theme="dark"]) .profile-wrapper {
@@ -125,19 +122,6 @@
     object-fit: cover;
   }
 
-  .logo-wrapper {
-    max-width: 150px;
-    margin-left: auto;
-    display: grid;
-    place-items: center;
-
-    .logo {
-      width: 100%;
-      object-fit: contain;
-    }
-  }
-
-  :global([data-theme="dark"]) .logo,
   :global([data-theme="dark"]) .inline-logo {
     filter: invert(1) brightness(1);
   }
@@ -208,10 +192,6 @@
       z-index: -1;
       left: 70%;
       bottom: calc(100% + 10px);
-    }
-
-    .logo-wrapper {
-      max-width: 100px;
     }
   }
 </style>

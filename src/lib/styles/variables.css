@@ -16,6 +16,12 @@
   src: url("/fonts/Agdasima-Regular.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Gochi Hand";
+  font-style: normal;
+  src: url("/fonts/GochiHand-Regular.ttf") format("truetype");
+}
+
 :root {
   --white: #fcf0e0;
   --offwhite: #eae1d2;
@@ -25,6 +31,7 @@
   --font-1: "Agdasima-Bold";
   --font-2: "Agdasima-Regular";
   --font-3: "Space Grotesk";
+  --font-4: "Gochi Hand";
 }
 
 [data-theme="dark"] {

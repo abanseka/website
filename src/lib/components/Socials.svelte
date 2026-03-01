@@ -2,6 +2,7 @@
   import githubIcon from "$lib/assets/github.svg";
   import linkedInIcon from "$lib/assets/linkedIn.svg";
   import xIcon from "$lib/assets/x.png";
+  import { ArrowBigLeftDash } from "@lucide/svelte";
 
   const socials = [
     {
@@ -29,8 +30,8 @@
   {/each}
 
   <p class="cta-container">
-    &#10229;
-    <span class="cta-text">shoot a direct DM to my X inbox</span>
+    <ArrowBigLeftDash strokeWidth={1} />
+    <span class="cta-text">shoot a direct DM to my inbox</span>
   </p>
 </ul>
 
@@ -64,6 +65,7 @@
   }
 
   .cta-text {
+    font-family: var(--font-4);
     font-size: clamp(0.5rem, 2vw, 1rem);
   }
 </style>
