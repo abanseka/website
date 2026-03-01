@@ -35,6 +35,14 @@
   --font-3: "Space Grotesk";
 }
 
+[data-theme="dark"] {
+  --white: #1a1a1a;
+  --offwhite: #2d2d2d;
+  --red: #ff6b6b;
+  --black: #f0e8dc;
+  --grey: #666666;
+}
+
 body {
   min-height: 100dvh;
   color: var(--black);
@@ -70,6 +78,10 @@ body {
   z-index: 1000;
 }
 
+[data-theme="dark"] .noiseTexture {
+  mix-blend-mode: overlay;
+}
+
 .profile-wrapper {
   width: 80px;
   height: 80px;
@@ -79,6 +91,10 @@ body {
   mix-blend-mode: multiply;
   display: grid;
   place-items: center;
+}
+
+[data-theme="dark"] .profile-wrapper {
+  mix-blend-mode: normal;
 }
 
 .profile-wrapper img {
@@ -103,6 +119,12 @@ body {
 .logo {
   width: 100%;
   object-fit: contain;
+}
+
+[data-theme="dark"] .logo,
+[data-theme="dark"] .socials .social-icon,
+[data-theme="dark"] .inline-logo {
+  filter: invert(1) brightness(1.2);
 }
 
 .title {

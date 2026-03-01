@@ -1,6 +1,9 @@
 <script lang="ts">
   import Socials from "$lib/components/Socials.svelte";
+  import ThemeToggle from "$lib/components/ThemeToggle.svelte";
 </script>
+
+<ThemeToggle />
 
 <main class="main">
   <p class="name-phonetic">
@@ -37,22 +40,8 @@
     <a href="https://berikids.org">berikids.org</a> for an NGO supporting
     orphans in Cameroon.
     <br />
-    <!--   <br /> -->
-    <!--   I'm also building -->
-    <!---->
-    <!--   <a href="https://www.linkedin.com/company/netphabric"> -->
-    <!--     <img -->
-    <!--       src="/netphabric.webp" -->
-    <!--       alt="archis" -->
-    <!--       class="inline-logo" -->
-    <!--       fetchpriority="high" -->
-    <!--     /></a -->
-    <!--   > -->
-    <!---->
-    <!--   , a startup aimed at helping businesses grow through smart web audits, -->
-    <!--   design, and development. -->
-    <!-- </p> -->
   </p>
+
   <p>
     you can always reach me at
     <span class="email">abansekasly98@gmail.com</span> or

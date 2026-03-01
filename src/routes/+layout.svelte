@@ -1,5 +1,17 @@
 <script lang="ts">
   import "../app.css";
+  import { onMount } from "svelte";
+
+  let { children } = $props();
+
+  onMount(() => {
+    const saved = localStorage.getItem("theme");
+    const isDark = saved ? saved === "dark" : false;
+    document.documentElement.setAttribute(
+      "data-theme",
+      isDark ? "dark" : "light",
+    );
+  });
 </script>
 
 <svg
@@ -19,4 +31,4 @@
   <rect width="100%" height="100%" filter="url(#noiseFilter)" />
 </svg>
 
-<slot />
+{@render children()}
