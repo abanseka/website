@@ -1,0 +1,36 @@
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  src: url("/fonts/SpaceGrotesk-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Agdasima-Bold";
+  font-style: normal;
+  src: url("/fonts/Agdasima-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Agdasima-Regular";
+  font-style: normal;
+  src: url("/fonts/Agdasima-Regular.ttf") format("truetype");
+}
+
+:root {
+  --white: #fcf0e0;
+  --offwhite: #eae1d2;
+  --red: #f43230;
+  --black: #070706;
+  --grey: #babdb6;
+  --font-1: "Agdasima-Bold";
+  --font-2: "Agdasima-Regular";
+  --font-3: "Space Grotesk";
+}
+
+[data-theme="dark"] {
+  --white: #1a1a1a;
+  --offwhite: #2d2d2d;
+  --red: #ff6b6b;
+  --black: #f0e8dc;
+  --grey: #666666;
+}

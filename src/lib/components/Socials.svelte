@@ -14,20 +14,56 @@
   ];
 </script>
 
-{#each socials as social (social.label)}
-  <li class="social-item">
-    <a
-      class="social-url"
-      href={social.url}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img class="social-icon" src={social.img} alt={social.label} />
-    </a>
-  </li>
-{/each}
+<ul class="socials">
+  {#each socials as social (social.label)}
+    <li class="social-item">
+      <a
+        class="social-url"
+        href={social.url}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img class="social-icon" src={social.img} alt={social.label} />
+      </a>
+    </li>
+  {/each}
 
-<p class="cta-container">
-  &#10229;
-  <span class="cta-text">shoot a direct DM to my X inbox</span>
-</p>
+  <p class="cta-container">
+    &#10229;
+    <span class="cta-text">shoot a direct DM to my X inbox</span>
+  </p>
+</ul>
+
+<style>
+  .socials {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+  }
+
+  .social-url {
+    color: var(--black);
+    display: grid;
+    place-items: center;
+  }
+
+  .social-icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  :global([data-theme="dark"]) .social-icon {
+    filter: invert(1) brightness(1.2);
+  }
+
+  .cta-container {
+    display: flex;
+    align-items: center;
+    gap: calc(8 / 16 * 1rem);
+  }
+
+  .cta-text {
+    font-size: clamp(0.5rem, 2vw, 1rem);
+  }
+</style>
