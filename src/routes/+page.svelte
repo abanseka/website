@@ -2,6 +2,29 @@
   import Socials from "$lib/components/Socials.svelte";
   import ThemeToggle from "$lib/components/ThemeToggle.svelte";
   import { AtSign } from "@lucide/svelte";
+  import { onMount } from "svelte";
+
+  const fullText = "Stay Hungry, Stay Foolish.";
+  let displayedText = $state("");
+
+  onMount(() => {
+    function typeWriter() {
+      displayedText = "";
+      let i = 0;
+      function type() {
+        if (i < fullText.length) {
+          displayedText = fullText.slice(0, i + 1);
+          i++;
+          setTimeout(type, 50);
+        }
+      }
+      type();
+    }
+
+    typeWriter();
+    const interval = setInterval(typeWriter, 10000);
+    return () => clearInterval(interval);
+  });
 </script>
 
 <ThemeToggle />
@@ -57,7 +80,7 @@
     <img alt="logo" class="logo" src="/signature.svg" />
   </div>
 
-  <p class="quote">Stay Hungry, Stay Foolish.</p>
+  <p class="quote">{displayedText}</p>
 </main>
 
 <style>
