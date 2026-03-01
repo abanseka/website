@@ -3,9 +3,23 @@
   import ThemeToggle from "$lib/components/ThemeToggle.svelte";
   import { AtSign } from "@lucide/svelte";
   import { onMount } from "svelte";
+  import { animate, stagger } from "motion";
 
   const fullText = "Stay Hungry, Stay Foolish.";
   let displayedText = $state("");
+
+  const phonetics = ["/ˈa.banˈse.kə/ /sɪlˈvɛs.tər/"];
+  let phoneticRefs: HTMLSpanElement[] = [];
+
+  function scramble(index: number) {
+    const chars = phoneticRefs[index].querySelectorAll(".char");
+    animate(
+      chars as unknown as Element[],
+      // @ts-ignore
+      { opacity: [0, 1], filter: ["blur(10px)", "blur(0px)"] },
+      { delay: stagger(0.03), duration: 0.4, easing: "ease-out" },
+    );
+  }
 
   onMount(() => {
     function typeWriter() {
@@ -31,8 +45,13 @@
 
 <main class="main">
   <p class="name-phonetic" title="Abanseka Sylvester">
-    <code>/ˈa.banˈse.kə/</code>
-    <code>/sɪlˈvɛs.tər/</code>
+    {#each phonetics as phonetic, i}
+      <code bind:this={phoneticRefs[i]} onmouseenter={() => scramble(i)}>
+        {#each phonetic.split("") as char}
+          <span class="char" style="filter: blur(10px);">{char}</span>
+        {/each}
+      </code>
+    {/each}
   </p>
 
   <h1 class="title" title="Abanseka Sylvester">
@@ -98,6 +117,7 @@
     display: flex;
     align-items: center;
     gap: 16px;
+    cursor: none;
   }
 
   .profile-wrapper {
